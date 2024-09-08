@@ -61,7 +61,9 @@ export default function Index() {
         </h2>
       </div>
       <div className="h-[calc(2rem-41px)] "></div>
-      <div className="w-[calc(full-2rem)] px-[1rem] mx-auto">
+      <div className="
+      // w-[calc(full-2rem)] px-[1rem] 
+      mx-auto">
       <Carousel featuredProducts={featuredProducts} />
       </div>
       <div className="flex relative h-[2rem]"></div>
