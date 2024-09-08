@@ -1,0 +1,141 @@
+
+@tailwind base;
+
+/* @tailwind components; */
+
+@tailwind utilities;
+
+@layer base {
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+@layer utilities {
+
+  
+  @font-face {
+    font-family: 'Metropolitano-Thin';
+    src: url(~/styles/font/Metropolitano-Thin.woff2) format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'Metropolitano-Light';
+    src: url(~/styles/font/Metropolitano-Light.woff2) format('woff2');
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'sans';
+    src: url(~/styles/font/Metropolitano-Light.woff2) format('woff2');
+    font-display: swap;
+  }
+    @font-face {
+      font-family: 'Metropolitano-Regular';
+      src: url(~/styles/font/Metropolitano-Regular.woff) format('woff');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Metropolitano-Medium';
+      src: url(~/styles/font/Metropolitano-Medium.woff2) format('woff2');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Metropolitano-Bold';
+      src: url(~/styles/font/Metropolitano-Bold.woff2) format('woff2');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Metropolitano-Black';
+      src: url(~/styles/font/Metropolitano-Black.woff2) format('woff2');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'FacetUltra-Regular';
+      src: url(~/styles/font/FacetUltra-Regular.woff2) format('woff2');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'RG-StandardBold';
+      src: url(~/styles/font/RG-StandardBold.woff2) format('woff2');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Nohemi-Black';
+      src: url(~/styles/font/Nohemi-Black.woff2) format('woff2');
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'neon-light';
+      src: url(~/styles/font/neon-light.woff) format('woff');
+      font-display: swap;
+    }
+  
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .shadow-divider {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 10px 9px -10px inset;
+  }
+
+  .mirror-x {
+    --tw-scale-x: -1;
+  }
+
+  .text-inherit {
+    color: inherit;
+  }
+
+  .bg-hero {
+    background-image: url('~/../public/banner4fin.webp');
+    background-size: cover;
+    background-position: right center;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10;
+    position: absolute;
+    top: 0;
+  }
+
+  .cookie-container {
+    backdrop-filter: blur(8px) !important;
+    background-color: rgb(0 0 0 / 0.75) !important;
+  }
+  .cookie-consent-button {
+    color: #fff !important;
+    letter-spacing: 0.1em !important;
+    background-color: rgba(255, 255, 255, 0) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important; /* Add a border style */
+  }
+  .cookie-consent-button:hover {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important; /* Add a border style */
+  }
+
+  .parent {
+    font-size: 28px;
+    line-height: 120%;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .parent:hover {
+    color: #ffffffc0;
+
+  }
+
+  .child {
+    font-size: 20px;
+    line-height: 100%;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .child:hover {
+    color: #ffffffc0;
+  }
+}
