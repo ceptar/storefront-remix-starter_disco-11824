@@ -1,7 +1,7 @@
 import { Link } from '@remix-run/react';
-import React from 'react';
+import React, { useState } from 'react';
 import NavMenuItem from './NavMenuItem';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { easings } from '~/utils/animations';
 
 interface Collection {
@@ -24,6 +24,8 @@ const AnimatedCollectionsTreemenu: React.FC<{
   collectionsData: CollectionsData;
   index: number;
 }> = ({ collectionsData, index }) => {
+  const [openAccordions, setOpenAccordions] = useState<string[]>([]);
+
   const normalizeParent = (collection: Collection) => {
     if (collection.parent) {
       const parentName = collection.parent.name;
@@ -31,14 +33,20 @@ const AnimatedCollectionsTreemenu: React.FC<{
         (c) => c.name === parentName,
       );
       if (parentCollection) {
-        collection = { ...collection, parentId: parentCollection.id };
+        return { ...collection, parentId: parentCollection.id };
       }
     }
     return collection;
   };
 
-  const normalizedCollections =
-    collectionsData.collections.map(normalizeParent);
+  const normalizedCollections = collectionsData.collections.map(normalizeParent);
+
+  const toggleAccordion = (event: React.MouseEvent, id: string) => {
+    event.stopPropagation();
+    setOpenAccordions(prev =>
+      prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
+    );
+  };
 
   const buildTree = (
     collections: Collection[],
@@ -48,48 +56,63 @@ const AnimatedCollectionsTreemenu: React.FC<{
 
     for (const collection of collections) {
       if (collection.parentId === parentId) {
+        const hasChildren = collections.some(c => c.parentId === collection.id);
+        const isOpen = openAccordions.includes(collection.id);
+
+        const navMenuItem = (
+          <NavMenuItem
+            index={collection.id.length}
+            title={collection.name}
+            class={`${collection.parentId ? 'child' : 'parent'}`}
+            isOpen={isOpen}
+          />
+        );
+
         result.push(
-
-          <div key={collection.id} >
-
-              <Link
-                to={`/collections/${collection.slug}`}
-              >
-                <NavMenuItem
-                  index={collection.id.length}
-                  title={collection.name}
-                  class={`${collection.parentId ? 'child' : 'parent'}`}
-                />
+          <div key={collection.id}>
+            {hasChildren ? (
+              <div onClick={(e) => toggleAccordion(e, collection.id)}>
+                {navMenuItem}
+              </div>
+            ) : (
+              <Link to={`/collections/${collection.slug}`}>
+                {navMenuItem}
               </Link>
-          {buildTree(collections, collection.id)}
-</div>
-          );
+            )}
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.3, ease: easings.easeOutQuart }}
+                >
+                  {buildTree(collections, collection.id)}
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        );
+      }
     }
-
-  }
-
-    
-    
 
     return result;
   };
-
+  
   return (
-      
-        <motion.nav
-          className="flex flex-col justify-start z-50"
-          initial={{ y: '-100%' }}
-          animate={{
-            y: 0,
-            transition: { duration: 1, ease: easings.easeOutQuart },
-          }}
-          exit={{ y: '-100%', transition: { duration: 0.3 } }}
-        >
-         <motion.ul exit={{ opacity: 0, transition: { duration: 0 } }}>
-          {buildTree(normalizedCollections)}
-          </motion.ul>
-        </motion.nav>
-
+    <motion.nav
+      className="flex flex-col justify-start z-50"
+      initial={{ y: '-100%' }}
+      animate={{
+        y: 0,
+        transition: { duration: 1, ease: easings.easeOutQuart },
+      }}
+      exit={{ y: '-100%', transition: { duration: 0.3 } }}
+    >
+      <motion.ul exit={{ opacity: 0, transition: { duration: 0 } }}>
+        {buildTree(normalizedCollections)}
+      </motion.ul>
+    </motion.nav>
   );
 };
 

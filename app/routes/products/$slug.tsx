@@ -97,16 +97,16 @@ export default function ProductSlug() {
       <div className="mx-auto px-4 mt-[2rem] ">
         <div className="md:grid md:grid-cols-2 md:gap-x-8 md:items-start my-4">
           {/* Image gallery */}
-          <div className="px-4 pt-4 pb-4 shadow-md bg-gray-100 w-full mx-auto sm:block ">
+          <div className="p-1 shadow-md bg-discogray w-auto mx-auto sm:block ">
             <span className="  overflow-hidden">
-              <div className="w-full h-full object-center object-cover md:max-h-[80vh]">
+              <div className="object-center object-cover">
                 <img
                   src={
                     (featuredAsset?.preview || product.featuredAsset?.preview) +
                     '?preset=full'
                   }
                   alt={product.name}
-                  className="w-full h-full object-center object-cover md:max-h-[80vh]"
+                  className="h-[70vh] object-center object-cover"
                 />
               </div>
             </span>
