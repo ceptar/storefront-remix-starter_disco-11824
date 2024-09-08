@@ -1,7 +1,7 @@
 import React, { SelectHTMLAttributes } from 'react';
 import { useField } from 'remix-validated-form';
 import FormElement from './FormElement';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
 export type SelectProps = {
   placeholder?: string;

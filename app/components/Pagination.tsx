@@ -4,7 +4,7 @@ import { Button } from '~/components/Button';
 import { ComponentProps } from 'react';
 import { useNavigation } from '@remix-run/react';
 import clsx from 'clsx';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
 export type PaginationProps = {
   appliedPaginationLimit: number;

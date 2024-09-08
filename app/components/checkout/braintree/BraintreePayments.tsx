@@ -4,7 +4,7 @@ import { classNames } from '~/utils/class-names';
 import { useSubmit } from '@remix-run/react';
 import { addPaymentToOrder } from '~/providers/checkout/checkout';
 import { CurrencyCode } from '~/generated/graphql';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
 export function BraintreeDropIn(props: {
   show: boolean;
@@ -13,7 +13,7 @@ export function BraintreeDropIn(props: {
   currencyCode: CurrencyCode;
 }) {
   const { show, authorization, fullAmount, currencyCode } = props;
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   const [braintreeInstance, setBraintreeInstance] = useState<Dropin>();
   const [enablePaymentButton, setEnablePaymentButton] = useState<boolean>();

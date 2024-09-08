@@ -11,7 +11,7 @@ import {
   translatePaginationTo,
   paginationValidationSchema,
 } from '~/utils/pagination';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
 const paginationLimitMinimumDefault = 10;
 const allowedPaginationLimits = new Set<number>([
@@ -64,7 +64,7 @@ export default function AccountHistory() {
     useLoaderData<typeof loader>();
   const submit = useSubmit();
   const navigation = useNavigation();
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const showingOrdersFrom = translatePaginationFrom(
     appliedPaginationPage,
     appliedPaginationLimit,

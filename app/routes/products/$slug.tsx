@@ -19,7 +19,7 @@ import Alert from '~/components/Alert';
 import { StockLevelLabel } from '~/components/products/StockLevelLabel';
 // import TopReviews from '~/components/products/TopReviews';
 import { ScrollableContainer } from '~/components/products/ScrollableContainer';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
 export const meta: MetaFunction = ({ data }) => {
   return [
@@ -62,10 +62,10 @@ export default function ProductSlug() {
   }>();
   const { activeOrder } = activeOrderFetcher.data ?? {};
   const addItemToOrderError = getAddItemToOrderError(error);
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   if (!product) {
-    return <div>{t('product.notFound')}</div>;
+    return <div>{('product.notFound')}</div>;
   }
 
   const findVariantById = (id: string) =>

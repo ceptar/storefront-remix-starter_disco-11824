@@ -8,7 +8,7 @@ import {
   validateRegistrationForm,
 } from '~/utils/registration-helper';
 import { API_URL, DEMO_API_URL } from '~/constants';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 // import { getFixedT } from '~/i18next.server';
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -43,7 +43,7 @@ export async function action({ request }: ActionFunctionArgs) {
 export default function SignUpPage() {
   const [searchParams] = useSearchParams();
   const formErrors = useActionData<RegisterValidationErrors>();
-  // const { t } = useTranslation();
+  // // const { t } = useTranslation();
 
   return (
     <>

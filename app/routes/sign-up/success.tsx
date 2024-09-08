@@ -1,14 +1,14 @@
 import { CheckCircleIcon } from '@heroicons/react/24/outline';
 import { Form } from '@remix-run/react';
 import { redirect } from '@remix-run/server-runtime';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
 export async function action() {
   return redirect('/');
 }
 
 export default function SuccessPage() {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <div className="flex flex-col justify-center py-12 sm:px-6 lg:px-8">
@@ -24,12 +24,12 @@ export default function SuccessPage() {
                   />
                 </div>
               </div>
-              <p className="text-center mb-5">{t('account.createdMessage')}</p>
+              <p className="text-center mb-5">{('account.createdMessage')}</p>
               <button
                 type="submit"
                 className="w-full flex justify-center py-2 px-4 border border-transparent  shadow-sm text-sm font-fw400 text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500"
               >
-                {t('account.goHome')}
+                {('account.goHome')}
               </button>
             </div>
           </Form>

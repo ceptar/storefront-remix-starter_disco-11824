@@ -202,7 +202,7 @@ export default function Carousel({ featuredProducts }) {
           <div
             key={index} // Prefer using a unique product identifier here
             className="relative flex-shrink-0 flex flex-col items-center justify-center b-radius-0 
-            w-[calc(50vw-24px)] sm:w-[calc(25vw-20px)]
+            w-[calc(50vw-32px)] sm:w-[calc(25vw-24px)]
             "
  /* 
  w-[calc(100vw-48px)] 
