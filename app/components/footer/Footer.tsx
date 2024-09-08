@@ -24,12 +24,12 @@ export default function Footer({
 }) {
   return (
   <footer
-    className="bg-discograytwo border-t-discogray border-[1px] relative overflow-hidden"
+    className="bg-discograytwo relative overflow-x-hidden"
     aria-labelledby="footer-heading"
   >
 
     <div className="container flex flex-col flex-wrap mx-auto md:flex-no-wrap md:flex-row md:items-center">
-      <div className="flex flex-wrap flex-grow mt-10 mb-10  md:mt-0 md:text-left">
+      <div className="flex flex-wrap flex-grow my-[2rem] md:text-left">
         <div className="w-full px-4 lg:w-1/4 md:w-1/2 mt-[2rem]">
 
 

@@ -66,19 +66,6 @@ export default function Index() {
       mx-auto">
       <Carousel featuredProducts={featuredProducts} />
       </div>
-      <div className="flex relative h-[2rem]"></div>
-      <div className="">
-
-        {/* <div className="flex items-center justify-center">
-          <div className="justify-center flex flex-row w-full">
-            <div className="flex flex-col pt-0 justify-center items-center w-[50%]"> */}
-
-{/*  */}
-            </div>
-            <div className="mb-[2rem]">
-
-
-            </div>
 
     </>
   );
