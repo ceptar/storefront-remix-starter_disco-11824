@@ -97,7 +97,7 @@ export default function ProductSlug() {
       <div className="mx-auto px-4 mt-[2rem]">
         <div className="sm:grid sm:grid-cols-2 sm:gap-x-8 sm:items-start w-fit sm:w-auto mx-auto my-4">
           {/* Image gallery */}
-          <div className="p-4">
+          <div className="p-4 sm:justify-self-end">
           <div className="p-1 shadow-md bg-discogray mx-auto w-fit sm-block">
             <span className="overflow-hidden">
               <div className="object-center object-cover">
@@ -251,7 +251,7 @@ export default function ProductSlug() {
         </div>
       </div>
 
-      <div className=" px-4 mt-[2rem] border-t border-discogray">
+      <div className=" px-4 mt-[2rem] ">
         <section className="mt-4 pt-4 text-xs">
           <h3 className="text-gray-600 font-bold mb-2">Shipping & Returns</h3>
           <div className=" text-discogray-600 space-y-1">
@@ -275,15 +275,15 @@ export default function ProductSlug() {
       {/* <div className="mt-24">
           <TopReviews></TopReviews>
         </div> */}
-      <div className="h-[2rem]"></div>
+      {/* <div className="h-[2rem]"></div>
         <Breadcrumbs
           items={
             product.collections[product.collections.length - 1]?.breadcrumbs ??
             []
           }
         ></Breadcrumbs>
-
-    </div>
+*/}
+    </div> 
   );
 }
 

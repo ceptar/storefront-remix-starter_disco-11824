@@ -8,6 +8,7 @@ import AnimatedCollectionsTreemenu from './CollectionsTreemenu';
 import { SearchBar } from '~/components/header/SearchBar';
 import SignIn from '~/components/svgs/SignIn';
 import { UserIcon } from '@heroicons/react/24/solid';
+import Woman from '../svgs/Woman';
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const collections = await getCollections(request, { take: 20 });
@@ -34,7 +35,7 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
         className="flex flex-col bg-opacity-90 cursor-pointer justify-center items-center py-2 text-sm text-discogray-500 transition-all duration-300 ease-out hover:opacity-70"
       >
         <button>
-          <Hamburger className="w-8 h-8 pl-1 mx-auto" fill={finalOpacity} />
+          <Hamburger className="w-8 h-8 mx-auto" fill={finalOpacity} />
         </button>
       </div>
       <div
@@ -60,16 +61,16 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
           </div>
           
   
-<div className="flex flex-row-reverse items-center mt-4 pr-1 pb-4">
+<div className="flex flex-row-reverse items-center mt-4 pr-8 pb-4">
         
-          <div className="cursor-pointer text-white top-0 w-12 flex items-center justify-center right-0">
+          <div className="cursor-pointer text-white top-0 flex items-center justify-center right-0">
 
-            <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
               <path d="M6 18L18 6M6 6l12 12" />
             </svg>
           </div>
-          <div> <Link to={isSignedIn ? '/account' : '/sign-in'} className="flex space-x-1">
-                <SignIn className="w-8 h-8 text-white " />
+          <div className="pr-4"> <Link to={isSignedIn ? '/account' : '/sign-in'} className="flex space-x-1">
+                <SignIn className="w-8 h-8 text-white" />
                 </Link></div>
  </div>
 
