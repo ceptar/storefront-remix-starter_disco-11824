@@ -60,7 +60,6 @@ export default function Index() {
           </span>
         </h2>
       </div>
-      <div className="h-[calc(2rem-41px)] "></div>
       <div className="
       // w-[calc(full-2rem)] px-[1rem] 
       mx-auto">

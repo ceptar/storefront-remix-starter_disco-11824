@@ -94,22 +94,24 @@ export default function ProductSlug() {
 
   return (
     <div>
-      <div className="mx-auto px-4 mt-[2rem] ">
-        <div className="md:grid md:grid-cols-2 md:gap-x-8 md:items-start my-4">
+      <div className="mx-auto px-4 mt-[2rem]">
+        <div className="sm:grid sm:grid-cols-2 sm:gap-x-8 sm:items-start w-fit sm:w-auto mx-auto my-4">
           {/* Image gallery */}
-          <div className="p-1 shadow-md bg-discogray w-auto mx-auto sm:block ">
-            <span className="  overflow-hidden">
+          <div className="p-4">
+          <div className="p-1 shadow-md bg-discogray mx-auto w-fit sm-block">
+            <span className="overflow-hidden">
               <div className="object-center object-cover">
                 <img
                   src={
                     (featuredAsset?.preview || product.featuredAsset?.preview) +
-                    '?preset=full'
+                    '?w=full'
                   }
                   alt={product.name}
                   className="h-[70vh] object-center object-cover"
                 />
               </div>
             </span>
+          </div>
           </div>
 
           {/* Product info */}
@@ -140,7 +142,7 @@ export default function ProductSlug() {
                         className="select-none w-full h-[calc(w-full*1.6)] object-cover object-center"
                         src={
                           asset.preview +
-                          '?preset=full' /* not ideal, but technically prevents loading 2 seperate images */
+                          '?w=full' /* not ideal, but technically prevents loading 2 seperate images */
                         }
                       />
                     </div>

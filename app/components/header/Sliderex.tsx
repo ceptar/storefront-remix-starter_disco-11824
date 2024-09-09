@@ -8,7 +8,6 @@ import AnimatedCollectionsTreemenu from './CollectionsTreemenu';
 import { SearchBar } from '~/components/header/SearchBar';
 import SignIn from '~/components/svgs/SignIn';
 import { UserIcon } from '@heroicons/react/24/solid';
-import '~/styles/app.css';
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const collections = await getCollections(request, { take: 20 });
