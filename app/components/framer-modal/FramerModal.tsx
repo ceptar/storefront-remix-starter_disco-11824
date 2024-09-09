@@ -28,7 +28,7 @@ const FramerModal: React.FC<FramerModalProps> = ({
           updateFilterIds={updateFilterIds} // Access the received setFilterIds function 
     />}</AnimatePresence>
 
-    <div className="mix-blend-difference z-[100] fixed bottom-0 right-0 mr-4 mb-8 ">
+    <div className="z-[100] fixed bottom-0 right-0 mr-4 mb-8 ">
 
       <FramerModalToggle menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
       

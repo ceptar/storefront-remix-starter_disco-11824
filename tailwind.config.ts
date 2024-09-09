@@ -7,6 +7,10 @@ export default {
   
   important: '#app',
 
+  safelist: [
+    { pattern: /^bg-/, variants: ['hover', 'focus'] },
+  ],
+
   theme: {
     extend: {
       fontFamily: {

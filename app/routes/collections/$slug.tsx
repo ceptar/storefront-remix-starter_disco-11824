@@ -36,6 +36,18 @@ export default function CollectionSlug() {
 
   return (
     <div className="w-full">
+          <div className="absolut top-[5rem]">      
+
+<FramerModal
+      menuOpen={menuOpen}
+      setMenuOpen={setMenuOpen}
+      results={search.facetValues}
+      filterIds={filterIds}
+      updateFilterIds={handleFilterChange}
+    />
+    </div>
+     
+
     <div className="px-4 relative h-[5rem] z-20 flex justify-center items-center mr-auto ml-auto w-full">
     <h2 id="category-heading" className="px-4 items-center justify-center flex leading-10 border-t border-b border-discogray">
       <span className="text-xl uppercase tracking-[0.25em] text-discogray p-2">
@@ -44,16 +56,8 @@ export default function CollectionSlug() {
     </h2>
   </div>
 
-    <div className="absolut top-[5rem] h-full px-4 my-4 py-4">      
 
-      <FramerModal
-            menuOpen={menuOpen}
-            setMenuOpen={setMenuOpen}
-            results={search.facetValues}
-            filterIds={filterIds}
-            updateFilterIds={handleFilterChange}
-          />
-
+  <div className="relative px-4 h-full my-4 py-4"> 
 <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">        
   {search.items.map(({ productName, slug, priceWithTax, currencyCode, productAsset }) => (
           <div className="break-inside-avoid object-cover w-full mb-4" key={slug}>

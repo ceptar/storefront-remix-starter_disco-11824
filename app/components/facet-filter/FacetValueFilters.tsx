@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Form } from '@remix-run/react';
+import { getTailwindColorClass } from './GetTailwindColorClass';
 
 export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
   const onTagClick = (id: string) => {
@@ -9,7 +10,6 @@ export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
     updateFilterIds(newFilterIds);
   };
 
-  // Group the results by facet name
   const groupedFacets = results.reduce((groups, item) => {
     const facetName = item.facetValue.facet.name;
     if (!groups[facetName]) {
@@ -24,24 +24,33 @@ export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
       <div style={{ marginTop: '24px', padding: '8px' }}>
         {Object.keys(groupedFacets).map((group) => (
           <div key={group} style={{ paddingBottom: '24px' }}>
-            <h3>{group}</h3>
+            <h3 style={{ 
+              color: 'white', 
+              marginBottom: '8px', 
+              fontWeight: 'bold',
+              fontSize: '24px',
+              textTransform: 'uppercase',
+               }}>
+              {group}</h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
-              {groupedFacets[group].map((f) => (
-                <div
-                  key={f.facetValue.id}
-                  onClick={() => onTagClick(f.facetValue.id)}
-                  style={{
-                    cursor: 'pointer',
-                    border: filterIds.includes(f.facetValue.id) ? '1px solid white' : '1px solid black',
-                    borderRadius: '50px',
-                    padding: '2px 6px',
-                    backgroundColor: filterIds.includes(f.facetValue.id) ? 'black' : 'white',
-                    color: filterIds.includes(f.facetValue.id) ? 'white' : 'black',
-                  }}
-                >
-                  {f.facetValue.name} ({f.count})
-                </div>
-              ))}
+              {groupedFacets[group].map((f) => {
+                const isSelected = filterIds.includes(f.facetValue.id);
+                const colorClass = group.toLowerCase() === 'colors' 
+                  ? getTailwindColorClass(f.facetValue.name)
+                  : '';
+
+                return (
+                  <div
+                    key={f.facetValue.id}
+                    onClick={() => onTagClick(f.facetValue.id)}
+                    className={`cursor-pointer text-sm rounded-full px-2 py-1 ${
+                      isSelected ? 'border border-white text-white' : 'border border-black text-black'
+                    } ${group.toLowerCase() === 'colors' ? colorClass : isSelected ? 'bg-black' : 'bg-white'}`}
+                  >
+                    {f.facetValue.name} ({f.count})
+                  </div>
+                );
+              })}
             </div>
           </div>
         ))}
@@ -51,90 +60,45 @@ export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
 }
 
 
+// import * as React from 'react';
+// import { Form } from '@remix-run/react';
 
-// import * as React from 'react'
-
-// interface FramerModalProps {
-//   menuOpen: boolean;
-//   setMenuOpen: (open: boolean) => void;
-//   results: any[];
-//   filterIds: string[];
-//   setFilterIds: (ids: string[]) => void;
-// }
-
-// interface FacetValueResult {
-//   facetValue: {
-//     id: string
-//     name: string
-//     facet: {
-//       id: string
-//       name: string
-//     }
-//   }
-//   count: number
-// }
-
-// export function FacetValueFilters(FramerModalProps: {
-//   results: FacetValueResult[];
-//   filterIds: string[];
-//   updateFilterIds: (ids: string[]) => void
-// }){
-//   const { results = [], filterIds, updateFilterIds } = FramerModalProps
-//   const [checkedFacets, setCheckedFacets] = React.useState<string[]>([])
-
+// export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
 //   const onTagClick = (id: string) => {
-//     const newCheckedFacets = checkedFacets.includes(id)
-//       ? checkedFacets.filter((fid) => fid !== id)
-//       : [...checkedFacets, id]
-//     setCheckedFacets(newCheckedFacets)
-//     updateFilterIds(newCheckedFacets)
-//   }
+//     const newFilterIds = filterIds.includes(id)
+//       ? filterIds.filter((fid) => fid !== id)
+//       : [...filterIds, id];
+//     updateFilterIds(newFilterIds);
+//   };
 
 //   // Group the results by facet name
 //   const groupedFacets = results.reduce((groups, item) => {
-//     const facetName = item.facetValue.facet.name
+//     const facetName = item.facetValue.facet.name;
 //     if (!groups[facetName]) {
-//       groups[facetName] = []
+//       groups[facetName] = [];
 //     }
-//     groups[facetName].push(item)
-//     return groups
-//   }, {} as { [key: string]: FacetValueResult[] })
+//     groups[facetName].push(item);
+//     return groups;
+//   }, {});
 
 //   return (
-//     <div style={{ marginTop: '24px', padding: '8px' }}>
-//       {results.length > 0 ? (
-//         Object.keys(groupedFacets).map((group) => (
-//           <div key={group} style={{ paddingBottom: '24px'}}>
-//             <h3 style={{ marginLeft: '6px', marginBottom: '24px', textTransform: 'uppercase', fontSize: '16px', letterSpacing: '0.3em', fontWeight: 'bolder' }}>{group}</h3>{' '}
-//             {/* Group heading */}
-//             <div
-//               style={{
-//                 display: 'flex',
-//                 flexWrap: 'wrap',
-//                 gap: '4px',
-//               }}
-//             >
+//     <Form method="get">
+//       <div style={{ marginTop: '24px', padding: '8px' }}>
+//         {Object.keys(groupedFacets).map((group) => (
+//           <div key={group} style={{ paddingBottom: '24px' }}>
+//             <h3>{group}</h3>
+//             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
 //               {groupedFacets[group].map((f) => (
 //                 <div
 //                   key={f.facetValue.id}
 //                   onClick={() => onTagClick(f.facetValue.id)}
 //                   style={{
 //                     cursor: 'pointer',
-//             border: checkedFacets.includes(f.facetValue.id)
-//                 ? '1px solid white'
-//           : '1px solid black',
+//                     border: filterIds.includes(f.facetValue.id) ? '1px solid white' : '1px solid black',
 //                     borderRadius: '50px',
 //                     padding: '2px 6px',
-//                     backgroundColor: checkedFacets.includes(f.facetValue.id)
-//                       ? 'black'
-//                       : 'white',
-//                     color: checkedFacets.includes(f.facetValue.id)
-//                       ? 'white'
-//                       : 'black',
-//                     fontWeight: checkedFacets.includes(f.facetValue.id)
-//                       ? '300'
-//                       : '300',
-//                     transition: 'all 0.2s ease',
+//                     backgroundColor: filterIds.includes(f.facetValue.id) ? 'black' : 'white',
+//                     color: filterIds.includes(f.facetValue.id) ? 'white' : 'black',
 //                   }}
 //                 >
 //                   {f.facetValue.name} ({f.count})
@@ -142,10 +106,8 @@ export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
 //               ))}
 //             </div>
 //           </div>
-//         ))
-//       ) : (
-//         <p>No facets available</p>
-//       )}
-//     </div>
-//   )
+//         ))}
+//       </div>
+//     </Form>
+//   );
 // }
