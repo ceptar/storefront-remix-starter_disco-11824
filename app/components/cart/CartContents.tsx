@@ -52,7 +52,7 @@ export function CartContents({
                 {editable ? (
                   <Form>
                     <label htmlFor={`quantity-${line.id}`} className="mr-2">
-                      {('common.quantity')}
+                    {'Quantity'}
                     </label>
                     <select
                       disabled={!isEditable}
@@ -77,7 +77,7 @@ export function CartContents({
                   </Form>
                 ) : (
                   <div className="text-gray-800">
-                    <span className="mr-1">{('common.quantity')}</span>
+                    <span className="mr-1">{'Quantity'}</span>
                     <span className="font-fw400">{line.quantity}</span>
                   </div>
                 )}
@@ -91,7 +91,7 @@ export function CartContents({
                       className="font-fw400 text-primary-600 hover:text-primary-500"
                       onClick={() => removeItem && removeItem(line.id)}
                     >
-                      {('common.remove')}
+                      {('Remove')}
                     </button>
                   )}
                 </div>

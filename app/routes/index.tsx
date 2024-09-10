@@ -60,12 +60,11 @@ export default function Index() {
           </span>
         </h2>
       </div>
-      <div className="
-      // w-[calc(full-2rem)] px-[1rem] 
-      mx-auto">
+      <div className="justify-center items-center">
+      <div className="w-screen pl-[16px] pr-[16px] mx-auto">
       <Carousel featuredProducts={featuredProducts} />
       </div>
-
+      </div>
     </>
   );
 }

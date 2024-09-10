@@ -213,10 +213,10 @@ export default function ProductSlug() {
                       activeOrderFetcher.state !== 'idle'
                         ? 'bg-gray-400'
                         : qtyInCart === 0
-                        ? 'bg-discopink-500 hover:bg-discopink-400'
-                        : 'bg-discopink-400 active:bg-discopink-400 hover:bg-discopink-500 hover:bg-opacity-70'
+                        ? 'bg-discopink-600 hover:bg-discopink-400 hover:bg-opacity-70'
+                        : 'bg-discopink-600 bg-opacity-90 active:bg-discopink-500 hover:bg-discopink-400 hover:bg-opacity-70'
                     }
-                      text-sm uppercase tracking-[0.25em] text-white              
+                      text-sm uppercase tracking-[0.25em] text-white        
                       bg-opacity-20 border border-opacity-20 
                       flex items-center justify-center  
                       focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-primary-500 
@@ -247,11 +247,7 @@ export default function ProductSlug() {
                 </div>
               )}
             </activeOrderFetcher.Form>
-          </div>
-        </div>
-      </div>
-
-      <div className=" px-4 mt-[2rem] ">
+            <div className="mt-[2rem] ">
         <section className="mt-4 pt-4 text-xs">
           <h3 className="text-gray-600 font-bold mb-2">Shipping & Returns</h3>
           <div className=" text-discogray-600 space-y-1">
@@ -271,6 +267,11 @@ export default function ProductSlug() {
           </div>
         </section>
       </div>
+          </div>
+        </div>
+      </div>
+<div className="h-[2rem] w-full"></div>
+      
 
       {/* <div className="mt-24">
           <TopReviews></TopReviews>

@@ -172,15 +172,14 @@ export default function Carousel({ featuredProducts }) {
         position: 'relative',
         display: 'flex',
         overflowX: 'hidden',
-        paddingLeft: 0, 
-
         paddingTop: 32,
         paddingBottom: 32,
-        marginLeft: 'auto',
-        marginRight: 'auto',
+        // marginLeft: 'auto',
+        // marginRight: 'auto',
       }}
     >
       <motion.div
+      className="flex gap-4 w-fit md:pr-4"
         ref={carouselRef}
         drag="x"
         animate={controls}
@@ -192,17 +191,18 @@ export default function Carousel({ featuredProducts }) {
         onDragStart={() => setIsDragging(true)}
         onDragEnd={handleDragEnd}
         onDrag={handleDrag}
-        style={{
-          display: 'flex',
-          gap: GAP,
-          width: 'max-content',
-        }}
+        // style={{
+        //   display: 'flex',
+        //   gap: GAP,
+        //   width: 'max-content',
+        //   paddingRight: 16,
+        // }}
       >
         {featuredProducts.map((product, index) => (
           <div
             key={index} // Prefer using a unique product identifier here
-            className="relative flex-shrink-0 flex flex-col items-center justify-center b-radius-0 
-            w-[calc(50vw-2rem)] sm:w-[calc(25vw-1.5rem)]
+            className="relative flex-shrink-0 flex flex-col b-radius-0 
+            w-[calc(50vw-24px)] md:w-[calc(25vw-24px)]
             "
  /* 
  w-[calc(100vw-48px)] 

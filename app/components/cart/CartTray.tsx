@@ -30,7 +30,7 @@ export function CartTray({
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as="div"
-        className="fixed inset-0 overflow-hidden z-20 top-[5rem]"
+        className="fixed inset-0 overflow-hidden z-20"
         onClose={onClose}
       >
         <div className="absolute inset-0 overflow-hidden">
@@ -46,7 +46,7 @@ export function CartTray({
             <Dialog.Overlay className="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
           </Transition.Child>
 
-          <div className="fixed inset-y-0 right-0 pl-10 max-w-full flex">
+          <div className="fixed inset-y-0 right-0 pl-10 max-w-full flex top-[5rem] h-[calc(100vh-5rem)]">
             <Transition.Child
               as={Fragment}
               enter="transform transition ease-in-out duration-300 sm:duration-300"
@@ -61,7 +61,7 @@ export function CartTray({
                   <div className="flex-1 py-6 overflow-y-auto px-4 sm:px-6">
                     <div className="flex items-start justify-between">
                       <Dialog.Title className="text-lg font-fw400 text-gray-900">
-                        {('cart.title')}
+                        {('Disco-Cart')}
                       </Dialog.Title>
                       <div className="ml-3 h-7 flex items-center">
                         <button
@@ -70,7 +70,7 @@ export function CartTray({
                           onClick={() => onClose(false)}
                         >
                           <span className="sr-only">
-                            {('common.closePanel')}
+                            {('ClosePanel')}
                           </span>
                           <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                         </button>
@@ -88,7 +88,7 @@ export function CartTray({
                         ></CartContents>
                       ) : (
                         <div className="flex items-center justify-center h-48 text-xl text-gray-400">
-                          {('cart.empty')}
+                          {('empty, lets go treasure hunting!')}
                         </div>
                       )}
                     </div>
@@ -97,7 +97,7 @@ export function CartTray({
                   {activeOrder?.totalQuantity && editable && (
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-fw400 text-gray-900">
-                        <p>{('common.subtotal')}</p>
+                        <p>{('Subtotal')}</p>
                         <p>
                           {currencyCode && (
                             <Price
@@ -108,7 +108,7 @@ export function CartTray({
                         </p>
                       </div>
                       <p className="mt-0.5 text-sm text-gray-500">
-                        {('cart.shippingMessage')}
+                        {('PLACEHOLDER_SHIPPING_TAXES_AND_DISCOUNTS')}
                       </p>
                       <div className="mt-6">
                         <Link
@@ -116,7 +116,7 @@ export function CartTray({
                           onClick={() => onClose(false)}
                           className="flex justify-center items-center px-6 py-3 border border-transparent  shadow-sm text-base font-fw400 text-white bg-primary-600 hover:bg-primary-700"
                         >
-                          {('cart.checkout')}
+                          {('Checkout')}
                         </Link>
                       </div>
                     </div>

@@ -8,7 +8,7 @@ export function CartTotals({ order }: { order?: OrderDetailFragment | null }) {
   return (
     <dl className="border-t mt-6 border-gray-200 py-6 space-y-6">
       <div className="flex items-center justify-between">
-        <dt className="text-sm">{('common.subtotal')}</dt>
+        <dt className="text-sm">{('Subtotal')}</dt>
         <dd className="text-sm font-fw400 text-gray-900">
           <Price
             priceWithTax={order?.subTotalWithTax}
@@ -17,7 +17,7 @@ export function CartTotals({ order }: { order?: OrderDetailFragment | null }) {
         </dd>
       </div>
       <div className="flex items-center justify-between">
-        <dt className="text-sm">{('common.shipping')}</dt>
+        <dt className="text-sm">{('Shipping')}</dt>
         <dd className="text-sm font-fw400 text-gray-900">
           <Price
             priceWithTax={order?.shippingWithTax ?? 0}
@@ -26,7 +26,7 @@ export function CartTotals({ order }: { order?: OrderDetailFragment | null }) {
         </dd>
       </div>
       <div className="flex items-center justify-between border-t border-gray-200 pt-6">
-        <dt className="text-base font-fw400">{('common.total')}</dt>
+        <dt className="text-base font-fw400">{('Total')}</dt>
         <dd className="text-base font-fw400 text-gray-900">
           <Price
             priceWithTax={order?.totalWithTax}
