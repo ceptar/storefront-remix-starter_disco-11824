@@ -1,12 +1,12 @@
 import { useLoaderData } from '@remix-run/react';
 // Import GraphQL functions from products provider
-import { sdk } from '../graphqlWrapper';
+// import { sdk } from '../graphqlWrapper';
 import { LoaderFunctionArgs, json } from '@remix-run/server-runtime';
-import FacetNew from '~/components/facet-filter/FacetNew';
-import Carousel from '../components/Carousel';
-import special from '~/../public/special.webp';
+// import FacetNew from '~/components/facet-filter/FacetNew';
+// import Carousel from '../components/Carousel';
+// import special from '~/../public/special.webp';
 import { fetchCollectionProducts } from '~/providers/products/collectionProducts';
-
+import Carousel from '~/components/carouselNew/Carousel';
 export async function loader({ request }) {
 
 
@@ -55,14 +55,21 @@ export default function Index() {
 
           className="px-8 items-center justify-center flex leading-10 border-t border-b border-discogray"
         >
-          <span className="text-xl uppercase tracking-[0.25em] font-fw300 text-discogray p-2">
+          <span className="text-xl text-center uppercase tracking-[0.25em] font-fw300 text-discogray p-2">
             Featured Items
           </span>
         </h2>
       </div>
       <div className="justify-center items-center">
       <div className="w-screen pl-[16px] pr-[16px] mx-auto">
-      <Carousel featuredProducts={featuredProducts} />
+      {/* <Carousel featuredProducts={featuredProducts} /> */}
+
+      <div className="container mx-auto py-8">
+      <Carousel featuredProducts={featuredProducts} slideWidth="1/3" />
+    </div>
+
+
+
       </div>
       </div>
     </>

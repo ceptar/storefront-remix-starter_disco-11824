@@ -2,7 +2,7 @@ export const APP_META_TITLE = 'DiscoBabes';
 export const APP_META_DESCRIPTION =
   'No Boring Jewelry';
   // VENDURESHOPAPI
-  export const DEMO_API_URL = 'https://romantic-goldberg.212-132-115-241.plesk.page/shop-api';
+  export const DEMO_API_URL = 'https://discobabes.store/shop-api';
   
   // export const DEMO_API_URL = 'https://readonlydemo.vendure.io/shop-api';
   // export const DEMO_API_URL = 'https://nonotheresnolimit.xyz/shop-api';

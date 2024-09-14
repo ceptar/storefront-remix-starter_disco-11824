@@ -93,12 +93,13 @@ export default function ProductSlug() {
   );
 
   return (
-    <div>
-      <div className="mx-auto px-4 mt-[2rem]">
+    <div className="w-fit">
+      <div className="mx-auto px-8 mt-[2rem]">
         <div className="sm:grid sm:grid-cols-2 sm:gap-x-8 sm:items-start w-fit sm:w-auto mx-auto my-4">
           {/* Image gallery */}
+
           <div className="p-4 sm:justify-self-end">
-          <div className="p-1 shadow-md bg-discogray mx-auto w-fit sm-block">
+          <div className="p-1 shadow-md bg-discogray mx-auto w-fit sm:block">
             <span className="overflow-hidden">
               <div className="object-center object-cover">
                 <img
@@ -107,7 +108,7 @@ export default function ProductSlug() {
                     '?w=full'
                   }
                   alt={product.name}
-                  className="h-[70vh] object-center object-cover"
+                  className="max-h-[70vh] object-center object-cover"
                 />
               </div>
             </span>
@@ -247,6 +248,7 @@ export default function ProductSlug() {
                 </div>
               )}
             </activeOrderFetcher.Form>
+
             <div className="mt-[2rem] ">
         <section className="mt-4 pt-4 text-xs">
           <h3 className="text-gray-600 font-bold mb-2">Shipping & Returns</h3>
@@ -265,9 +267,10 @@ export default function ProductSlug() {
               information.
             </p>
           </div>
+
         </section>
       </div>
-          </div>
+      </div>
         </div>
       </div>
 <div className="h-[2rem] w-full"></div>

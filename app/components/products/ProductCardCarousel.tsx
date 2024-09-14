@@ -1,15 +1,11 @@
-import type { SearchQuery } from '~/generated/graphql';
-import { Link } from '@remix-run/react';
 import { Price } from './Price';
-
-export type ProductCardProps = SearchQuery['search']['items'][number];
 
 export function ProductCardCarousel({
   productAsset,
   productName,
   priceWithTax,
   currencyCode,
-}: ProductCardProps) {
+}) {
   return (
     <div className="break-inside-avoid flex flex-col h-full">
         <img

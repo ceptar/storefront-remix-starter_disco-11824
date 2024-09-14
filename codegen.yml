@@ -1,7 +1,7 @@
 overwrite: true
 schema:
 # VENDURESHOPAPI
-  - "${VENDURE_API_URL:https://romantic-goldberg.212-132-115-241.plesk.page/shop-api}"
+  - "${VENDURE_API_URL:https://discobabes.store/shop-api}"
   # This is the additional schema extension that would be present it
   # the Stripe playment plugin is enabled on the Vendure server. Added
   # manually here to allow codegen to work regardless.
