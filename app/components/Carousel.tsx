@@ -179,7 +179,7 @@ export default function Carousel({ featuredProducts }) {
       }}
     >
       <motion.div
-      className="flex gap-4 w-fit md:pr-4"
+      className="flex gap-4 w-fit md:px-4"
         ref={carouselRef}
         drag="x"
         animate={controls}
@@ -202,7 +202,7 @@ export default function Carousel({ featuredProducts }) {
           <div
             key={index} // Prefer using a unique product identifier here
             className="relative flex-shrink-0 flex flex-col b-radius-0 
-            w-[calc(50vw-24px)] md:w-[calc(25vw-24px)]
+            w-[calc(50vw-32px)] md:w-[calc(25vw-24px)]
             "
  /* 
  w-[calc(100vw-48px)] 

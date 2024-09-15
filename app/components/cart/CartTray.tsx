@@ -40,10 +40,10 @@ export function CartTray({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="absolute inset-0 bg-discogray opacity-45 transition-opacity" />
+            <Dialog.Overlay className="absolute inset-0 bg-white bg-opacity-75 transition-opacity" />
           </Transition.Child>
 
-          <div className="fixed inset-y-0 right-0 pl-10 max-w-full top-20 flex">
+          <div className="fixed inset-y-0 right-0 w-full sm:w-[50vw] top-20 flex">
             <Transition.Child
               as={Fragment}
               enter="transform transition ease-in-out duration-300 sm:duration-300"

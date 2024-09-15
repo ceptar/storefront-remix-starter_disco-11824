@@ -3,10 +3,10 @@ import { useLoaderData } from '@remix-run/react';
 import { sdk } from '../graphqlWrapper';
 import { LoaderFunctionArgs, json } from '@remix-run/server-runtime';
 // import FacetNew from '~/components/facet-filter/FacetNew';
-// import Carousel from '../components/Carousel';
+import Carousel from '../components/Carousel';
 // import special from '~/../public/special.webp';
 import { getCollectionProducts } from '~/providers/products/collectionProducts';
-import Carousel from '~/components/carouselNew/Carousel';
+// import Carousel from '~/components/carouselNew/Carousel';
 export async function loader({ request }:LoaderFunctionArgs) {
 
 
@@ -62,13 +62,14 @@ export default function Index() {
         </h2>
       </div>
       <div className="justify-center items-center">
-      <div className="pl-[16px] pr-[16px] mx-auto">
-      {/* <Carousel featuredProducts={featuredProducts} /> */}
+      {/* <div className="pl-[16px] pr-[16px] mx-auto"> */}
 
-      <div className="container mx-auto py-8">
-    
-      <Carousel featuredProducts={featuredProducts} slideWidth={"1/2"}/> 
-    </div>
+
+      <div className="container px-4 md:px-0 py-8">
+          <Carousel featuredProducts={featuredProducts} />
+
+      {/* <Carousel featuredProducts={featuredProducts} slideWidth={"1/2"}/>  */}
+    {/* </div> */}
       </div>
       </div>
     </>
