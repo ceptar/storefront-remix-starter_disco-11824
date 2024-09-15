@@ -66,7 +66,7 @@ export default function ProductSlug() {
   // const { t } = useTranslation();
 
   if (!product) {
-    return <div>{('product.notFound')}</div>;
+    return <div>Product not found!</div>;
   }
 
   const findVariantById = (id: string) =>
@@ -85,6 +85,9 @@ export default function ProductSlug() {
       ?.quantity ?? 0;
 
   const asset = product.assets[0];
+  const brandName = product.facetValues.find(
+    (fv) => fv.facet.code === 'brand',
+  )?.name;
  
   const colorFacetValues = product.facetValues.filter(
     (fv) => fv.facet.code.toLowerCase() === 'colors'
@@ -145,7 +148,7 @@ export default function ProductSlug() {
                         className="select-none w-full h-[calc(w-full*1.6)] object-cover object-center"
                         src={
                           asset.preview +
-                          '?w=full' /* not ideal, but technically prevents loading 2 seperate images */
+                          '?preset=full' /* not ideal, but technically prevents loading 2 seperate images */
                         }
                       />
                     </div>
@@ -249,38 +252,34 @@ export default function ProductSlug() {
                   <Alert message={addItemToOrderError} />
                 </div>
               )}
-            </activeOrderFetcher.Form>
 
-            <div className="mt-[2rem] ">
-        <section className="mt-4 pt-4 text-xs">
-          <h3 className="text-gray-600 font-bold mb-2">Shipping & Returns</h3>
-          <div className=" text-discogray-600 space-y-1">
-            <p>
-              Standard shipping: 3 - 5 working days. Express shipping: 1 - 3
-              working days.
-            </p>
-            <p>
-              Shipping costs depend on delivery address and will be calculated
-              during checkout.
-            </p>
-            <p>
-              Returns are subject to terms. Please see the{' '}
-              <span className="underline">returns page</span> for further
-              information.
-            </p>
+              <section className="mt-4 pt-4 text-xs">
+                <h3 className="text-gray-600 font-bold mb-2">Shipping & Returns</h3>
+                <div className=" text-discogray-600 space-y-1">
+                  <p>
+                    Standard shipping: 3 - 5 working days. Express shipping: 1 - 3
+                    working days.
+                  </p>
+                  <p>
+                    Shipping costs depend on delivery address and will be calculated
+                    during checkout.
+                  </p>
+                  <p>
+                    Returns are subject to terms. Please see the{' '}
+                    <span className="underline">returns page</span> for further
+                    information.
+                  </p>
+                </div>
+                <div className="py-4 sm:justify-self-end">
+                  {/* ... existing image code ... */}
+                  <ColorSwatches colors={colorFacetValues} />
+                </div>
+              </section>
+            </activeOrderFetcher.Form> 
           </div>
-          <div className="py-4 sm:justify-self-end">
-  {/* ... existing image code ... */}
-  <ColorSwatches colors={colorFacetValues} />
-</div>
-        </section>
-      </div>
-      </div>
         </div>
       </div>
-<div className="h-[2rem] w-full"></div>
-      
-
+      <div className="h-[2rem] w-full"></div>
       {/* <div className="mt-24">
           <TopReviews></TopReviews>
         </div> */}
@@ -291,11 +290,10 @@ export default function ProductSlug() {
             []
           }
         ></Breadcrumbs>
-*/}
-    </div> 
+      */}
+    </div>
   );
 }
-
 export function CatchBoundary() {
   return (
     <div className="max-w-6xl mx-auto px-4">

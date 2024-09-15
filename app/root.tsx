@@ -142,7 +142,7 @@ export default function App() {
           removeItem={removeItem}
         />
 
-        <Footer collections={collections} className="relative mt-[2rem] z-110"></Footer>
+        <Footer collections={collections} ></Footer>
         <ScrollRestoration />
         <Scripts />
       </body>

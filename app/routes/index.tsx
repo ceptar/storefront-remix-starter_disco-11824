@@ -1,29 +1,31 @@
 import { useLoaderData } from '@remix-run/react';
 // Import GraphQL functions from products provider
-// import { sdk } from '../graphqlWrapper';
+import { sdk } from '../graphqlWrapper';
 import { LoaderFunctionArgs, json } from '@remix-run/server-runtime';
 // import FacetNew from '~/components/facet-filter/FacetNew';
 // import Carousel from '../components/Carousel';
 // import special from '~/../public/special.webp';
-import { fetchCollectionProducts } from '~/providers/products/collectionProducts';
+import { getCollectionProducts } from '~/providers/products/collectionProducts';
 import Carousel from '~/components/carouselNew/Carousel';
-export async function loader({ request }) {
+export async function loader({ request }:LoaderFunctionArgs) {
 
 
-  const { products, totalItems } = await fetchCollectionProducts(
-    'featured-items',
-    0,
-    20,
-  );
+  const products = await sdk.GetCollectionProducts({
+    slug: 'featured-items',
+    skip: 0,
+    take: 20
+  
+});
 
-  return json({
-    featuredProducts:products,
-    totalItems,
-  });
+console.log('collectionProducts', products)
+  return {
+    featuredProducts: products.search.items,
+    totalitems: products.search.totalItems,
+  };
 }
 
 export default function Index() {
-  const { featuredProducts, totalItems } =
+  const { featuredProducts, totalitems } =
     useLoaderData<typeof loader>();
 
 
@@ -65,11 +67,9 @@ export default function Index() {
       {/* <Carousel featuredProducts={featuredProducts} /> */}
 
       <div className="container mx-auto py-8">
-      <Carousel featuredProducts={featuredProducts} slideWidth="1/2" />
+    
+      <Carousel featuredProducts={featuredProducts} slideWidth={"1/3"}/> 
     </div>
-
-
-
       </div>
       </div>
     </>

@@ -1,7 +1,8 @@
+import { useLoaderData, useLocation, Link } from '@remix-run/react';
 import React, { useEffect, useState } from 'react';
-import { useLocation, Link } from '@remix-run/react';
+import { useRootLoader } from '~/utils/use-root-loader';
 import Cart from '~/components/svgs/Cart';
-
+import { classNames } from '~/utils/class-names';
 import Logo from '~/components/svgs/Logo';
 import Sliderex from './Sliderex';
 
@@ -12,6 +13,7 @@ export function Header({
   onCartIconClick: () => void;
   cartQuantity: number;
 }) {
+  const data = useRootLoader();
   const [rootRouteOpacity, setRootRouteOpacity] = React.useState(1);
   const [headerOpacity, setHeaderOpacity] = React.useState(0);
   const location = useLocation();

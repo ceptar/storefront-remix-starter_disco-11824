@@ -24,7 +24,7 @@ export default function Footer({
 }) {
   return (
   <footer
-    className="bg-discograytwo relative overflow-x-hidden"
+    className="bg-discograytwo relative overflow-x-hidden mt-8 z-110"
     aria-labelledby="footer-heading"
   >
 

@@ -21,7 +21,6 @@ import { shippingFormDataIsValid } from '~/utils/validation';
 export type CartLoaderData = Awaited<ReturnType<typeof loader>>;
 
 export async function loader({ request }: DataFunctionArgs) {
-
   return {
     activeOrder: await getActiveOrder({ request }),
   };
@@ -155,7 +154,6 @@ export async function action({ request, params }: DataFunctionArgs) {
   headers = {
     'Set-Cookie': await sessionStorage.commitSession(session),
   };
-  console.log('activeOrder', activeOrder);
   return json(
     { activeOrder: activeOrder || (await getActiveOrder({ request })) },
     {

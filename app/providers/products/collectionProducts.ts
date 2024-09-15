@@ -3,8 +3,9 @@ import { SearchQueryVariables, SearchResult } from '~/generated/graphql';
 import { sdk } from '~/graphqlWrapper';
 import { search } from '~/providers/products/products';
 
-
-
+export function getCollectionProducts(slug: string, skip: number = 0, take: number = 10) {
+  return sdk.GetCollectionProducts({ slug, skip, take });
+}
 const GET_COLLECTION_PRODUCTS = /*GraphQL*/ `
 query GetCollectionProducts($slug: String!, $skip: Int!, $take: Int!) {
   collection(slug: $slug) {
@@ -48,18 +49,18 @@ query GetCollectionProducts($slug: String!, $skip: Int!, $take: Int!) {
 
 
 
-export async function fetchCollectionProducts(slug: string, skip: number = 0, take: number = 10) {
-  try {
-    const data = await sdk.GetCollectionProducts({ slug, skip, take });
-    console.log(data);
-    return {
-      products: data.search.items,
-      totalItems: data.search.totalItems,
-  };
-  } catch (error) {
-    console.error('Error fetching collection products:', error);
-    throw error;
-  } finally {
-    console.log('Query execution completed');
-  }
-}
+// export async function fetchCollectionProducts(slug: string, skip: number = 0, take: number = 10) {
+//   try {
+//     const data = await sdk.GetCollectionProducts({ slug, skip, take });
+//     console.log(data);
+//     return {
+//       products: data.search.items,
+//       totalItems: data.search.totalItems,
+//   };
+//   } catch (error) {
+//     console.error('Error fetching collection products:', error);
+//     throw error;
+//   } finally {
+//     console.log('Query execution completed');
+//   }
+// }

@@ -28,6 +28,9 @@ export async function getSessionStorage() {
   sessionStorage = factory({
     cookie: {
       name: 'vendure_remix_session',
+      httpOnly: true,
+      path: '/',
+      sameSite: 'lax',
       secrets: ['XC3zrayhwNbozg0NnC7Pxnlbf9ridQPx'],
     },
   });
