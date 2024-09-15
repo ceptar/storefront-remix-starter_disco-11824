@@ -33,7 +33,8 @@ export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
 
   return (
     <Form method="get">
-      <div style={{ marginTop: '24px', padding: '8px' }}>
+
+      <div style={{ marginTop: '104px', paddingBottom: '24px', paddingLeft: '16px', paddingRight: '16px' }}>
         {Object.keys(groupedFacets).map((group) => (
           <div key={group} style={{ paddingBottom: '24px' }}>
             <h3 style={{ 

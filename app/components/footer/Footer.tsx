@@ -30,7 +30,7 @@ export default function Footer({
 
     <div className="container flex flex-col flex-wrap mx-auto md:flex-no-wrap md:flex-row md:items-center">
       <div className="flex flex-wrap flex-grow my-[2rem] md:text-left">
-        <div className="w-full px-8 lg:w-1/4 md:w-1/2 mt-[2rem]">
+        <div className="w-full px-4 lg:w-1/4 md:w-1/2 mt-[2rem]">
 
 
 
@@ -53,7 +53,7 @@ export default function Footer({
           
 
         </div>
-        <div className="w-full px-8 lg:w-1/4 md:w-1/2 mt-[2rem]">
+        <div className="w-full px-4 lg:w-1/4 md:w-1/2 mt-[2rem]">
           <h3 className="text-sm font-semibold text-discogray tracking-[0.25em] uppercase">
             Shop
           </h3>
@@ -72,7 +72,7 @@ export default function Footer({
             ))}
           </ul>
         </div>
-        <div className="w-full px-8 lg:w-1/4 md:w-1/2 mt-[2rem]">
+        <div className="w-full px-4 lg:w-1/4 md:w-1/2 mt-[2rem]">
           <h3 className="text-sm font-semibold text-discogray tracking-[0.25em] uppercase">
             Support
           </h3>
@@ -89,7 +89,7 @@ export default function Footer({
             ))}
           </ul>{" "}
         </div>
-        <div className="w-full px-8 lg:w-1/4 md:w-1/2 mt-[2rem]">
+        <div className="w-full px-4 lg:w-1/4 md:w-1/2 mt-[2rem]">
 
         <div className="mx-auto">
               <LogoTwoLines

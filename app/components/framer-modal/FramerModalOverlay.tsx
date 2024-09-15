@@ -15,7 +15,7 @@ const FramerModalOverlay = ({
 }) => {
   return (
     <motion.div
-    className="fixed top-20 bottom-0 h-full w-full sm:w-[50vw] bg-black bg-opacity-85 backdrop-blur-[4px] justify-end p-4 z-50"
+    className="fixed top-20 bottom-0 h-full w-full md:w-[50vw] bg-discogray bg-opacity-85 backdrop-blur-[4px] justify-end p-4 z-50"
     initial={{ x: "-100%" }}
       animate={{
         x: 0,

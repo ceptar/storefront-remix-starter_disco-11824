@@ -57,7 +57,7 @@ export default function CollectionSlug() {
   </div>
 
 
-  <div className="relative px-8 h-full my-4 py-4"> 
+  <div className="relative px-4 h-full my-4 py-4"> 
 <div className="grid gap-4 grid-cols-2 md:grid-cols-3 lg:grid-cols-4">        
   {search.items.map(({ productName, slug, priceWithTax, currencyCode, productAsset }) => (
           <div className="break-inside-avoid object-cover w-full mb-4" key={slug}>

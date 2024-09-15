@@ -52,7 +52,7 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
         <div
           onClick={toggleSlideover}
           id="slideover"
-          className={`shadow-xl shadow-discogray bg-discogray bg-opacity-85 backdrop-blur-md top-20 w-full sm:w-[50vw] h-full absolute right-0 duration-300 ease-out transition-all ${
+          className={`shadow-xl shadow-discogray bg-discogray bg-opacity-85 backdrop-blur-md top-20 w-full md:w-[50vw] h-full absolute right-0 duration-300 ease-out transition-all ${
             isSlideoverVisible ? '' : 'translate-x-full'
           }`}
         >
@@ -60,17 +60,17 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
 
 <div className="absolute transform w-full h-full flex flex-col">
   {/* Menu */}
-  <div className="flex-grow overflow-y-auto">
-  <div className="bg-white p-4 flex-row-reverse bg-opacity-85 ">
-    <div className="flex justify-between items-center">
-    <SearchBar />
+  <div className="flex flex-col justify-between items-stretch h-full"> 
+  <div className="flex flex-row justify-between items-center pr-4 h-20">
+  <SearchBar />
+    <div className="flex flex-row gap-2 items-center">
     <Link
         to={isSignedIn ? '/account' : '/sign-in'}
         className="flex space-x-1"
       >
         <DiscoSignIn className="w-10 h-10 p-1" />
       </Link>
-    <div className="cursor-pointer text-discogray flex items-center justify-center" onClick={toggleSlideover}>
+  <div className="cursor-pointer text-white flex items-center justify-center" onClick={toggleSlideover}>
         <svg
           className="w-10 h-10"
           fill="none"
@@ -81,30 +81,37 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
           <path d="M6 18L18 6M6 6l12 12" strokeWidth={1.5}/>
         </svg>
       </div>
+      </div>
+          </div>
 
-
-
-    </div>
-    </div>
-    <div className="w-full py-8">
+<div className="flex flex-col flex-grow justify-start items-start pl-4">    
+<div className="w-full py-8">
       <AnimatedCollectionsTreemenu
         collectionsData={{ collections }}
         index={0}
       />
     </div>
+    </div>
+<div className="flex flex-row justify-between items-stretch px-4">
+
+
+    
+ </div>
+</div>
+
   </div>
   
   {/* Bottom section */}
-  <div className="">
 
-    <div className="flex flex-row-reverse items-center p-4">
+
+    <div className="flex h-20">
       
-    </div>
+
   </div>
 </div>
           </div>
         </div>
-      </div>
+
 
   );
 };

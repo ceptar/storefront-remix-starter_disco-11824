@@ -99,8 +99,9 @@ export default function ProductSlug() {
   );
 
   return (
+    <div className="justify-center">
     <div className="w-fit">
-      <div className="mx-auto px-4 mt-[2rem]">
+      <div className="mx-auto mt-[2rem]">
         <div className="sm:grid sm:grid-cols-2 sm:gap-x-4 sm:items-start w-fit sm:w-auto mx-auto my-4">
           {/* Image gallery */}
 
@@ -281,6 +282,7 @@ export default function ProductSlug() {
         </div>
       </div>
       <div className="h-[2rem] w-full"></div>
+      </div>
       {/* <div className="mt-24">
           <TopReviews></TopReviews>
         </div> */}
