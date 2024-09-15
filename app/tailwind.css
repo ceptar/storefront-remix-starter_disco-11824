@@ -117,11 +117,12 @@
   .parent {
     font-size: 28px;
     line-height: 120%;
-    color: #ffffff;
+    color: #fff;
     text-transform: uppercase;
+    letter-spacing: 0.05em;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    font-weight: bold;
+
   }
   .parent:hover {
     color: #ffffffc0;
@@ -129,12 +130,12 @@
   }
 
   .child {
-    font-size: 20px;
+    font-size: 18px;
     line-height: 100%;
     color: #ffffff;
-    letter-spacing: 0.05em;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    font-weight: 400;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
   }
   .child:hover {
     color: #ffffffc0;

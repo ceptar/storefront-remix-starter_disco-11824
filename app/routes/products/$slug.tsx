@@ -21,6 +21,7 @@ import { StockLevelLabel } from '~/components/products/StockLevelLabel';
 // import TopReviews from '~/components/products/TopReviews';
 import { ScrollableContainer } from '~/components/products/ScrollableContainer';
 // import { useTranslation } from 'react-i18next';
+import { Button } from '~/components/Button';
 
 export const meta: MetaFunction = ({ data }) => {
   return [
@@ -213,14 +214,14 @@ export default function ProductSlug() {
                   ></Price>
                 </p>
                 <div className="flex align-baseline">
-                  <button
+                  <Button
                     type="submit"
                     className={`max-w-xs py-3 flex-1 ${
                       activeOrderFetcher.state !== 'idle'
                         ? 'bg-gray-400'
                         : qtyInCart === 0
                         ? 'bg-discogray-800 hover:bg-discogray-600 hover:bg-opacity-70'
-                        : 'bg-discogray-800 bg-opacity-90 active:bg-discogray-600 hover:bg-discogray-400 hover:bg-opacity-70'
+                        : 'bg-discogray-900 active:bg-discogray-700 hover:bg-opacity-70'
                     }
                       text-sm uppercase tracking-[0.25em] text-white        
                       bg-opacity-20 border border-opacity-20 
@@ -238,7 +239,7 @@ export default function ProductSlug() {
                     ) : (
                       `Add to cart`
                     )}
-                  </button>
+                  </Button>
                 </div>
               </div>
               <div className="mt-2 flex items-center">

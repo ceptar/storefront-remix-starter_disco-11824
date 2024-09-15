@@ -8,7 +8,7 @@ import AnimatedCollectionsTreemenu from './CollectionsTreemenu';
 import { SearchBar } from '~/components/header/SearchBar';
 import SignIn from '~/components/svgs/SignIn';
 import { UserIcon } from '@heroicons/react/24/solid';
-import Woman from '../svgs/Woman';
+import DiscoSignIn from '../svgs/DiscoSignIn';
 
 export async function loader({ request }: LoaderFunctionArgs) {
   const collections = await getCollections(request, { take: 20 });
@@ -35,7 +35,7 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
         className="flex flex-col bg-opacity-90 cursor-pointer justify-center items-center py-2 text-sm text-discogray-500 transition-all duration-300 ease-out hover:opacity-70"
       >
         <button>
-          <Hamburger className="w-8 h-8 mx-auto" fill={finalOpacity} />
+          <Hamburger className="w-10 h-10 mx-auto px-1" fill={finalOpacity} />
         </button>
       </div>
       <div
@@ -56,46 +56,56 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
             isSlideoverVisible ? '' : 'translate-x-full'
           }`}
         >
-          <div className="flex flex-row-reverse items-center mt-6 py-4 px-8">
-            <div className="cursor-pointer text-white top-0 flex items-center justify-center">
-              <svg
-                className="w-8 h-8"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M6 18L18 6M6 6l12 12" strokeWidth={2}/>
-              </svg>
-            </div>
-            <div className="pr-4">
-              {' '}
-              <Link
-                to={isSignedIn ? '/account' : '/sign-in'}
-                className="flex space-x-1"
-              >
-                <SignIn className="w-8 h-8 text-white" />
-              </Link>
-            </div>
-          </div>
 
-          <div className="absolute transform w-full">
-            <div className="bg-discopink-100">
-              <SearchBar />
-            </div>
-            {/* Menu */}
-            <div className="w-full">
-              <div className="w-full py-8">
-                <AnimatedCollectionsTreemenu
-                  collectionsData={{ collections }}
-                  index={0}
-                />
-              </div>
-            </div>
+
+<div className="absolute transform w-full h-full flex flex-col">
+  {/* Menu */}
+  <div className="flex-grow overflow-y-auto">
+  <div className="bg-white p-4 flex-row-reverse bg-opacity-85 ">
+    <div className="flex justify-between items-center">
+    <SearchBar />
+    <Link
+        to={isSignedIn ? '/account' : '/sign-in'}
+        className="flex space-x-1"
+      >
+        <DiscoSignIn className="w-10 h-10 p-1" />
+      </Link>
+    <div className="cursor-pointer text-discogray flex items-center justify-center" onClick={toggleSlideover}>
+        <svg
+          className="w-10 h-10"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M6 18L18 6M6 6l12 12" strokeWidth={1.5}/>
+        </svg>
+      </div>
+
+
+
+    </div>
+    </div>
+    <div className="w-full py-8">
+      <AnimatedCollectionsTreemenu
+        collectionsData={{ collections }}
+        index={0}
+      />
+    </div>
+  </div>
+  
+  {/* Bottom section */}
+  <div className="">
+
+    <div className="flex flex-row-reverse items-center p-4">
+      
+    </div>
+  </div>
+</div>
           </div>
         </div>
       </div>
-    </div>
+
   );
 };
 

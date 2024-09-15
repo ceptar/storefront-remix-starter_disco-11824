@@ -109,9 +109,7 @@ export default function App() {
   }, [loaderData]);
 
   return (
-    <html className="font-sans" lang={locale} 
-    // dir={i18n.dir()} 
-    id="app">
+    <html id="app">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -119,12 +117,12 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="flex flex-col min-h-screen w-full overflow-x-hidden font-sans">
+      <body className="flex flex-col min-h-screen w-full overflow-x-hidden">
         <Header
           onCartIconClick={() => setOpen(!open)}
           cartQuantity={activeOrder?.totalQuantity ?? 0}
         />
-        <main className="mt-[5rem] w-full font-sans z-10">
+        <main className="mt-[5rem] w-full z-10">
         <Outlet
             context={{
               activeOrderFetcher,
@@ -141,10 +139,10 @@ export default function App() {
           adjustOrderLine={adjustOrderLine}
           removeItem={removeItem}
         />
-
-        <Footer collections={collections} ></Footer>
         <ScrollRestoration />
         <Scripts />
+        <Footer collections={collections} ></Footer>
+
       </body>
     </html>
   );

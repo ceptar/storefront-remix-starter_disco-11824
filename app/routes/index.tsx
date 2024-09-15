@@ -17,11 +17,10 @@ export async function loader({ request }:LoaderFunctionArgs) {
   
 });
 
-console.log('collectionProducts', products)
-  return {
+  return json({
     featuredProducts: products.search.items,
     totalitems: products.search.totalItems,
-  };
+  });
 }
 
 export default function Index() {
@@ -68,7 +67,7 @@ export default function Index() {
 
       <div className="container mx-auto py-8">
     
-      <Carousel featuredProducts={featuredProducts} slideWidth={"1/3"}/> 
+      <Carousel featuredProducts={featuredProducts} slideWidth={"1/2"}/> 
     </div>
       </div>
       </div>

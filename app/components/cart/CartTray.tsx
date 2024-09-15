@@ -40,10 +40,10 @@ export function CartTray({
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
           >
-            <Dialog.Overlay className="absolute inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+            <Dialog.Overlay className="absolute inset-0 bg-discogray opacity-45 transition-opacity" />
           </Transition.Child>
 
-          <div className="fixed inset-y-0 right-0 pl-10 max-w-full flex">
+          <div className="fixed inset-y-0 right-0 pl-10 max-w-full top-20 flex">
             <Transition.Child
               as={Fragment}
               enter="transform transition ease-in-out duration-300 sm:duration-300"
@@ -54,7 +54,7 @@ export function CartTray({
               leaveTo="translate-x-full"
             >
               <div className="w-screen max-w-md">
-                <div className="h-full flex flex-col bg-white shadow-xl overflow-y-scroll">
+                <div className="h-full flex flex-col bg-white bg-opacity-85 backdrop-blur-md shadow-xl overflow-y-scroll">
                   <div className="flex-1 py-6 overflow-y-auto px-4 sm:px-6">
                     <div className="flex items-start justify-between">
                       <Dialog.Title className="text-lg font-medium text-gray-900">
@@ -109,7 +109,7 @@ export function CartTray({
                         <Link
                           to="/checkout"
                           onClick={() => onClose(false)}
-                          className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700"
+                          className="flex justify-center items-center px-6 py-3 border border-transparent shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700"
                         >
                           Checkout
                         </Link>

@@ -27,9 +27,9 @@ const NavMenuItem: React.FC<NavMenuItemProps> = ({ index, title, class: classNam
         <motion.div variants={itemCoverMotion} 
                     className="absolute left-0 top-0 right-0 bottom-0 px-4"
         />
-        <motion.div className="p-2" variants={arrowMotion}>
-          <DiscoLightningFill className="fill-white absolute" width={24} height={24} />
-          <DiscoLightningFill className="fill-secondary opacity-10 relative" width={24} height={24} />
+        <motion.div className="px-4 " variants={arrowMotion}>
+          <DiscoLightningFill className="fill-white absolute" width={28} height={28} />
+          <DiscoLightningFill className="fill-secondary opacity-10 relative" width={28} height={28} />
         </motion.div>
         <motion.div className={`${className} flex-1 flex items-center justify-between`} variants={itemContentMotion}>
           {title}

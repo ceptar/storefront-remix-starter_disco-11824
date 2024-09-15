@@ -13,11 +13,11 @@ export function Header({
   onCartIconClick: () => void;
   cartQuantity: number;
 }) {
-  const data = useRootLoader();
+  // const data = useRootLoader();
   const [rootRouteOpacity, setRootRouteOpacity] = React.useState(1);
   const [headerOpacity, setHeaderOpacity] = React.useState(0);
   const location = useLocation();
-
+  // console.log('headerData', data);
   React.useEffect(() => {
     const checkRootRoute = () => {
       setRootRouteOpacity(location.pathname === '/' ? 0 : 1);
@@ -53,7 +53,7 @@ export function Header({
       }}
     >
       <div className="relative px-4 flex flex-row items-center justify-between h-full w-full ">
-        <div className="relative ml-4 flex flex-col  items-start justify-start w-1/6">
+        <div className="relative flex flex-col  items-start justify-start w-1/6">
           <button
             className="flex flex-col  bg-opacity-90 shadow-none cursor-pointer justify-center rounded-full items-center py-2 text-sm text-discogray transition-all duration-300 ease-out hover:opacity-70"
             onClick={onCartIconClick}
@@ -84,7 +84,7 @@ export function Header({
             />
           </Link>
         </div>
-        <div className="z-40 mr-4 flex flex-col items-end justify-center w-1/6">
+        <div className="z-40 flex flex-col items-end justify-center w-1/6">
 
           <Sliderex
             finalOpacity={`rgba(${

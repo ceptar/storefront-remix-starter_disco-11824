@@ -21,7 +21,7 @@ export function CartContents({
       <ul role="list" className="-my-6 divide-y divide-gray-200">
         {(orderLines ?? []).map((line) => (
           <li key={line.id} className="py-6 flex">
-            <div className="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
+            <div className="flex-shrink-0 w-24 h-24 border border-gray-200 overflow-hidden">
               <img
                 src={line.featuredAsset?.preview + '?preset=thumb'}
                 alt={line.productVariant.name}
@@ -60,7 +60,7 @@ export function CartContents({
                         adjustOrderLine &&
                         adjustOrderLine(line.id, +e.target.value)
                       }
-                      className="max-w-full rounded-md border border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                      className="max-w-full border-gray-300 py-1.5 text-base leading-5 font-medium text-gray-700 text-left shadow-sm focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
                     >
                       <option value={1}>1</option>
                       <option value={2}>2</option>
