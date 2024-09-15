@@ -40,7 +40,9 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
       </div>
       <div
         id="slideover-container"
-        className={`w-full h-full fixed z-[100] inset-0 ${isSlideoverVisible ? '' : 'invisible'}`}
+        className={`w-full h-full fixed z-[100] inset-0 ${
+          isSlideoverVisible ? '' : 'invisible'
+        }`}
       >
         <div
           onClick={toggleSlideover}
@@ -50,44 +52,45 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
         <div
           onClick={toggleSlideover}
           id="slideover"
-          className={`shadow-xl shadow-discogray bg-discogray bg-opacity-90 backdrop-blur-md top-[5rem] w-full sm:w-[50vw] h-full absolute right-0 duration-300 ease-out transition-all ${
+          className={`shadow-xl shadow-discogray bg-discogray bg-opacity-85 backdrop-blur-md top-20 w-full sm:w-[50vw] h-full absolute right-0 duration-300 ease-out transition-all ${
             isSlideoverVisible ? '' : 'translate-x-full'
           }`}
         >
-          <div className="mx-4 px-4 flex absolute top-0 pt-2 text-white text-xl font-fw700">
-
-
-
-          </div>
-          
-  
-<div className="flex flex-row-reverse items-center mt-4 pr-8 pb-4">
-        
-          <div className="cursor-pointer text-white top-0 flex items-center justify-center right-0">
-
-            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </div>
-          <div className="pr-4"> <Link to={isSignedIn ? '/account' : '/sign-in'} className="flex space-x-1">
+          <div className="flex flex-row-reverse items-center mt-6 py-4 px-8">
+            <div className="cursor-pointer text-white top-0 flex items-center justify-center">
+              <svg
+                className="w-8 h-8"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M6 18L18 6M6 6l12 12" strokeWidth={2}/>
+              </svg>
+            </div>
+            <div className="pr-4">
+              {' '}
+              <Link
+                to={isSignedIn ? '/account' : '/sign-in'}
+                className="flex space-x-1"
+              >
                 <SignIn className="w-8 h-8 text-white" />
-                </Link></div>
- </div>
-
+              </Link>
+            </div>
+          </div>
 
           <div className="absolute transform w-full">
-          <div className="bg-discopink-100" ><SearchBar/></div>
-            <div className="w-full pb-8">
-              <AnimatedCollectionsTreemenu collectionsData={{ collections }} index={0} />
+            <div className="bg-discopink-100">
+              <SearchBar />
             </div>
-            <div className="w-full pb-8">
-              
-            </div>
-            <div className="flex flex-row-reverse py-3 pb-8 px-4">
-            
-             
-               
-
+            {/* Menu */}
+            <div className="w-full">
+              <div className="w-full py-8">
+                <AnimatedCollectionsTreemenu
+                  collectionsData={{ collections }}
+                  index={0}
+                />
+              </div>
             </div>
           </div>
         </div>

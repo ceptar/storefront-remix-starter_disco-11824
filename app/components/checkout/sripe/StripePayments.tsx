@@ -1,6 +1,6 @@
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe, Stripe } from '@stripe/stripe-js';
-import { CheckoutForm } from '~/components/checkout/stripe/CheckoutForm';
+import { CheckoutForm } from './CheckoutForm';
 
 let _stripe: Promise<Stripe | null>;
 function getStripe(publishableKey: string) {

@@ -2,6 +2,18 @@ import * as React from 'react';
 import { Form } from '@remix-run/react';
 import { getTailwindColorClass } from './GetTailwindColorClass';
 
+// Add this CSS class to your global styles or component-specific styles
+const noSelectClass = `
+  .no-select {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+`;
+
 export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
   const onTagClick = (id: string) => {
     const newFilterIds = filterIds.includes(id)
@@ -58,56 +70,3 @@ export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
     </Form>
   );
 }
-
-
-// import * as React from 'react';
-// import { Form } from '@remix-run/react';
-
-// export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
-//   const onTagClick = (id: string) => {
-//     const newFilterIds = filterIds.includes(id)
-//       ? filterIds.filter((fid) => fid !== id)
-//       : [...filterIds, id];
-//     updateFilterIds(newFilterIds);
-//   };
-
-//   // Group the results by facet name
-//   const groupedFacets = results.reduce((groups, item) => {
-//     const facetName = item.facetValue.facet.name;
-//     if (!groups[facetName]) {
-//       groups[facetName] = [];
-//     }
-//     groups[facetName].push(item);
-//     return groups;
-//   }, {});
-
-//   return (
-//     <Form method="get">
-//       <div style={{ marginTop: '24px', padding: '8px' }}>
-//         {Object.keys(groupedFacets).map((group) => (
-//           <div key={group} style={{ paddingBottom: '24px' }}>
-//             <h3>{group}</h3>
-//             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
-//               {groupedFacets[group].map((f) => (
-//                 <div
-//                   key={f.facetValue.id}
-//                   onClick={() => onTagClick(f.facetValue.id)}
-//                   style={{
-//                     cursor: 'pointer',
-//                     border: filterIds.includes(f.facetValue.id) ? '1px solid white' : '1px solid black',
-//                     borderRadius: '50px',
-//                     padding: '2px 6px',
-//                     backgroundColor: filterIds.includes(f.facetValue.id) ? 'black' : 'white',
-//                     color: filterIds.includes(f.facetValue.id) ? 'white' : 'black',
-//                   }}
-//                 >
-//                   {f.facetValue.name} ({f.count})
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-//         ))}
-//       </div>
-//     </Form>
-//   );
-// }

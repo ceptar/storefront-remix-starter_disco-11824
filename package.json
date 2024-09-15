@@ -93,5 +93,8 @@
     "**/*.{js,jsx,ts,tsx}": [
       "npx prettier --write"
     ]
-  }
+  },
+  "resolutions": {
+  "path-to-regexp": "^6.3.0"
+}
 }

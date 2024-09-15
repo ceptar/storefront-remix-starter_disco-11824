@@ -41,7 +41,7 @@ export function Header({
 
   return (
     <header
-      className="z-40 bg-discogray bg-opacity-75 top-0 flex items-center fixed justify-between h-[5rem] w-full min-w-full"
+      className="z-40 bg-discogray bg-opacity-75 top-0 flex items-center fixed justify-between h-20 w-full"
       style={{
         backgroundColor: `rgba(255, 255, 255, ${headerOpacity})`,
         borderColor: `rgba(${255 * (1 - headerOpacity - rootRouteOpacity)}, ${

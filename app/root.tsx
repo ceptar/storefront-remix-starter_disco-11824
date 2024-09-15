@@ -82,6 +82,7 @@ export async function loader({ request, params, context }: DataFunctionArgs) {
     collections: collections,
     locale: locale, // Always set to English
   };
+  console.log('loaderData', loaderData);
   return json(loaderData, { headers: activeCustomer._headers });
 }
 
@@ -118,12 +119,12 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="flex flex-col min-h-screen overflow-x-hidden font-sans">
+      <body className="flex flex-col min-h-screen w-full overflow-x-hidden font-sans">
         <Header
           onCartIconClick={() => setOpen(!open)}
           cartQuantity={activeOrder?.totalQuantity ?? 0}
         />
-        <main className="mt-[5rem] font-sans z-10">
+        <main className="mt-[5rem] w-full font-sans z-10">
         <Outlet
             context={{
               activeOrderFetcher,

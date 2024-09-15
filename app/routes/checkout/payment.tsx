@@ -10,7 +10,7 @@ import {
 import { useLoaderData, useOutletContext } from '@remix-run/react';
 import { OutletContext } from '~/types';
 import { CurrencyCode, ErrorCode, ErrorResult } from '~/generated/graphql';
-import { StripePayments } from '~/components/checkout/stripe/StripePayments';
+import { StripePayments } from '~/components/checkout/sripe/StripePayments';
 import { DummyPayments } from '~/components/checkout/DummyPayments';
 import { BraintreeDropIn } from '~/components/checkout/braintree/BraintreePayments';
 import { getActiveOrder } from '~/providers/orders/order';

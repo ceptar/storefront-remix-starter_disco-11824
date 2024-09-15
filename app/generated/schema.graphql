@@ -93,7 +93,6 @@ type BooleanCustomFieldConfig implements CustomField {
   name: String!
   nullable: Boolean
   readonly: Boolean
-  requiresPermission: [Permission!]
   type: String!
   ui: JSON
 }
@@ -161,8 +160,6 @@ type CollectionBreadcrumb {
 }
 
 input CollectionFilterParameter {
-  _and: [CollectionFilterParameter!]
-  _or: [CollectionFilterParameter!]
   createdAt: DateOperators
   description: StringOperators
   id: IDOperators
@@ -184,7 +181,7 @@ input CollectionListOptions {
   filter: CollectionFilterParameter
 
   """
-  Specifies whether multiple top-level "filter" fields should be combined with a logical AND or OR operation. Defaults to AND.
+  Specifies whether multiple "filter" arguments should be combines with a logical AND or OR operation. Defaults to AND.
   """
   filterOperator: LogicalOperator
 
@@ -852,7 +849,6 @@ interface CustomField {
   name: String!
   nullable: Boolean
   readonly: Boolean
-  requiresPermission: [Permission!]
   type: String!
   ui: JSON
 }
@@ -875,8 +871,6 @@ type Customer implements Node {
 }
 
 input CustomerFilterParameter {
-  _and: [CustomerFilterParameter!]
-  _or: [CustomerFilterParameter!]
   createdAt: DateOperators
   emailAddress: StringOperators
   firstName: StringOperators
@@ -906,7 +900,7 @@ input CustomerListOptions {
   filter: CustomerFilterParameter
 
   """
-  Specifies whether multiple top-level "filter" fields should be combined with a logical AND or OR operation. Defaults to AND.
+  Specifies whether multiple "filter" arguments should be combines with a logical AND or OR operation. Defaults to AND.
   """
   filterOperator: LogicalOperator
 
@@ -969,7 +963,6 @@ type DateTimeCustomFieldConfig implements CustomField {
   name: String!
   nullable: Boolean
   readonly: Boolean
-  requiresPermission: [Permission!]
   step: Int
   type: String!
   ui: JSON
@@ -1060,8 +1053,6 @@ type Facet implements Node {
 }
 
 input FacetFilterParameter {
-  _and: [FacetFilterParameter!]
-  _or: [FacetFilterParameter!]
   code: StringOperators
   createdAt: DateOperators
   id: IDOperators
@@ -1080,7 +1071,7 @@ input FacetListOptions {
   filter: FacetFilterParameter
 
   """
-  Specifies whether multiple top-level "filter" fields should be combined with a logical AND or OR operation. Defaults to AND.
+  Specifies whether multiple "filter" arguments should be combines with a logical AND or OR operation. Defaults to AND.
   """
   filterOperator: LogicalOperator
 
@@ -1137,8 +1128,6 @@ input FacetValueFilterInput {
 }
 
 input FacetValueFilterParameter {
-  _and: [FacetValueFilterParameter!]
-  _or: [FacetValueFilterParameter!]
   code: StringOperators
   createdAt: DateOperators
   facetId: IDOperators
@@ -1158,7 +1147,7 @@ input FacetValueListOptions {
   filter: FacetValueFilterParameter
 
   """
-  Specifies whether multiple top-level "filter" fields should be combined with a logical AND or OR operation. Defaults to AND.
+  Specifies whether multiple "filter" arguments should be combines with a logical AND or OR operation. Defaults to AND.
   """
   filterOperator: LogicalOperator
 
@@ -1208,7 +1197,6 @@ type FloatCustomFieldConfig implements CustomField {
   name: String!
   nullable: Boolean
   readonly: Boolean
-  requiresPermission: [Permission!]
   step: Float
   type: String!
   ui: JSON
@@ -1258,8 +1246,6 @@ type HistoryEntry implements Node {
 }
 
 input HistoryEntryFilterParameter {
-  _and: [HistoryEntryFilterParameter!]
-  _or: [HistoryEntryFilterParameter!]
   createdAt: DateOperators
   id: IDOperators
   type: StringOperators
@@ -1276,7 +1262,7 @@ input HistoryEntryListOptions {
   filter: HistoryEntryFilterParameter
 
   """
-  Specifies whether multiple top-level "filter" fields should be combined with a logical AND or OR operation. Defaults to AND.
+  Specifies whether multiple "filter" arguments should be combines with a logical AND or OR operation. Defaults to AND.
   """
   filterOperator: LogicalOperator
 
@@ -1314,7 +1300,6 @@ enum HistoryEntryType {
   ORDER_CANCELLATION
   ORDER_COUPON_APPLIED
   ORDER_COUPON_REMOVED
-  ORDER_CUSTOMER_UPDATED
   ORDER_FULFILLMENT
   ORDER_FULFILLMENT_TRANSITION
   ORDER_MODIFIED
@@ -1393,7 +1378,6 @@ type IntCustomFieldConfig implements CustomField {
   name: String!
   nullable: Boolean
   readonly: Boolean
-  requiresPermission: [Permission!]
   step: Int
   type: String!
   ui: JSON
@@ -1903,7 +1887,6 @@ type LocaleStringCustomFieldConfig implements CustomField {
   nullable: Boolean
   pattern: String
   readonly: Boolean
-  requiresPermission: [Permission!]
   type: String!
   ui: JSON
 }
@@ -1916,7 +1899,6 @@ type LocaleTextCustomFieldConfig implements CustomField {
   name: String!
   nullable: Boolean
   readonly: Boolean
-  requiresPermission: [Permission!]
   type: String!
   ui: JSON
 }
@@ -1966,16 +1948,13 @@ type Mutation {
 
   """Create a new Customer Address"""
   createCustomerAddress(input: CreateAddressInput!): Address!
-  createStripePaymentIntent: String
+  createStripePaymentIntent: String!
 
   """Delete an existing Address"""
   deleteCustomerAddress(id: ID!): Success!
 
   """
-  Authenticates the user using the native authentication strategy. This mutation is an alias for authenticate({ native: { ... }})
-  
-  The `rememberMe` option applies when using cookie-based sessions, and if `true` it will set the maxAge of the session cookie
-  to 1 year.
+  Authenticates the user using the native authentication strategy. This mutation is an alias for `authenticate({ native: { ... }})`
   """
   login(password: String!, rememberMe: Boolean, username: String!): NativeAuthenticationResult!
 
@@ -2231,8 +2210,6 @@ type OrderAddress {
 }
 
 input OrderFilterParameter {
-  _and: [OrderFilterParameter!]
-  _or: [OrderFilterParameter!]
   active: BooleanOperators
   code: StringOperators
   createdAt: DateOperators
@@ -2352,7 +2329,7 @@ input OrderListOptions {
   filter: OrderFilterParameter
 
   """
-  Specifies whether multiple top-level "filter" fields should be combined with a logical AND or OR operation. Defaults to AND.
+  Specifies whether multiple "filter" arguments should be combines with a logical AND or OR operation. Defaults to AND.
   """
   filterOperator: LogicalOperator
 
@@ -2879,7 +2856,6 @@ type Product implements Node {
   createdAt: DateTime!
   customFields: JSON
   description: String!
-  enabled: Boolean!
   facetValues: [FacetValue!]!
   featuredAsset: Asset
   id: ID!
@@ -2898,11 +2874,8 @@ type Product implements Node {
 }
 
 input ProductFilterParameter {
-  _and: [ProductFilterParameter!]
-  _or: [ProductFilterParameter!]
   createdAt: DateOperators
   description: StringOperators
-  enabled: BooleanOperators
   id: IDOperators
   languageCode: StringOperators
   name: StringOperators
@@ -2920,7 +2893,7 @@ input ProductListOptions {
   filter: ProductFilterParameter
 
   """
-  Specifies whether multiple top-level "filter" fields should be combined with a logical AND or OR operation. Defaults to AND.
+  Specifies whether multiple "filter" arguments should be combines with a logical AND or OR operation. Defaults to AND.
   """
   filterOperator: LogicalOperator
 
@@ -3018,8 +2991,6 @@ type ProductVariant implements Node {
 }
 
 input ProductVariantFilterParameter {
-  _and: [ProductVariantFilterParameter!]
-  _or: [ProductVariantFilterParameter!]
   createdAt: DateOperators
   currencyCode: StringOperators
   id: IDOperators
@@ -3043,7 +3014,7 @@ input ProductVariantListOptions {
   filter: ProductVariantFilterParameter
 
   """
-  Specifies whether multiple top-level "filter" fields should be combined with a logical AND or OR operation. Defaults to AND.
+  Specifies whether multiple "filter" arguments should be combines with a logical AND or OR operation. Defaults to AND.
   """
   filterOperator: LogicalOperator
 
@@ -3274,7 +3245,6 @@ type RelationCustomFieldConfig implements CustomField {
   name: String!
   nullable: Boolean
   readonly: Boolean
-  requiresPermission: [Permission!]
   scalarFields: [String!]!
   type: String!
   ui: JSON
@@ -3308,7 +3278,6 @@ input SearchInput {
   collectionSlug: String
   facetValueFilters: [FacetValueFilterInput!]
   groupByProduct: Boolean
-  inStock: Boolean
   skip: Int
   sort: SearchResultSortParameter
   take: Int
@@ -3333,7 +3302,6 @@ type SearchResult {
   description: String!
   facetIds: [ID!]!
   facetValueIds: [ID!]!
-  inStock: Boolean!
   price: SearchResultPrice!
   priceWithTax: SearchResultPrice!
   productAsset: SearchResultAsset
@@ -3454,7 +3422,6 @@ type StringCustomFieldConfig implements CustomField {
   options: [StringFieldOption!]
   pattern: String
   readonly: Boolean
-  requiresPermission: [Permission!]
   type: String!
   ui: JSON
 }
@@ -3552,7 +3519,6 @@ type TextCustomFieldConfig implements CustomField {
   name: String!
   nullable: Boolean
   readonly: Boolean
-  requiresPermission: [Permission!]
   type: String!
   ui: JSON
 }

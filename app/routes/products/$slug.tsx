@@ -16,6 +16,7 @@ import { CartLoaderData } from '~/routes/api/active-order';
 import { getSessionStorage } from '~/sessions';
 import { ErrorCode, ErrorResult } from '~/generated/graphql';
 import Alert from '~/components/Alert';
+import { ColorSwatches } from '~/components/facet-filter/ColorSwatches';
 import { StockLevelLabel } from '~/components/products/StockLevelLabel';
 // import TopReviews from '~/components/products/TopReviews';
 import { ScrollableContainer } from '~/components/products/ScrollableContainer';
@@ -84,9 +85,10 @@ export default function ProductSlug() {
       ?.quantity ?? 0;
 
   const asset = product.assets[0];
-  const brandName = product.facetValues.find(
-    (fv) => fv.facet.code === 'brand',
-  )?.name;
+ 
+  const colorFacetValues = product.facetValues.filter(
+    (fv) => fv.facet.code.toLowerCase() === 'colors'
+  );
 
   const [featuredAsset, setFeaturedAsset] = useState(
     selectedVariant?.featuredAsset,
@@ -94,8 +96,8 @@ export default function ProductSlug() {
 
   return (
     <div className="w-fit">
-      <div className="mx-auto px-8 mt-[2rem]">
-        <div className="sm:grid sm:grid-cols-2 sm:gap-x-8 sm:items-start w-fit sm:w-auto mx-auto my-4">
+      <div className="mx-auto px-4 mt-[2rem]">
+        <div className="sm:grid sm:grid-cols-2 sm:gap-x-4 sm:items-start w-fit sm:w-auto mx-auto my-4">
           {/* Image gallery */}
 
           <div className="p-4 sm:justify-self-end">
@@ -125,7 +127,7 @@ export default function ProductSlug() {
             </div>
             <div className="flex flex-col justify-center items-center">
               {product.assets.length > 1 && (
-                <ScrollableContainer className="">
+                <ScrollableContainer>
                   {product.assets.map((asset) => (
                     <div
                       key={asset.id}
@@ -214,8 +216,8 @@ export default function ProductSlug() {
                       activeOrderFetcher.state !== 'idle'
                         ? 'bg-gray-400'
                         : qtyInCart === 0
-                        ? 'bg-discopink-600 hover:bg-discopink-400 hover:bg-opacity-70'
-                        : 'bg-discopink-600 bg-opacity-90 active:bg-discopink-500 hover:bg-discopink-400 hover:bg-opacity-70'
+                        ? 'bg-discogray-800 hover:bg-discogray-600 hover:bg-opacity-70'
+                        : 'bg-discogray-800 bg-opacity-90 active:bg-discogray-600 hover:bg-discogray-400 hover:bg-opacity-70'
                     }
                       text-sm uppercase tracking-[0.25em] text-white        
                       bg-opacity-20 border border-opacity-20 
@@ -267,7 +269,10 @@ export default function ProductSlug() {
               information.
             </p>
           </div>
-
+          <div className="py-4 sm:justify-self-end">
+  {/* ... existing image code ... */}
+  <ColorSwatches colors={colorFacetValues} />
+</div>
         </section>
       </div>
       </div>

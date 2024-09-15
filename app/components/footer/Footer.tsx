@@ -30,7 +30,7 @@ export default function Footer({
 
     <div className="container flex flex-col flex-wrap mx-auto md:flex-no-wrap md:flex-row md:items-center">
       <div className="flex flex-wrap flex-grow my-[2rem] md:text-left">
-        <div className="w-full px-4 lg:w-1/4 md:w-1/2 mt-[2rem]">
+        <div className="w-full px-8 lg:w-1/4 md:w-1/2 mt-[2rem]">
 
 
 
@@ -53,7 +53,7 @@ export default function Footer({
           
 
         </div>
-        <div className="w-full px-4 lg:w-1/4 md:w-1/2 mt-[2rem]">
+        <div className="w-full px-8 lg:w-1/4 md:w-1/2 mt-[2rem]">
           <h3 className="text-sm font-semibold text-discogray tracking-[0.25em] uppercase">
             Shop
           </h3>
@@ -72,7 +72,7 @@ export default function Footer({
             ))}
           </ul>
         </div>
-        <div className="w-full px-4 lg:w-1/4 md:w-1/2 mt-[2rem]">
+        <div className="w-full px-8 lg:w-1/4 md:w-1/2 mt-[2rem]">
           <h3 className="text-sm font-semibold text-discogray tracking-[0.25em] uppercase">
             Support
           </h3>
@@ -89,7 +89,7 @@ export default function Footer({
             ))}
           </ul>{" "}
         </div>
-        <div className="w-full px-4 lg:w-1/4 md:w-1/2 mt-[2rem]">
+        <div className="w-full px-8 lg:w-1/4 md:w-1/2 mt-[2rem]">
 
         <div className="mx-auto">
               <LogoTwoLines
@@ -101,7 +101,7 @@ export default function Footer({
 
         </div>
       </div>
-      <div className="flex flex-row w-full px-4 mb-8 mt-8 xl:mt-0">
+      <div className="flex flex-row w-full px-8 mb-8 mt-8 xl:mt-0">
         <div className="flex flex-col">
             <h3 className="text-sm font-semibold text-discogray tracking-[0.25em] uppercase">
               Subscribe to our newsletter
@@ -119,7 +119,7 @@ export default function Footer({
                 id="email-address"
                 autoComplete="email"
                 required
-                className="appearance-none min-w-0 w-full bg-white border border-gray-300 py-2 px-4 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400"
+                className="appearance-none min-w-0 w-full bg-white border border-gray-300 py-2 px-8 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white focus:border-white focus:placeholder-gray-400"
                 placeholder="Enter your email"
               />
               <div className="mt-3 sm:mt-0 sm:ml-3 sm:flex-shrink-0">
