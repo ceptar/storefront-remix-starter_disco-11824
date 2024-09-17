@@ -101,7 +101,7 @@ export default function Footer({
 
         </div>
       </div>
-      <div className="flex flex-row w-full px-8 mb-8 mt-8 xl:mt-0">
+      <div className="flex flex-row w-full px-4 mb-8 mt-8 xl:mt-0">
         <div className="flex flex-col">
             <h3 className="text-sm font-semibold text-discogray tracking-[0.25em] uppercase">
               Subscribe to our newsletter

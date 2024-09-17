@@ -31,6 +31,7 @@ export function Price({
 export function formatPrice(value: number, currency: CurrencyCode) {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
+    currencyDisplay: 'code',
     currency,
   }).format(value / 100);
 }

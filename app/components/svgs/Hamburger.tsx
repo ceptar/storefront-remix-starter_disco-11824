@@ -1,28 +1,28 @@
 import * as React from 'react';
 import type { SVGProps } from 'react';
-const Hamburger = ({ fill = "currentColor", ...props }: SVGProps<SVGSVGElement>) => (
+const Hamburger = ({
+  fill = 'currentColor',
+  ...props
+}: SVGProps<SVGSVGElement>) => (
   <svg
-    viewBox="0 0 64 64"
+    viewBox="0 0 480 480"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    style={{ color: fill }} {...props}
+    style={{ color: fill }}
+    {...props}
   >
     <path
-      d="M62 17C61.9894 17.0007 61.9788 17.0015 61.9683 17.0024H2V22H62V17Z"
-
+      d="M99.25 128.693L99.2501 179.307L380.75 179.142L380.75 128.693H99.25Z"
       fill="currentColor"
     />
     <path
-      d="M62 43C61.9894 43.0007 61.9788 43.0015 61.9683 43.0024H2V48H62V43Z"
-     
+      d="M99.2501 214.652V265.101L380.75 264.936L380.75 214.487L99.2501 214.652Z"
       fill="currentColor"
     />
     <path
-      d="M62 30C61.9894 30.0007 61.9788 30.0015 61.9683 30.0024H2V35H62V30Z"
-      
+      d="M100.25 300.693V351.307L380.75 351.142L380.75 300.528L100.25 300.693Z"
       fill="currentColor"
     />
-
   </svg>
 );
 export default Hamburger;

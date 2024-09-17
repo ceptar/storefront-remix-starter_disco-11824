@@ -52,6 +52,7 @@ export function Header({
         transition: 'background-color 0.3s, border-color 0.3s',
       }}
     >
+
       <div className="relative px-4 flex flex-row items-center justify-between h-full w-full ">
         <div className="relative flex flex-col  items-start justify-start w-1/6">
           <button
@@ -96,6 +97,8 @@ export function Header({
 
         </div>
       </div>
+
     </header>
+
   );
 }

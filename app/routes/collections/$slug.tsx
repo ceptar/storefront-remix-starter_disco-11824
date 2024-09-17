@@ -48,7 +48,7 @@ export default function CollectionSlug() {
     </div>
      
 
-    <div className="px-8 relative h-[5rem] z-20 flex justify-center items-center mr-auto ml-auto w-full">
+    <div className="pt-4 relative h-[5rem] z-20 flex justify-center items-center mr-auto ml-auto w-full">
     <h2 id="category-heading" className="px-4 items-center justify-center flex leading-10 border-t border-b border-discogray">
       <span className="text-xl uppercase tracking-[0.25em] text-discogray text-center p-2">
         {collection.name}

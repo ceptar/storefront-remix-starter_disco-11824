@@ -6,8 +6,7 @@ import React, { useState } from 'react';
 import Hamburger from '~/components/svgs/Hamburger';
 import AnimatedCollectionsTreemenu from './CollectionsTreemenu';
 import { SearchBar } from '~/components/header/SearchBar';
-import SignIn from '~/components/svgs/SignIn';
-import { UserIcon } from '@heroicons/react/24/solid';
+import X from '../svgs/X';
 import DiscoSignIn from '../svgs/DiscoSignIn';
 
 export async function loader({ request }: LoaderFunctionArgs) {
@@ -35,7 +34,7 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
         className="flex flex-col bg-opacity-90 cursor-pointer justify-center items-center py-2 text-sm text-discogray-500 transition-all duration-300 ease-out hover:opacity-70"
       >
         <button>
-          <Hamburger className="w-10 h-10 mx-auto px-1" fill={finalOpacity} />
+          <Hamburger className="w-9 h-9" fill={finalOpacity} />
         </button>
       </div>
       <div
@@ -52,67 +51,50 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
         <div
           onClick={toggleSlideover}
           id="slideover"
-          className={`shadow-xl shadow-discogray bg-discogray bg-opacity-85 backdrop-blur-md top-20 w-full md:w-[50vw] h-full absolute right-0 duration-300 ease-out transition-all ${
+          className={`shadow-xl shadow-discogray bg-transparent top-20 w-full md:w-[50vw] h-full absolute right-0 duration-300 ease-out transition-all ${
             isSlideoverVisible ? '' : 'translate-x-full'
           }`}
         >
+          <div className="absolute justify-between items-stretch bg-discogray bg-opacity-85 backdrop-blur-md transform w-full h-full flex flex-col">
+            {/* Menu */}
 
+            <div className="flex flex-row justify-between items-center h-20 border-b border-gray-500">
+              <h2 className="pl-4 text-2xl text-white">Menu</h2>
 
-<div className="absolute transform w-full h-full flex flex-col">
-  {/* Menu */}
-  <div className="flex flex-col justify-between items-stretch h-full"> 
-  <div className="flex flex-row justify-between items-center pr-4 h-20">
-  <SearchBar />
-    <div className="flex flex-row gap-2 items-center">
-    <Link
-        to={isSignedIn ? '/account' : '/sign-in'}
-        className="flex space-x-1"
-      >
-        <DiscoSignIn className="w-10 h-10 p-1" />
-      </Link>
-  <div className="cursor-pointer text-white flex items-center justify-center" onClick={toggleSlideover}>
-        <svg
-          className="w-10 h-10"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M6 18L18 6M6 6l12 12" strokeWidth={1.5}/>
-        </svg>
-      </div>
-      </div>
+              <div className="flex flex-row pr-4 gap-2 items-center">
+                <Link
+                  to={isSignedIn ? '/account' : '/sign-in'}
+                  className="flex space-x-1"
+                >
+                  <DiscoSignIn className="w-9 h-9" fill="white" />
+                </Link>
+                <div
+                  className="cursor-pointer text-white flex items-center justify-center"
+                  onClick={toggleSlideover}
+                >
+                  <X className="w-9 h-9" fill="white" />
+                </div>
+              </div>
+            </div>
+            <div className="flex-grow overflow-y-auto">
+              <div className="flex flex-col">
+                <div className="w-full py-8">
+                  <AnimatedCollectionsTreemenu
+                    collectionsData={{ collections }}
+                    index={0}
+                  />
+                </div>
+              </div>
+            </div>
+            <div className="mb-20">
+              <SearchBar />
+            </div>
           </div>
 
-<div className="flex flex-col flex-grow justify-start items-start pl-4">    
-<div className="w-full py-8">
-      <AnimatedCollectionsTreemenu
-        collectionsData={{ collections }}
-        index={0}
-      />
-    </div>
-    </div>
-<div className="flex flex-row justify-between items-stretch px-4">
-
-
-    
- </div>
-</div>
-
-  </div>
-  
-  {/* Bottom section */}
-
-
-    <div className="flex h-20">
-      
-
-  </div>
-</div>
-          </div>
+          {/* Bottom section */}
         </div>
-
-
+      </div>
+    </div>
   );
 };
 

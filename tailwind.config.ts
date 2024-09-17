@@ -49,6 +49,9 @@ export default {
         discogray: '#000000',
         discograytwo: '#F5F5F5',
       },
+      backgroundPosition: {
+        'right-center': 'right center',
+      },
       animation: {
         dropIn: 'dropIn 0.2s ease-out',
       },

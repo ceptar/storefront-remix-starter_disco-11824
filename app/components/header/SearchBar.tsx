@@ -20,7 +20,7 @@ export function SearchBar() {
         name="q"
         defaultValue={initialQuery}
         placeholder="Search"
-        className="bg-transparent focus:ring-white focus:border-white block text-sm uppercase tracking-[0.15] text-discogray border-t-[1px] border-b-[1px] border-discograytwo-500 w-full"
+        className="flex flex-grow flex-row bg-transparent focus:ring-white focus:border-white text-sm uppercase tracking-[0.15] text-discogray border-t-[1px] border-b-[1px] border-discograytwo-500 w-full"
       />
     </Form>
   );

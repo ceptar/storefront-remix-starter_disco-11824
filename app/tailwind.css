@@ -87,18 +87,6 @@
     color: inherit;
   }
 
-  .bg-hero {
-    background-image: url('~/../public/banner4fin.webp');
-    background-size: cover;
-    background-position: right center;
-    height: 100%;
-    width: 100%;
-    z-index: 10;
-    position: absolute;
-    top: 0;
-    overflow: hidden;
-  }
-
   .cookie-container {
     backdrop-filter: blur(8px) !important;
     background-color: rgb(0 0 0 / 0.75) !important;
@@ -116,6 +104,7 @@
 
   .parent {
     font-size: 28px;
+    font-weight:500;
     line-height: 120%;
     color: #fff;
     text-transform: uppercase;
@@ -126,7 +115,6 @@
   }
   .parent:hover {
     color: #ffffffc0;
-
   }
 
   .child {
@@ -136,9 +124,23 @@
     font-weight: 400;
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
-
+    text-transform: uppercase;
   }
   .child:hover {
     color: #ffffffc0;
   }
+
+  .wrapper {
+    width: 100%;
+
+    position: absolute;
+    background: linear-gradient(45deg, #F17C58, #E94584, #24AADB, #27DBB1, #FFDC18, #FF3706);
+    background-size: 600% 100%;
+    animation: gradient 16s linear infinite;
+    animation-direction: alternate;
+}
+@keyframes gradient {
+    0% {background-position: 0%}
+    100% {background-position: 100%}
+}
 }

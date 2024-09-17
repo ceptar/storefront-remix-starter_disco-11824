@@ -24,12 +24,12 @@ const NavMenuItem: React.FC<NavMenuItemProps> = ({ index, title, class: classNam
       onAnimationComplete={() => setIsLoading(false)}
     >
       <div className="flex items-center relative w-full">
-        <motion.div variants={itemCoverMotion} 
+        {/* <motion.div variants={itemCoverMotion} 
                     className="absolute left-0 top-0 right-0 bottom-0 px-4"
-        />
+        /> */}
         <motion.div className="px-4 " variants={arrowMotion}>
-          <DiscoLightningFill className="fill-white absolute" width={28} height={28} />
-          <DiscoLightningFill className="fill-secondary opacity-10 relative" width={28} height={28} />
+          <DiscoLightningFill className="fill-white" width={28} height={28} />
+          {/* <DiscoLightningFill className="fill-secondary opacity-10 relative" width={28} height={28} /> */}
         </motion.div>
         <motion.div className={`${className} flex-1 flex items-center justify-between`} variants={itemContentMotion}>
           {title}

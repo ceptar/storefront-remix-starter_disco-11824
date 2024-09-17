@@ -2,11 +2,9 @@ import { useLoaderData } from '@remix-run/react';
 // Import GraphQL functions from products provider
 import { sdk } from '../graphqlWrapper';
 import { LoaderFunctionArgs, json } from '@remix-run/server-runtime';
-// import FacetNew from '~/components/facet-filter/FacetNew';
 import Carousel from '../components/Carousel';
-// import special from '~/../public/special.webp';
 import { getCollectionProducts } from '~/providers/products/collectionProducts';
-// import Carousel from '~/components/carouselNew/Carousel';
+
 export async function loader({ request }:LoaderFunctionArgs) {
 
 
@@ -30,9 +28,12 @@ export default function Index() {
 
   return (
     <>
-      <div className="bg-hero" aria-label="[hero1]">
-        <div className="h-full flex justify-end sm:justify-start items-end pl-4">
-          <div className="mb-32 ml-4 mr-auto sm:w-full ">
+<div 
+  className="w-full h-screen bg-cover bg-right-center bg-no-repeat"
+  style={{backgroundImage: "url('/banner4fin.webp')"}}
+>
+          <div className="h-full flex justify-end sm:justify-start items-end pl-4">
+          <div className="flex pb-24 ml-4 mr-auto sm:w-full ">
             <div className="pr-[32px] w-[80vw] md:w-[calc(50vw-32px)]">
               <div className="filter p-[16px] bg-opacity-75 mix-blend-lighten border-[1px] border-white backdrop-blur-[4px]">
                 <div className="filter p-[16px] bg-white bg-opacity-100 mix-blend-lighten border-[1px] border-black backdrop-blur-[4px]">
@@ -41,17 +42,14 @@ export default function Index() {
                     <p>to wear</p>
                     <p className="py-1">boring jewelry</p>
                   </span>
-                  <div className="flex flex-row-reverse font-fw300 tracking-wider uppercase text-2xl sm:text-4xl lg:text-5xl xl:text-7xl">
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="h-[calc(100vh-80px)] relative"></div>
       <div className="h-8"></div>
-      <div className="relative h-20 z-20 flex justify-center items-center mr-auto ml-auto w-full">
+      <div className="h-20 flex justify-center items-center mx-auto w-full">
         <h2
 
           className="px-8 items-center justify-center flex leading-10 border-t border-b border-discogray"
@@ -61,16 +59,13 @@ export default function Index() {
           </span>
         </h2>
       </div>
-      <div className="justify-center items-center">
-      {/* <div className="pl-[16px] pr-[16px] mx-auto"> */}
 
 
-      <div className="container px-4 md:px-0 py-8">
+      <div className="w-full flex flex-col items-center justify-center mt-8 px-4">
           <Carousel featuredProducts={featuredProducts} />
 
       {/* <Carousel featuredProducts={featuredProducts} slideWidth={"1/2"}/>  */}
-    {/* </div> */}
-      </div>
+
       </div>
     </>
   );

@@ -1,6 +1,7 @@
 import { Fragment } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { XMarkIcon } from '@heroicons/react/24/outline';
+import X from '../svgs/X';
 import { CartContents } from './CartContents';
 import { Link, useLocation } from '@remix-run/react';
 import { Price } from '~/components/products/Price';
@@ -27,10 +28,10 @@ export function CartTray({
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as="div"
-        className="fixed inset-0 overflow-hidden z-20"
+        className="fixed inset-0 z-20"
         onClose={onClose}
       >
-        <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0">
           <Transition.Child
             as={Fragment}
             enter="ease-in-out duration-300"
@@ -54,25 +55,25 @@ export function CartTray({
               leaveTo="translate-x-full"
             >
               <div className="w-screen">
-                <div className="h-full flex flex-col bg-white bg-opacity-85 shadow-xl overflow-y-scroll">
-                  <div className="flex-1 py-6 overflow-y-auto px-4 sm:px-6">
-                    <div className="flex items-start justify-between">
-                      <Dialog.Title className="text-lg font-medium text-gray-900">
+                <div className="h-full flex flex-col bg-white bg-opacity-85 shadow-xl">
+                  <div className="flex-1 ">
+                    <div className="flex flex-row justify-between items-center h-20 border-b border-gray-200">
+                      <Dialog.Title className="pl-4 text-2xl text-discogray">
                         Shopping cart
                       </Dialog.Title>
-                      <div className="ml-3 h-7 flex items-center">
+                      <div className="flex items-center pr-4">
                         <button
                           type="button"
-                          className="-m-2 p-2 text-gray-400 hover:text-gray-500"
+                          className=" text-gray-400 hover:text-gray-500"
                           onClick={() => onClose(false)}
                         >
                           <span className="sr-only">Close panel</span>
-                          <XMarkIcon className="h-6 w-6" aria-hidden="true" />
+                          <X className="h-9 w-9" fill="discogray" aria-hidden="true" />
                         </button>
                       </div>
                     </div>
 
-                    <div className="mt-8">
+                    <div className="overflow-y-auto px-4 py-8">
                       {activeOrder?.totalQuantity ? (
                         <CartContents
                           orderLines={activeOrder?.lines ?? []}

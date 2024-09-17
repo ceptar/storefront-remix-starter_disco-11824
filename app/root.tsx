@@ -117,12 +117,16 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="flex flex-col min-h-screen w-full overflow-x-hidden">
+      <body 
+      // className="flex flex-col min-h-screen w-full overflow-x-hidden"
+      >
         <Header
           onCartIconClick={() => setOpen(!open)}
           cartQuantity={activeOrder?.totalQuantity ?? 0}
         />
-        <main className="mt-[5rem] w-full z-10">
+        <main
+        //  className="mt-20 w-full z-10"
+         >
         <Outlet
             context={{
               activeOrderFetcher,

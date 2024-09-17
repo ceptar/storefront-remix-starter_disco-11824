@@ -34,15 +34,31 @@ export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
   return (
     <Form method="get">
 
-      <div style={{ marginTop: '104px', paddingBottom: '24px', paddingLeft: '16px', paddingRight: '16px' }}>
-        {Object.keys(groupedFacets).map((group) => (
-          <div key={group} style={{ paddingBottom: '24px' }}>
-            <h3 style={{ 
+      <div style={{ paddingLeft: '16px',  paddingRight: '16px', height: '80px', alignContent: 'center', borderBottom: '1px solid #6b7280',}}>
+      <h3 style={{ 
+        fontSize: '24px',
+        lineHeight: '32px',
               color: 'white', 
-              marginBottom: '8px', 
-              fontWeight: 'bold',
-              fontSize: '24px',
-              textTransform: 'uppercase',
+
+
+               }}>
+              Filter</h3>
+              </div>
+        {Object.keys(groupedFacets).map((group) => (
+          <div key={group} style={{ 
+            paddingTop: '32px',
+            paddingLeft: '16px',
+            paddingRight: '16px',
+             }}>
+            <h3 style={{ 
+    fontSize: '28px',
+    fontWeight:'500',
+    lineHeight: '120%',
+    color: '#fff',
+    textTransform: 'uppercase',
+    letterSpacing: '0.05em',
+    paddingTop: '1rem',
+    paddingBottom: '1rem',
                }}>
               {group}</h3>
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
@@ -56,7 +72,7 @@ export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
                   <div
                     key={f.facetValue.id}
                     onClick={() => onTagClick(f.facetValue.id)}
-                    className={`cursor-pointer text-sm rounded-full px-2 py-1 ${
+                    className={`no-select cursor-pointer text-sm rounded-full px-2 py-1 ${
                       isSelected ? 'border border-white text-white' : 'border border-black text-black'
                     } ${group.toLowerCase() === 'colors' ? colorClass : isSelected ? 'bg-black' : 'bg-white'}`}
                   >
@@ -67,7 +83,8 @@ export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
             </div>
           </div>
         ))}
-      </div>
+
+
     </Form>
   );
 }
