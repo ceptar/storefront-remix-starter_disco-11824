@@ -61,7 +61,7 @@ export default function Index() {
       </div>
 
 
-      <div className="w-full flex flex-col items-center justify-center mt-8 px-4">
+      <div className="w-full flex flex-col items-center justify-center mt-8">
           <Carousel featuredProducts={featuredProducts} />
 
       {/* <Carousel featuredProducts={featuredProducts} slideWidth={"1/2"}/>  */}

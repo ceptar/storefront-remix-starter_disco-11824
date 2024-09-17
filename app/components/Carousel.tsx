@@ -166,9 +166,9 @@ export default function Carousel({ featuredProducts }) {
   };
 
   return (
-
+    <div className="flex flex-row w-full px-4 ">
     <div
-    className="relative flex flex-row w-full overflow-hidden"
+    className="relative flex overflow-hidden"
       ref={containerRef}
     >
       <motion.div
@@ -188,8 +188,8 @@ export default function Carousel({ featuredProducts }) {
         {featuredProducts.map((product, index) => (
           <div
             key={index} // Prefer using a unique product identifier here
-            className="flex justify-center items-center b-radius-0 
-            w-[calc(50vw-32px)] md:w-[calc(25vw-24px)]
+            className="relative flex-shrink-0 flex flex-col b-radius-0 
+            w-[calc(50vw-24px)] md:w-[calc(25vw-24px)]
             "
  /* 
  w-[calc(100vw-48px)] 
@@ -217,6 +217,6 @@ export default function Carousel({ featuredProducts }) {
         ))}
       </motion.div>
     </div>
-
+    </div>
   );
 }
