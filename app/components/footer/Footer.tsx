@@ -1,5 +1,7 @@
+import React, { useState } from 'react';
 import type { RootLoaderData } from '~/root';
 import { Link } from '@remix-run/react';
+import { arrayToTree, TreeNode, RootNode } from '~/utils/array-to-tree';
 import LogoTwoLines from '~/components/svgs/LogoTwoLines'
 
 const navigation = {
@@ -17,14 +19,14 @@ const navigation = {
   ],
 };
 
-export default function Footer({
-  collections,
-}: {
-  collections: RootLoaderData['collections'];
-}) {
+export default function Footer({ collections }: RootLoaderData) {
+  console.log('Collections:', collections);
+  const collectionTree = arrayToTree(collections);
+  console.log('Collection Tree:', collectionTree);
+
   return (
   <footer
-    className="bg-discograytwo relative overflow-x-hidden mt-8 z-110"
+    className="bg-discograytwo relative overflow-x-hidden z-110"
     aria-labelledby="footer-heading"
   >
 
@@ -57,20 +59,14 @@ export default function Footer({
           <h3 className="text-sm font-semibold text-discogray tracking-[0.25em] uppercase">
             Shop
           </h3>
-          <ul className="my-2">
-            {collections.map((collection) => (
-              <li key={collection.id}>
-                <Link
-                  className="text-md font-metrolight1 text-discogray hover:underline"
-                  to={"/collections/" + collection.slug}
-                  prefetch="intent"
-                  key={collection.id}
-                >
-                  {collection.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+
+{/* TREEMENU */}
+{collectionTree.children.length > 0 ? (
+    <CollectionList collections={collectionTree} />
+  ) : (
+    <p>No collections available</p>
+  )}
+
         </div>
         <div className="w-full px-4 lg:w-1/4 md:w-1/2 mt-[2rem]">
           <h3 className="text-sm font-semibold text-discogray tracking-[0.25em] uppercase">
@@ -135,5 +131,44 @@ export default function Footer({
           </div>
     </div>
   </footer>
+  );
+}
+
+function CollectionList({ collections }: { collections: RootNode<any> }) {
+  const [openAccordions, setOpenAccordions] = useState<string[]>([]);
+
+  const toggleAccordion = (id: string) => {
+    setOpenAccordions(prev =>
+      prev.includes(id) ? prev.filter(item => item !== id) : [...prev, id]
+    );
+  };
+
+  if (!collections || !collections.children || collections.children.length === 0) {
+    return <p>No collections available</p>;
+  }
+
+  return (
+    <ul className="my-2">
+      {collections.children.map((child) => (
+        <li key={child.id}>
+          <button
+            onClick={() => toggleAccordion(child.id)}
+            className="flex items-center justify-between w-full text-left"
+          >
+            <span>{child.name}</span>
+            <span>{openAccordions.includes(child.id) ? '▲' : '▼'}</span>
+          </button>
+          {openAccordions.includes(child.id) && child.children.length > 0 && (
+            <ul className="pl-4 my-2">
+              {child.children.map((subChild) => (
+                <li key={subChild.id}>
+                  <a href={subChild.slug} className="hover:underline">{subChild.name}</a>
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
   );
 }

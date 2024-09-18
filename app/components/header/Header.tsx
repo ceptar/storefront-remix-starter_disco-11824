@@ -67,7 +67,7 @@ export function Header({
               }, ${255 * (1 - headerOpacity - rootRouteOpacity)})`}
             />
             {cartQuantity ? (
-              <div className="top-[15px] left-[12px] w-5 h-5 z-40 absolute items-center justify-center rounded-full text-md bg-secondary-500 text-white font-fw400">
+              <div className="top-[15px] left-[12px] w-5 h-5 z-40 absolute items-center justify-center rounded-full text-md bg-primary-700 text-white font-fw400">
                 {cartQuantity}
               </div>
             ) : (

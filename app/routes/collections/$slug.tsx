@@ -35,7 +35,7 @@ export default function CollectionSlug() {
   };
 
   return (
-    <div className="w-full">
+    <div className="w-full mt-20">
           <div className="absolut top-[5rem]">      
 
 <FramerModal

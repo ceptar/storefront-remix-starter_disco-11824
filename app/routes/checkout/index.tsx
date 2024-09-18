@@ -146,10 +146,10 @@ export default function CheckoutShipping() {
   }
 
   return (
-    <div>
+    <div className="">
       <div>
         <h2 className="text-lg font-fw400 text-gray-900">
-          {('checkout.detailsTitle')}
+          Checkout Details
         </h2>
 
         {isSignedIn ? (
@@ -173,7 +173,7 @@ export default function CheckoutShipping() {
                 htmlFor="emailAddress"
                 className="block text-sm font-fw400 text-gray-700"
               >
-                {('account.emailAddress')}
+                Email Address
               </label>
               <div className="mt-1">
                 <input
@@ -197,7 +197,7 @@ export default function CheckoutShipping() {
                   htmlFor="firstName"
                   className="block text-sm font-fw400 text-gray-700"
                 >
-                  {('account.firstName')}
+                  First Name
                 </label>
                 <div className="mt-1">
                   <input
@@ -216,7 +216,7 @@ export default function CheckoutShipping() {
                   htmlFor="lastName"
                   className="block text-sm font-fw400 text-gray-700"
                 >
-                  {('account.lastName')}
+                  Last Name
                 </label>
                 <div className="mt-1">
                   <input
@@ -243,7 +243,7 @@ export default function CheckoutShipping() {
         <input type="hidden" name="action" value="setCheckoutShipping" />
         <div className="mt-10 border-t border-gray-200 pt-10">
           <h2 className="text-lg font-fw400 text-gray-900">
-            {('checkout.shippingTitle')}
+           Shipping
           </h2>
         </div>
         {isSignedIn && activeCustomer.addresses?.length ? (
@@ -286,7 +286,7 @@ export default function CheckoutShipping() {
         )}
       >
         <LockClosedIcon className="w-5 h-5"></LockClosedIcon>
-        <span>{('checkout.goToPayment')}</span>
+        <span>Proceed to Payment</span>
       </button>
     </div>
   );

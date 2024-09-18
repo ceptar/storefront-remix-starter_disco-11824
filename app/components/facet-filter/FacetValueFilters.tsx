@@ -61,7 +61,7 @@ export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
     paddingBottom: '1rem',
                }}>
               {group}</h3>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
+            <div className="no-select" style={{ display: 'flex', flexWrap: 'wrap', gap: '4px' }}>
               {groupedFacets[group].map((f) => {
                 const isSelected = filterIds.includes(f.facetValue.id);
                 const colorClass = group.toLowerCase() === 'colors' 

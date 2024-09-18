@@ -38,8 +38,8 @@ export default {
         fw950: ['Metropolitano-Black', 'sans'],
       },
       colors: {
-        primary: '#163e63',
-        secondary: '#c65364',
+        primary: '#c65364',
+        secondary: '#0ea288',
         discopink: '#c65364',
         discoteal: '#0ea288',
         discopurple: '#8002E4',

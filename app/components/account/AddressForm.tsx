@@ -13,15 +13,13 @@ export function AddressForm({
   // const { t } = useTranslation();
 
   return (
-    <div className="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
+    <div className="mt-4 grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-4">
       <div>
         <label
           htmlFor="fullName"
           className="block text-sm font-fw400 text-gray-700"
         >
-          {
-          // t
-          ('account.fullName')}
+          Full Name
         </label>
         <div className="mt-1">
           <input
@@ -40,9 +38,7 @@ export function AddressForm({
           htmlFor="company"
           className="block text-sm font-fw400 text-gray-700"
         >
-          {
-          // t
-          ('address.company')}
+         Company
         </label>
         <div className="mt-1">
           <input
@@ -60,9 +56,7 @@ export function AddressForm({
           htmlFor="streetLine1"
           className="block text-sm font-fw400 text-gray-700"
         >
-          {
-          // t
-          ('address.streetLine1')}
+Street 1/2
         </label>
         <div className="mt-1">
           <input
@@ -81,9 +75,7 @@ export function AddressForm({
           htmlFor="streetLine2"
           className="block text-sm font-fw400 text-gray-700"
         >
-          {
-          // t
-          ('address.streetLine2')}
+Street 2/2
         </label>
         <div className="mt-1">
           <input
@@ -101,9 +93,7 @@ export function AddressForm({
           htmlFor="city"
           className="block text-sm font-fw400 text-gray-700"
         >
-          {
-          // t
-          ('address.city')}
+City
         </label>
         <div className="mt-1">
           <input
@@ -122,16 +112,14 @@ export function AddressForm({
           htmlFor="countryCode"
           className="block text-sm font-fw400 text-gray-700"
         >
-          {
-          // t
-          ('address.country')}
+Country
         </label>
         <div className="mt-1">
           {availableCountries && (
             <select
               id="countryCode"
               name="countryCode"
-              defaultValue={address?.countryCode ?? 'US'}
+              defaultValue={address?.countryCode ?? 'AT'}
               className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
             >
               {availableCountries.map((item) => (
@@ -149,9 +137,7 @@ export function AddressForm({
           htmlFor="province"
           className="block text-sm font-fw400 text-gray-700"
         >
-          {
-          // t
-          ('address.province')}
+Province
         </label>
         <div className="mt-1">
           <input
@@ -170,9 +156,7 @@ export function AddressForm({
           htmlFor="postalCode"
           className="block text-sm font-fw400 text-gray-700"
         >
-          {
-          // t
-          ('address.postalCode')}
+Zip Code
         </label>
         <div className="mt-1">
           <input
@@ -191,9 +175,7 @@ export function AddressForm({
           htmlFor="phoneNumber"
           className="block text-sm font-fw400 text-gray-700"
         >
-          {
-          // t
-          ('address.phoneNumber')}
+Phone Number
         </label>
         <div className="mt-1">
           <input

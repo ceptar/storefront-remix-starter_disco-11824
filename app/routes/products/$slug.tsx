@@ -101,14 +101,13 @@ export default function ProductSlug() {
 
   return (
 
-    <div className="justify-center">
-          <div className="h-8 w-full"></div>
-      <div className="">
-        <div className="w-full flex flex-col items-center justify-items-center">
-          <div className="sm:grid sm:grid-cols-2 sm:items-start w-fit sm:w-auto mx-auto my-4">
+    <div className="w-full">
+      <div className="h-28 w-full"></div>
+      <div className="w-full flex justify-center">
+        <div className="w-fit flex flex-col justify-evenly items-start sm:flex-row">
+          <div className="flex justify-start p-4 flex-row sm:flex-col sm:flex">
             {/* Image gallery */}
 
-            <div className="p-4 sm:justify-self-end">
               <div className="p-1 shadow-md bg-discogray mx-auto w-fit sm:block">
                 <span className="overflow-hidden">
                   <div className="object-center object-cover">
@@ -126,8 +125,9 @@ export default function ProductSlug() {
             </div>
 
             {/* Product info */}
-            <div className="p-4">
+            <div className="flex justify-start p-4 flex-row sm:flex-col sm:flex">
               {/* Product name */}
+              <div>
               <div>
                 <h2 className="uppercase font-metrothin1 tracking-[0.25em] text-4xl py-1">
                   {product.name}
@@ -217,7 +217,7 @@ export default function ProductSlug() {
                       currencyCode={selectedVariant?.currencyCode}
                     ></Price>
                   </p>
-                  <div className="flex h-4 align-baseline">
+                  <div className="relative flex h-4 align-baseline">
                     <Button
                       type="submit"
                       className={`wrapper max-w-xs py-3 flex-1 ${
@@ -227,8 +227,7 @@ export default function ProductSlug() {
                           ? 'bg-discogray-800 hover:bg-discogray-600 hover:bg-opacity-70'
                           : 'bg-discogray-900 active:bg-discogray-700 hover:bg-opacity-70'
                       }
-                      text-sm uppercase tracking-[0.25em] text-white        
-                      bg-opacity-20 border border-opacity-20 
+                      text-sm uppercase tracking-[0.25em] text-discogray 
                       flex items-center justify-center  
                       focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-primary-500 
                       sm:w-full
@@ -246,7 +245,7 @@ export default function ProductSlug() {
                     </Button>
                   </div>
                 </div>
-                <div className="mt-2 flex items-center">
+                <div className="mt-12 flex items-center">
                   <span className="text-gray-500 pr-2">
                     {selectedVariant?.sku}
                   </span>
@@ -285,10 +284,14 @@ export default function ProductSlug() {
               </activeOrderFetcher.Form>
             </div>
           </div>
+          </div>
         </div>
         <div className="h-8 w-full"></div>
       </div>
-      {/* <div className="mt-24">
+  );
+}
+            {/* 
+        <div className="mt-24">
           <TopReviews></TopReviews>
         </div> */}
       {/* <div className="h-[2rem]"></div>
@@ -299,9 +302,8 @@ export default function ProductSlug() {
           }
         ></Breadcrumbs>
       */}
-    </div>
-  );
-}
+
+
 export function CatchBoundary() {
   return (
     <div className="max-w-6xl mx-auto px-4">

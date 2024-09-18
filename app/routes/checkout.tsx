@@ -24,7 +24,7 @@ export default function Checkout() {
   let isConfirmationPage = state === 'confirmation';
 
   return (
-    <div className="bg-gray-50">
+    <div className="bg-white mt-20">
       <div
         className={classNames(
           isConfirmationPage ? 'lg:max-w-3xl mx-auto' : 'lg:max-w-7xl',

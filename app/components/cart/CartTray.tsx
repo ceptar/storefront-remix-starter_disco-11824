@@ -57,14 +57,14 @@ export function CartTray({
               <div className="w-screen">
                 <div className="h-full flex flex-col bg-white bg-opacity-85 shadow-xl">
                   <div className="flex-1 ">
-                    <div className="flex flex-row justify-between items-center h-20 border-b border-gray-200">
+                    <div className="flex flex-row justify-between items-center h-20 border-b border-discogray">
                       <Dialog.Title className="pl-4 text-2xl text-discogray">
                         Shopping cart
                       </Dialog.Title>
                       <div className="flex items-center pr-4">
                         <button
                           type="button"
-                          className=" text-gray-400 hover:text-gray-500"
+                          className=" text-discogray hover:text-discogray-500"
                           onClick={() => onClose(false)}
                         >
                           <span className="sr-only">Close panel</span>
@@ -91,7 +91,7 @@ export function CartTray({
                   </div>
 
                   {activeOrder?.totalQuantity && editable && (
-                    <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
+                    <div className="border-t border-discogray py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
                         <p>
@@ -110,7 +110,7 @@ export function CartTray({
                         <Link
                           to="/checkout"
                           onClick={() => onClose(false)}
-                          className="flex justify-center items-center px-6 py-3 border border-transparent shadow-sm text-base font-medium text-white bg-primary-600 hover:bg-primary-700"
+                          className="uppercase tracking-wider text-sm flex justify-center items-center px-6 py-3 border border-transparent shadow-sm text-base font-medium text-white bg-primary-700 hover:bg-primary-500"
                         >
                           Checkout
                         </Link>
