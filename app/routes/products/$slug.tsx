@@ -128,6 +128,7 @@ export default function ProductSlug() {
             <div className="flex justify-start p-4 flex-row sm:flex-col sm:flex">
               {/* Product name */}
               <div>
+ 
               <div>
                 <h2 className="uppercase font-metrothin1 tracking-[0.25em] text-4xl py-1">
                   {product.name}
@@ -276,7 +277,7 @@ export default function ProductSlug() {
                       further information.
                     </p>
                   </div>
-                  <div className="py-4 sm:justify-self-end">
+                  <div className="sm:justify-self-end mt-4 pt-4">
                     {/* ... existing image code ... */}
                     <ColorSwatches colors={colorFacetValues} />
                   </div>
@@ -286,7 +287,7 @@ export default function ProductSlug() {
           </div>
           </div>
         </div>
-        <div className="h-8 w-full"></div>
+        <div className="h-12 w-full"></div>
       </div>
   );
 }

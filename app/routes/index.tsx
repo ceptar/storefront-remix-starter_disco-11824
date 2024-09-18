@@ -33,7 +33,7 @@ export default function Index() {
   style={{backgroundImage: "url('/banner4fin.webp')"}}
 >
           <div className="h-full flex justify-end sm:justify-start items-end pl-4">
-          <div className="flex pb-24 ml-4 mr-auto sm:w-full ">
+          <div className="flex pb-24 mr-auto sm:w-full ">
             <div className="pr-[32px] w-[80vw] md:w-[calc(50vw-32px)]">
               <div className="filter p-[16px] bg-opacity-75 mix-blend-lighten border-[1px] border-white backdrop-blur-[4px]">
                 <div className="filter p-[16px] bg-white bg-opacity-100 mix-blend-lighten border-[1px] border-black backdrop-blur-[4px]">
@@ -67,6 +67,7 @@ export default function Index() {
       {/* <Carousel featuredProducts={featuredProducts} slideWidth={"1/2"}/>  */}
 
       </div>
+      <div className="h-12"></div>
     </>
   );
 }
