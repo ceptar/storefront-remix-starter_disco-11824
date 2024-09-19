@@ -9,7 +9,7 @@ module.exports = {
           // VENDURESHOPAPI
           VENDURE_API_URL: 'https://discobabes.store/shop-api',
           // COOKIESECRET
-          COOKIE_SECRET: '',
+          COOKIE_SECRET: 'awdbhbjahdbaw',
         },
         autorestart: true
       },

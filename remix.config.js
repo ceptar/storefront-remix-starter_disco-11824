@@ -52,6 +52,7 @@ const devConfig = {
  */
 const buildConfig = {
   appDirectory: 'app',
+  serverModuleFormat: 'cjs',
   assetsBuildDirectory: 'public/build',
   publicPath: '/build/',
   serverBuildDirectory: 'build',
