@@ -132,15 +132,14 @@
 
   .wrapper {
     width: 100%;
-
     position: absolute;
-    background: linear-gradient(45deg, rgb(241, 124, 88, 0.8), rgb(233, 69, 132, 0.8), rgb(36, 170, 219, 0.8), rgb(39, 219, 177, 0.8), rgb(255, 220, 24, 0.8), rgb(255, 55, 6, 0.8));
-    background-size: 600% 100%;
+    background-size: 200% 200%;
     animation: gradient 16s linear infinite;
-    animation-direction: alternate;
 }
+
 @keyframes gradient {
-    0% {background-position: 0%}
-    100% {background-position: 100%}
+    0% {background-position: 0% 50%}
+    50% {background-position: 100% 50%}
+    100% {background-position: 0% 50%}
 }
 }
