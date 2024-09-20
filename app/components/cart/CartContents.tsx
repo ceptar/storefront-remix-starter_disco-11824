@@ -85,7 +85,7 @@ export function CartContents({
                       type="submit"
                       name="removeItem"
                       value={line.id}
-                      className="font-medium text-primary-800 hover:text-primary-600"
+                      className="font-medium text-discogray-600 hover:text-discogray-500"
                       onClick={() => removeItem && removeItem(line.id)}
                     >
                       Remove

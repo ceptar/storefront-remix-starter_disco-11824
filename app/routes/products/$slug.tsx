@@ -16,9 +16,9 @@ import { CartLoaderData } from '~/routes/api/active-order';
 import { getSessionStorage } from '~/sessions';
 import { ErrorCode, ErrorResult } from '~/generated/graphql';
 import Alert from '~/components/Alert';
+import { generateGradient } from '~/components/facet-filter/GenerateGradient'
 import {
   ColorSwatches,
-  generateGradient,
 } from '~/components/facet-filter/ColorSwatches';
 import { StockLevelLabel } from '~/components/products/StockLevelLabel';
 // import TopReviews from '~/components/products/TopReviews';
@@ -131,7 +131,9 @@ export default function ProductSlug() {
               </h2>
               <div className="flex flex-col justify-center items-center">
                 {product.assets.length > 1 && (
+                                      <div className="w-full overflow-y-visible">
                   <ScrollableContainer>
+
                     {product.assets.map((asset) => (
                       <div
                         key={asset.id}
@@ -152,6 +154,7 @@ export default function ProductSlug() {
                       </div>
                     ))}
                   </ScrollableContainer>
+                  </div>
                 )}
               </div>
               <div className="">
@@ -204,12 +207,12 @@ export default function ProductSlug() {
                 )}
                 {/* Product price */}
                 <div className="flex flex-col">
-                  <p className="text-xl text-discogray font-fw500 mr-4 py-4">
+                  <div className="text-xl text-discogray font-fw300 mr-4 py-4">
                     <Price
                       priceWithTax={selectedVariant?.priceWithTax}
                       currencyCode={selectedVariant?.currencyCode}
                     ></Price>
-                  </p>
+                  </div>
 
                  {/* ADD TO CART  */}
 
