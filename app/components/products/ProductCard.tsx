@@ -19,7 +19,7 @@ export function ProductCard({
         to={`/products/${slug}`}
       >
         <img
-          className="object-cover "
+          className="object-cover aspect-[5/8] object-center"
           alt=""
           src={productAsset?.preview + '?w=full'}
         />

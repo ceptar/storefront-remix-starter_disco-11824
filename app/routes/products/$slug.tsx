@@ -21,6 +21,7 @@ import {
   ColorSwatches,
 } from '~/components/facet-filter/ColorSwatches';
 import { StockLevelLabel } from '~/components/products/StockLevelLabel';
+import CarouselSingle from '~/components/CarouselSingle';
 // import TopReviews from '~/components/products/TopReviews';
 import { ScrollableContainer } from '~/components/products/ScrollableContainer';
 // import { useTranslation } from 'react-i18next';
@@ -100,26 +101,28 @@ export default function ProductSlug() {
   const [featuredAsset, setFeaturedAsset] = useState(
     selectedVariant?.featuredAsset,
   );
-
+  const productAsset = product.assets.map(asset => asset.preview + '?w=full');
+console.log('productImages',productAsset)
   return (
     <div className="w-full">
       <div className="h-28 w-full"></div>
       <div className="w-full flex justify-center">
-        <div className="w-auto sm:max-w-none flex  justify-center items-center">
+        <div className="w-auto sm:max-w-none flex justify-center items-center">
           {/* Image container */}
           <div className="flex flex-col sm:flex-row">
-            <div className="w-full sm:w-1/2 p-4 flex sm:justify-end">
-              <div className="p-1 shadow-md bg-discogray ">
-                <div>
-                  <img
+            <div className="w-full flex-row sm:flex-col sm:w-1/2 p-4 flex sm:justify-end">
+                <div className="h-full w-fit overflow-hidden">
+
+<CarouselSingle productAsset={productAsset}/>
+                  {/* <img
                     src={
                       (featuredAsset?.preview ||
                         product.featuredAsset?.preview) + '?w=full'
                     }
                     alt={product.name}
                     className="sm:max-h-[70vh] max-w-full h-full w-auto object-center object-cover"
-                  />
-                </div>
+                  /> */}
+
               </div>
             </div>
 
@@ -130,7 +133,7 @@ export default function ProductSlug() {
                 {product.name}
               </h2>
               <div className="flex flex-col justify-center items-center">
-                {product.assets.length > 1 && (
+                {/* {product.assets.length > 1 && (
                                       <div className="w-full overflow-y-visible">
                   <ScrollableContainer>
 
@@ -155,7 +158,7 @@ export default function ProductSlug() {
                     ))}
                   </ScrollableContainer>
                   </div>
-                )}
+                )} */}
               </div>
               <div className="">
                 <h3 className="sr-only">Description</h3>
@@ -207,7 +210,7 @@ export default function ProductSlug() {
                 )}
                 {/* Product price */}
                 <div className="flex flex-col">
-                  <div className="text-xl text-discogray font-fw300 mr-4 py-4">
+                  <div className="uppercase font-fw400 tracking-[0.05em] text-xl mr-4 py-4">
                     <Price
                       priceWithTax={selectedVariant?.priceWithTax}
                       currencyCode={selectedVariant?.currencyCode}
@@ -216,7 +219,7 @@ export default function ProductSlug() {
 
                  {/* ADD TO CART  */}
 
-                  <div className="mb-4">
+                  <div className="relative pr-4 w-full mb-4">
                     <div
                       className="absolute wrapper flex-1 sm:w-full max-w-xs h-12 uppercase text-discogray transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none',
 "
@@ -270,6 +273,7 @@ export default function ProductSlug() {
                 )}
 
                 <div className="mt-4 pt-4 text-xs">
+
                   <h3 className="text-gray-600 font-bold mb-2">
                     Shipping & Returns
                   </h3>
@@ -298,8 +302,9 @@ export default function ProductSlug() {
           </div>
         </div>
       </div>
-      <div className="h-12 w-full"></div>
-    </div>
+
+<div className="h-12 w-full"></div>
+</div>
   );
 }
 
