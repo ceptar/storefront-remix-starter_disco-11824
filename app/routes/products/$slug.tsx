@@ -210,7 +210,7 @@ console.log('productImages',productAsset)
                 )}
                 {/* Product price */}
                 <div className="flex flex-col">
-                  <div className="uppercase font-fw400 tracking-[0.05em] text-xl mr-4 py-4">
+                  <div className="uppercase font-fw400 text-xl py-2 mb-4">
                     <Price
                       priceWithTax={selectedVariant?.priceWithTax}
                       currencyCode={selectedVariant?.currencyCode}
@@ -219,30 +219,34 @@ console.log('productImages',productAsset)
 
                  {/* ADD TO CART  */}
 
-                  <div className="relative pr-4 w-full mb-4">
-                    <div
-                      className="absolute wrapper flex-1 sm:w-full max-w-xs h-12 uppercase text-discogray transition-all duration-300 hover:translate-x-[-4px] hover:translate-y-[-4px] hover:shadow-[4px_4px_0px_black] active:translate-x-[0px] active:translate-y-[0px] active:shadow-none',
-"
+                  <div className="relative w-full pb-2 pr-2  ">
+                  <button className="text-xl w-full text-white uppercase py-2.5 px-5 border-2 border-transparent bg-discogray shadow-[3px_3px_black] cursor-pointer my-2 active:shadow-none active:translate-x-[3px] active:translate-y-[3px] transition-all duration-150">
+  Button Text
+</button>
+                    {/* <div
+                      className="absolute tracking-[0.15em] flex-1 w-full h-12 font-fw300 uppercase text-discogray transition-all duration-100 shadow-[0px_0px_0px_black] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none',
+                      "
                       style={{
                         background: generateGradient({
                           colors: colorFacetValues,
                         }),
                         backgroundSize: '600% 100%',
-                        mixBlendMode: 'multiply',
+                        // mixBlendMode: 'multiply',
                         animation: 'gradient 16s ease infinite',
+
                       }}
-                    >
-                      <button
+                    > */}
+                      {/* <button
                         type="submit"
                         className={`relative w-full py-4 h-12 flex-1 ${
                           activeOrderFetcher.state !== 'idle'
-                            ? 'bg-white'
+                            ? 'bg-black'
                             : qtyInCart === 0
-                            ? 'bg-white hover:bg-white hover:bg-opacity-70'
-                            : 'bg-white active:bg-white hover:bg-opacity-70'
+                            ? 'bg-black hover:bg-white hover:bg-opacity-70'
+                            : 'bg-black active:bg-white hover:bg-opacity-70'
                         }
-                      text-sm uppercase tracking-[0.25em] text-discogray bg-white bg-opacity-40
-                      flex items-center justify-center border-discogray border-2
+                      text-sm uppercase tracking-[0.15em] font-fw300 text-white bg-black hover:text-discogray hover:font-fw500 bg-opacity-100
+                      flex items-center justify-center border-discogray border-2 mix-blend-darken
                       focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-50 focus:ring-primary-500 
                       
                       transition-all duration-300 ease-in-out`}
@@ -256,8 +260,8 @@ console.log('productImages',productAsset)
                         ) : (
                           `Add to cart`
                         )}
-                      </button>
-                    </div>
+                      </button> */}
+                    {/* </div> */}
                   </div>
                 </div>
                 <div className="mt-12 flex items-center">

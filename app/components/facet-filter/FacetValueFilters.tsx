@@ -38,9 +38,11 @@ export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
     <Form method="get">
       <div style={{ paddingLeft: '16px', paddingRight: '16px', height: '80px', alignContent: 'center', borderBottom: '1px solid #6b7280', }}>
         <h3 style={{
-          fontSize: '24px',
-          lineHeight: '32px',
+          fontSize: '20px',
+          lineHeight: '28px',
+          fontWeight: '600',
           color: 'white',
+          textTransform: 'uppercase',
         }}>
           Filter
         </h3>

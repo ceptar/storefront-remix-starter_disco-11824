@@ -13,60 +13,58 @@
 
 @layer utilities {
 
+  @font-face {
+    font-family: 'uncut';
+    src: url(~/styles/font/_var_public.woff2) format('woff2-variations');
+    font-weight: 100 900;
+    font-stretch: 75% 125%;
+    font-style: normal;
+  }
   
   @font-face {
     font-family: 'Metropolitano-Thin';
-    src: url(~/styles/font/Metropolitano-Thin.woff2) format('woff2');
+    src: url(~/styles/font/_var_public.woff2) format('woff2-variations');
+    font-weight: 200;
+    font-stretch: 75%;
     font-display: swap;
   }
   @font-face {
     font-family: 'Metropolitano-Light';
-    src: url(~/styles/font/Metropolitano-Light.woff2) format('woff2');
+    src: url(~/styles/font/_var_public.woff2) format('woff2-variations');
+    font-weight: 300;
+    font-stretch: 75%;
     font-display: swap;
   }
   @font-face {
     font-family: 'sans';
-    src: url(~/styles/font/Metropolitano-Light.woff2) format('woff2');
+    src: url(~/styles/font/_var_public.woff2) format('woff2-variations');
+    font-weight: 300;
+    font-stretch: 75%;
     font-display: swap;
   }
     @font-face {
       font-family: 'Metropolitano-Regular';
-      src: url(~/styles/font/Metropolitano-Regular.woff) format('woff');
+      src: url(~/styles/font/_var_public.woff2) format('woff2-variations');
+      font-weight: 400;
+      font-stretch: 75%;
       font-display: swap;
     }
     @font-face {
       font-family: 'Metropolitano-Medium';
-      src: url(~/styles/font/Metropolitano-Medium.woff2) format('woff2');
+      src: url(~/styles/font/_var_public.woff2) format('woff2-variations');
+      font-weight: 500;
       font-display: swap;
     }
     @font-face {
       font-family: 'Metropolitano-Bold';
-      src: url(~/styles/font/Metropolitano-Bold.woff2) format('woff2');
+      src: url(~/styles/font/_var_public.woff2) format('woff2-variations');
+      font-weight: 700;
       font-display: swap;
     }
     @font-face {
       font-family: 'Metropolitano-Black';
-      src: url(~/styles/font/Metropolitano-Black.woff2) format('woff2');
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'FacetUltra-Regular';
-      src: url(~/styles/font/FacetUltra-Regular.woff2) format('woff2');
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'RG-StandardBold';
-      src: url(~/styles/font/RG-StandardBold.woff2) format('woff2');
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'Nohemi-Black';
-      src: url(~/styles/font/Nohemi-Black.woff2) format('woff2');
-      font-display: swap;
-    }
-    @font-face {
-      font-family: 'neon-light';
-      src: url(~/styles/font/neon-light.woff) format('woff');
+      src: url(~/styles/font/_var_public.woff2) format('woff2-variations');
+      font-weight: 800;
       font-display: swap;
     }
   

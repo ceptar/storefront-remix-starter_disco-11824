@@ -39,10 +39,11 @@ const FramerModalToggle: React.FC<FramerModalToggleProps> = ({
 
   return (
     <div
-      className="p-2 mt-2 bg-white rounded-full justify-content-center items-center flex flex-col-reverse gap-2 cursor-pointer stroke-black stroke-2 transition-all duration-300 ease-out hover:opacity-70"
+      className="px-[1px] bg-white bg-opacity-50 rounded-full border-black border-[3px] justify-items-center items-center flex flex-col cursor-pointer stroke-black stroke-2 transition-all duration-300 ease-out hover:opacity-70"
       onClick={() => setMenuOpen(!menuOpen)}
     >
-      <svg width="36" height="36"     viewBox="-5.0 -10.0 110.0 135.0"
+       <div className="w-full h-[2px]"></div>
+      <svg width="32" height="32"     viewBox="-5.0 -10.0 110.0 135.0"
       >
         <motion.path
           {...path1Variants.closed}
@@ -55,6 +56,8 @@ const FramerModalToggle: React.FC<FramerModalToggleProps> = ({
           transition={{ duration: 0.2 }}
         />
       </svg>
+      {/* <div className="w-full"></div> */}
+     
     </div>
   );
 };
