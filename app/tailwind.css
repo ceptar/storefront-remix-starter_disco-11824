@@ -25,34 +25,35 @@
     font-family: 'Metropolitano-Thin';
     src: url(~/styles/font/_var_public.woff2) format('woff2-variations');
     font-weight: 200;
-    font-stretch: 75%;
+    font-stretch: 115%;
     font-display: swap;
   }
   @font-face {
     font-family: 'Metropolitano-Light';
     src: url(~/styles/font/_var_public.woff2) format('woff2-variations');
     font-weight: 300;
-    font-stretch: 75%;
+    font-stretch: 115%;
     font-display: swap;
   }
   @font-face {
     font-family: 'sans';
     src: url(~/styles/font/_var_public.woff2) format('woff2-variations');
     font-weight: 300;
-    font-stretch: 75%;
+    font-stretch: 115%;
     font-display: swap;
   }
     @font-face {
       font-family: 'Metropolitano-Regular';
       src: url(~/styles/font/_var_public.woff2) format('woff2-variations');
       font-weight: 400;
-      font-stretch: 75%;
+      font-stretch: 115%;
       font-display: swap;
     }
     @font-face {
       font-family: 'Metropolitano-Medium';
       src: url(~/styles/font/_var_public.woff2) format('woff2-variations');
       font-weight: 500;
+      font-stretch: 115%;
       font-display: swap;
     }
     @font-face {
@@ -126,6 +127,28 @@
   }
   .child:hover {
     color: #ffffffc0;
+  }
+
+  .disco-gradient {
+    background: linear-gradient(90deg, 
+    rgba(255,0,0,var(--opacity)) 0%, 
+    rgba(255,0,0,var(--opacity)) 5.261845386533666%, 
+    rgba(251,255,0,var(--opacity)) 14.339152119700744%, 
+    rgba(250,255,0,var(--opacity)) 25.60265747983557%, 
+    rgba(247,255,0,var(--opacity)) 25.81047381546135%, 
+    rgba(118,255,0,var(--opacity)) 33.083954237940304%, 
+    rgba(117,255,0,var(--opacity)) 39.318368203027596%, 
+    rgba(1,235,251,var(--opacity)) 43.05901658207995%, 
+    rgba(0,235,255,var(--opacity)) 45.80215872671836%, 
+    rgba(0,235,255,var(--opacity)) 55.777221070858005%, 
+    rgba(0,45,255,var(--opacity)) 61.01412880153134%, 
+    rgba(55,1,255,var(--opacity)) 66.37572481150639%, 
+    rgba(155,0,255,var(--opacity)) 72.85951533519717%, 
+    rgba(168,0,255,var(--opacity)) 80.5901886519054%, 
+    rgba(253,0,130,var(--opacity)) 84.82959014816474%, 
+    rgba(255,0,129,var(--opacity)) 91.43806895115726%, 
+    rgba(255,0,2,var(--opacity)) 96.05153528532185%
+    );
   }
 
   .wrapper {

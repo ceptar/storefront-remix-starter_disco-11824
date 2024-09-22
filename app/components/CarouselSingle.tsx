@@ -12,7 +12,7 @@ export default function CarouselSingle({productAsset}) {
 
   const dragEndHandler = (dragInfo: PanInfo) => {
     const draggedDistance = dragInfo.offset.x;
-    const swipeThreshold = 50;
+    const swipeThreshold = 20;
     if (draggedDistance > swipeThreshold) {
       console.log("swipe detection: ", "prev");
       index > 0 && setIndex(index - 1);
@@ -23,7 +23,7 @@ export default function CarouselSingle({productAsset}) {
   };
 
   return (
-    <MotionConfig transition={{ duration: 0.7, ease: [0.32, 0.72, 0, 1] }}>
+    <MotionConfig transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}>
       <div className="w-full h-full flex flex-col justify-center items-center border-discogray border-4">
         {/* ↓ Parent Container */}
         <div

@@ -54,11 +54,11 @@ export function CartTray({
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <div className="w-full  border-l border-discogray">
+              <div className="w-full border border-discogray">
                 <div className="h-full flex flex-col bg-white bg-opacity-85 shadow-xl">
                   <div className="flex-1">
-                    <div className="flex flex-row justify-between items-center h-20 border-y border-discogray">
-                      <Dialog.Title className="pl-4 text-xl font-bold uppercase text-discogray">
+                    <div className="flex flex-row justify-between items-center h-20 border-b border-discogray">
+                      <Dialog.Title className="pl-4 tracking-[0.15em] text-lg font-bold uppercase text-discogray">
                         Shopping cart
                       </Dialog.Title>
                       <div className="flex items-center pr-4">

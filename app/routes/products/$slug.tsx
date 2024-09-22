@@ -110,55 +110,21 @@ console.log('productImages',productAsset)
         <div className="w-auto sm:max-w-none flex justify-center items-center">
           {/* Image container */}
           <div className="flex flex-col sm:flex-row">
-            <div className="w-full flex-row sm:flex-col sm:w-1/2 p-4 flex sm:justify-end">
+            <div className="w-full flex-row sm:flex-col sm:w-1/2 p-4 sm:py-4 sm:pl-4 sm:pr-2 flex sm:justify-end">
                 <div className="h-full w-fit overflow-hidden">
 
 <CarouselSingle productAsset={productAsset}/>
-                  {/* <img
-                    src={
-                      (featuredAsset?.preview ||
-                        product.featuredAsset?.preview) + '?w=full'
-                    }
-                    alt={product.name}
-                    className="sm:max-h-[70vh] max-w-full h-full w-auto object-center object-cover"
-                  /> */}
 
               </div>
             </div>
 
             {/* Product info */}
-            <div className="w-full sm:w-1/2 p-4">
+            <div className="w-full sm:w-1/2 p-4 sm:py-4 sm:pl-2 sm:pr-4">
               {/* Product info content */}
-              <h2 className="uppercase font-metrothin1 tracking-[0.25em] text-4xl py-1">
+              <h2 className="uppercase font-metrothin1 tracking-[0.15em] text-4xl py-1">
                 {product.name}
               </h2>
               <div className="flex flex-col justify-center items-center">
-                {/* {product.assets.length > 1 && (
-                                      <div className="w-full overflow-y-visible">
-                  <ScrollableContainer>
-
-                    {product.assets.map((asset) => (
-                      <div
-                        key={asset.id}
-                        className={`basis-1/5 md:basis-1/4 flex-shrink-0 select-none touch-pan-x ${
-                          featuredAsset?.id == asset.id
-                            ? 'outline outline-2 outline-discogray outline-offset-[-2px]'
-                            : ''
-                        }`}
-                        onClick={() => {
-                          setFeaturedAsset(asset);
-                        }}
-                      >
-                        <img
-                          draggable="false"
-                          className="select-none w-full h-[calc(w-full*1.6)] object-cover object-center"
-                          src={asset.preview + '?preset=full'}
-                        />
-                      </div>
-                    ))}
-                  </ScrollableContainer>
-                  </div>
-                )} */}
               </div>
               <div className="">
                 <h3 className="sr-only">Description</h3>
@@ -210,7 +176,7 @@ console.log('productImages',productAsset)
                 )}
                 {/* Product price */}
                 <div className="flex flex-col">
-                  <div className="uppercase font-fw400 text-xl py-2 mb-4">
+                  <div className="uppercase font-black text-lg py-4 ">
                     <Price
                       priceWithTax={selectedVariant?.priceWithTax}
                       currencyCode={selectedVariant?.currencyCode}
@@ -220,11 +186,8 @@ console.log('productImages',productAsset)
                  {/* ADD TO CART  */}
 
                   <div className="relative w-full pb-2 pr-2  ">
-                  <button className="text-xl w-full text-white uppercase py-2.5 px-5 border-2 border-transparent bg-discogray shadow-[3px_3px_black] cursor-pointer my-2 active:shadow-none active:translate-x-[3px] active:translate-y-[3px] transition-all duration-150">
-  Button Text
-</button>
-                    {/* <div
-                      className="absolute tracking-[0.15em] flex-1 w-full h-12 font-fw300 uppercase text-discogray transition-all duration-100 shadow-[0px_0px_0px_black] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none',
+                  <div
+                      className="bg-opacity-50 tracking-[0.2em] text-sm  flex-1 w-full h-12 uppercase text-discogray transition-all duration-100 shadow-[0px_0px_0px_black] active:translate-x-[3px] active:translate-y-[3px] active:shadow-none',
                       "
                       style={{
                         background: generateGradient({
@@ -235,7 +198,33 @@ console.log('productImages',productAsset)
                         animation: 'gradient 16s ease infinite',
 
                       }}
-                    > */}
+                    > 
+                  <button type="submit" className={`relative h-12 text-sm w-full text-discogray tracking-[0.2em] uppercase py-2.5 px-5 border-2 border-transparent shadow-[3px_3px_black] cursor-pointer my-2 active:shadow-none active:translate-x-[3px] active:translate-y-[3px] transition-all duration-100
+                  ${
+                    activeOrderFetcher.state !== 'idle'
+                      ? 'bg-black'
+                      : qtyInCart === 0
+                      ? 'bg-black hover:bg-white hover:bg-opacity-70'
+                      : 'bg-black active:bg-white hover:bg-opacity-70'
+                  }
+                  uppercase tracking-[0.2em] text-sm text-white bg-black bg-opacity-100 hover:bg-opacity-50
+                      flex items-center justify-center border-discogray border-2 mix-blend-darken
+                      
+                      transition-all duration-100 ease-in-out`}
+                        disabled={activeOrderFetcher.state !== 'idle'}
+                      >
+                        {qtyInCart ? (
+                          <span className="flex items-center">
+                            <CheckIcon className="w-5 h-5 mr-1" /> {qtyInCart}{' '}
+                            in cart
+                          </span>
+                        ) : (
+                          `Add to cart`
+                        )}
+
+                   </button>
+
+                     
                       {/* <button
                         type="submit"
                         className={`relative w-full py-4 h-12 flex-1 ${
@@ -264,7 +253,8 @@ console.log('productImages',productAsset)
                     {/* </div> */}
                   </div>
                 </div>
-                <div className="mt-12 flex items-center">
+                </div>
+                <div className="mt-4 flex items-center">
                   <span className="text-gray-500 pr-2">
                     {selectedVariant?.sku}
                   </span>

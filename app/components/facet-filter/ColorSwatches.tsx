@@ -9,13 +9,13 @@ export function ColorSwatches({ colors }) {
         <div key={color.id}>
         <DiscoLightningFill
           
-          className={`absolute w-8 h-8 border-2 p-2 rounded-full ${getTailwindColorClass(
+          className={`absolute w-9 h-9 rounded-full border-4 border-discogray ${getTailwindColorClass(
             color.name,
           )}`}
           title={color.name}
         />
         <DiscoLightningFill
-          className="fill-discogray relative w-8 h-8"
+          className="fill-discogray relative w-9 h-9 rounded-full"
 
            />
           

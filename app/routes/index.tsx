@@ -65,6 +65,7 @@ export default function Index() {
           <Carousel featuredProducts={featuredProducts} />
 
       </div>
+    
       <div className="h-12">
       </div>
     </>

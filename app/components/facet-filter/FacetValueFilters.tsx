@@ -40,8 +40,9 @@ export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
         <h3 style={{
           fontSize: '20px',
           lineHeight: '28px',
-          fontWeight: '600',
+          fontWeight: '300',
           color: 'white',
+          letterSpacing: '0.15em',
           textTransform: 'uppercase',
         }}>
           Filter

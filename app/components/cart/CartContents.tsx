@@ -31,7 +31,7 @@ export function CartContents({
 
             <div className="ml-4 flex-1 flex flex-col">
               <div>
-                <div className="flex justify-between text-base font-medium text-gray-900">
+                <div className="flex justify-between text-base uppercase text-gray-900">
                   <h3>
                     <Link to={`/products/${line.productVariant.product.slug}`}>
                       {line.productVariant.name}
