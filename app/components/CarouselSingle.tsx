@@ -24,7 +24,7 @@ export default function CarouselSingle({productAsset}) {
 
   return (
     <MotionConfig transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}>
-      <div className="w-full h-full flex flex-col justify-center items-center border-discogray border-4">
+      <div className="w-full h-full flex flex-col justify-center items-center">
         {/* ↓ Parent Container */}
         <div
           // Added ref to Parent Container so we can use
@@ -86,35 +86,38 @@ export default function CarouselSingle({productAsset}) {
               </div>
             ))}
           </motion.div>
+          <div className="h-full">
           <AnimatePresence initial={false}>
             {index > 0 && (
               <motion.button
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.7 }}
+                animate={{ opacity: 0.8 }}
                 exit={{ opacity: 0, pointerEvents: "none" }}
                 whileHover={{ opacity: 1 }}
-                className="absolute left-2 top-1/2 -mt-4 flex h-8 w-8 items-center justify-center rounded-full bg-black shadow-lg"
+                className="absolute bottom-0 light-0 flex h-12 w-12 items-center justify-center bg-black"
                 onClick={() => setIndex(index - 1)}
               >
-                <DiscoPfeilLinks className="h-9 w-9 opacity-70"/>
+                <DiscoPfeilLinks className="h-9 w-9 opacity-80"/>
               </motion.button>
             )}
           </AnimatePresence>
-
+          </div>
+          <div className="h-full">
           <AnimatePresence initial={false}>
             {index + 1 < productAsset.length && (
               <motion.button
                 initial={{ opacity: 0 }}
-                animate={{ opacity: 0.7 }}
+                animate={{ opacity: 0.8 }}
                 exit={{ opacity: 0, pointerEvents: "none" }}
                 whileHover={{ opacity: 1 }}
-                className="absolute right-2 top-1/2 -mt-4 flex h-8 w-8 items-center justify-center rounded-full bg-black shadow-lg"
+                className="absolute bottom-0 right-0 flex h-12 w-12 items-center justify-center bg-black"
                 onClick={() => setIndex(index + 1)}
               >
-                <DiscoPfeilRechts className="h-9 w-9 opacity-70"/>
+                <DiscoPfeilRechts className="h-9 w-9 opacity-80"/>
               </motion.button>
             )}
           </AnimatePresence>
+          </div>
         </div>
       </div>
     </MotionConfig>

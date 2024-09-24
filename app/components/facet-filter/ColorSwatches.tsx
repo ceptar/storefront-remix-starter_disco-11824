@@ -1,21 +1,21 @@
 import { getTailwindColorClass } from '~/components/facet-filter/GetTailwindColorClass';
-import DiscoLightningFill from '../svgs/DiscoLightningFill';
+import DiscoLightningInner from '../svgs/DiscoLightningInner';
 
 
 export function ColorSwatches({ colors }) {
   return (
-    <div className="flex flex-wrap gap-2 mt-4">
+    <div className="flex flex-wrap items-center justify-items-center gap-2 mt-4">
       {colors.map((color, index) => (
         <div key={color.id}>
-        <DiscoLightningFill
+        <div
           
-          className={`absolute w-9 h-9 rounded-full border-4 border-discogray ${getTailwindColorClass(
+          className={`absolute w-8 h-8 border-2 border-discogray rounded-full  ${getTailwindColorClass(
             color.name,
           )}`}
           title={color.name}
         />
-        <DiscoLightningFill
-          className="fill-discogray relative w-9 h-9 rounded-full"
+        <DiscoLightningInner
+          className="relative fill-discogray w-8 h-8 rounded-full "
 
            />
           

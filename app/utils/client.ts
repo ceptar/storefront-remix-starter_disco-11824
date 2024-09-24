@@ -4,8 +4,8 @@ import React from 'react'
 // in localStorage using this key.
 const AUTH_TOKEN_KEY = 'auth_token';
 // VENDURESHOPAPI
-export const DEMO_API_URL = 'https://discobabes.store/shop-api';
-const API_URL = 'https://discobabes.store/shop-api';
+export const DEMO_API_URL = 'https://discobabes.club/shop-api';
+const API_URL = 'https://discobabes.club/shop-api';
 // process.env.VENDURE_API_URL || 
 
   // export const DEMO_API_URL = 'https://readonlydemo.vendure.io/shop-api';
@@ -14,7 +14,7 @@ const API_URL = 'https://discobabes.store/shop-api';
   // export const DEMO_API_URL = 'https://discobabes.club/shop-api'
   // export const DEMO_API_URL = 'https://app--server--5x7w9zx7qk9w.code.run/shop-api';
   // export const DEMO_API_URL = 'https://discobabes.store/shop-api';
-
+  // export const DEMO_API_URL = 'https://discobabes.club/shop-api';
 
 let languageCode: string | undefined;
 let channelToken: string | undefined;
