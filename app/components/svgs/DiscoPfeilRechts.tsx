@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { SVGProps } from "react";
 
-const DiscoPfeilRechts = ({ width = 24, height = 24, fill = "black", ...props }) => (
+const DiscoPfeilRechts = ({ width = 24, height = 24, fill = "white", ...props }) => (
     <svg
       width={width}
       height={height}
