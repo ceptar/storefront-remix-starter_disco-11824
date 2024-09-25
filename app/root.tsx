@@ -143,10 +143,9 @@ export default function App() {
           adjustOrderLine={adjustOrderLine}
           removeItem={removeItem}
         />
+        <Footer collections={collections} ></Footer>
         <ScrollRestoration />
         <Scripts />
-        <Footer collections={collections} ></Footer>
-
       </body>
     </html>
   );

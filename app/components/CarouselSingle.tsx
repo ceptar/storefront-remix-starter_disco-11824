@@ -94,7 +94,7 @@ export default function CarouselSingle({productAsset}) {
                 animate={{ opacity: 0.8 }}
                 exit={{ opacity: 0, pointerEvents: "none" }}
                 whileHover={{ opacity: 1 }}
-                className="absolute bottom-0 light-0 flex h-12 w-12 items-center justify-center bg-black"
+                className="absolute bottom-0 left-0 flex h-12 w-12 items-center justify-center bg-black"
                 onClick={() => setIndex(index - 1)}
               >
                 <DiscoPfeilLinks className="h-9 w-9 opacity-80"/>
