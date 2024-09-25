@@ -179,7 +179,7 @@ export default function ProductSlug() {
                   </div>
 
                   {/* ADD TO CART  */}
-                  <div className="relative w-full">
+                  <div className="relative w-full pr-[3px]">
 
                     <button
                       type="submit"

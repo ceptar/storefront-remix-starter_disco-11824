@@ -5,14 +5,14 @@ const Hamburger = ({
   ...props
 }: SVGProps<SVGSVGElement>) => (
   <svg
-    viewBox="0 0 480 480"
+    viewBox="0 0 24 24"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     style={{ color: fill }}
     {...props}
   >
-<path d="M387 152.198V184.485H92V152.198H387Z" fill="currentColor"/>
-<path d="M92 296.392V328.679H387V296.392H92Z" fill="currentColor"/>
+<path d="M3 16.125V14.625H20.5V16.125H3ZM3 8.5V7H20.5V8.5H3Z" fill="currentColor"/>
+
   </svg>
 );
 export default Hamburger;

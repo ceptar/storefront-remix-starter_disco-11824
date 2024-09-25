@@ -25,10 +25,10 @@ export default function Footer({ collections }: RootLoaderData) {
   console.log('Collection Tree:', collectionTree);
 
   return (
-<div className="relative w-full h-full">
+<div className="relative text-white w-full h-full">
   {/* Gradient background */}
-  <div className="absolute inset-0 disco-gradient [--opacity:0.1]"></div>
-  <div className="absolute inset-0 opacity-80">
+  <div className="absolute inset-0 bg-discogray"></div>
+  <div className="absolute inset-0 opacity-10">
     <svg width="100%" height="100%">
       <pattern id="pattern-disco" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
       <path 
@@ -52,7 +52,7 @@ fill="white"/>
 
 
 
-          <h3 className="text-sm font-semibold text-discogray tracking-[0.25em] uppercase">
+          <h3 className="text-sm font-semibold tracking-[0.25em] uppercase">
             Company
           </h3>
           <ul className="my-2">
@@ -60,7 +60,7 @@ fill="white"/>
               <li key={item.name}>
                 <a
                   href={item.href}
-                  className="text-md font-metrolight1 text-discogray hover:underline"
+                  className="text-md font-metrolight1  hover:underline"
                 >
                   {item.name}
                 </a>
@@ -72,7 +72,7 @@ fill="white"/>
 
         </div>
         <div className="w-full px-4 lg:w-1/4 md:w-1/2 mt-[2rem]">
-          <h3 className="text-sm font-semibold text-discogray tracking-[0.25em] uppercase">
+          <h3 className="text-sm font-semibold  tracking-[0.25em] uppercase">
             Shop
           </h3>
 
@@ -85,7 +85,7 @@ fill="white"/>
 
         </div>
         <div className="w-full px-4 lg:w-1/4 md:w-1/2 mt-[2rem]">
-          <h3 className="text-sm font-semibold text-discogray tracking-[0.25em] uppercase">
+          <h3 className="text-sm font-semibold  tracking-[0.25em] uppercase">
             Support
           </h3>
           <ul className="my-2">
@@ -93,7 +93,7 @@ fill="white"/>
               <li key={item.name}>
                 <a
                   href={item.href}
-                  className="text-md font-metrolight1 text-discogray hover:underline"
+                  className="text-md font-metrolight1  hover:underline"
                 >
                   {item.name}
                 </a>
@@ -115,10 +115,10 @@ fill="white"/>
       </div>
       <div className="flex flex-row w-full px-4 mb-8 mt-8 xl:mt-0">
         <div className="flex flex-col">
-            <h3 className="text-sm font-semibold text-discogray tracking-[0.25em] uppercase">
+            <h3 className="text-sm font-semibold  tracking-[0.25em] uppercase">
               Subscribe to our newsletter
             </h3>
-            <span className="mt-4 text-md font-metrolight1 text-discogray">
+            <span className="mt-4 text-md font-metrolight1 ">
               Be the first to know about exclusive offers & deals.
             </span>
             <form className="mt-4 sm:flex sm:max-w-md">
@@ -137,7 +137,7 @@ fill="white"/>
               <div className="mt-3 sm:mt-0 sm:ml-3 sm:flex-shrink-0">
                 <button
                   type="submit"
-                  className="w-full bg-discogray border border-transparent py-2 px-6 flex items-center justify-center tracking-[0.25em] text-sm uppercase text-white hover:bg-primary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-primary-500"
+                  className="w-full bg-discoyellow-200 border border-transparent py-2 px-6 flex items-center justify-center tracking-[0.25em] text-sm uppercase text-discogray hover:bg-discoyellow-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-primary-500"
                 >
                   Subscribe
                 </button>

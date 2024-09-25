@@ -94,10 +94,10 @@ export default function CarouselSingle({productAsset}) {
                 animate={{ opacity: 0.8 }}
                 exit={{ opacity: 0, pointerEvents: "none" }}
                 whileHover={{ opacity: 1 }}
-                className="absolute bottom-0 left-0 flex h-12 w-12 items-center justify-center"
+                className="absolute bottom-0 left-0 flex h-9 w-9 items-center justify-center"
                 onClick={() => setIndex(index - 1)}
               >
-                <DiscoPfeilLinks className="h-12 w-12 bg-black fill-white opacity-80"/>
+                <DiscoPfeilLinks className="h-9 w-9 bg-discogray backdrop-blur-md text-white opacity-85 -ml-1 bg-blend-difference"/>
               </motion.button>
             )}
           </AnimatePresence>
@@ -110,10 +110,10 @@ export default function CarouselSingle({productAsset}) {
                 animate={{ opacity: 0.8 }}
                 exit={{ opacity: 0, pointerEvents: "none" }}
                 whileHover={{ opacity: 1 }}
-                className="absolute bottom-0 right-0 flex h-12 w-12 items-center justify-center"
+                className="absolute bottom-0 right-0 flex h-9 w-9 items-center justify-center"
                 onClick={() => setIndex(index + 1)}
               >
-                <DiscoPfeilRechts className="h-12 w-12 bg-black fill-white opacity-80"/>
+                <DiscoPfeilRechts className="h-9 w-9 bg-discogray backdrop-blur-md text-white opacity-85 -mr-1 bg-blend-difference"/>
               </motion.button>
             )}
           </AnimatePresence>

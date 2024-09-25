@@ -61,13 +61,13 @@ export function Header({
             aria-label="Open cart tray"
           >
             <Cart
-              className="w-12 h-12 z-40"
+              className="w-9 h-9 z-40"
               fill={`rgba(${255 * (1 - headerOpacity - rootRouteOpacity)}, ${
                 255 * (1 - headerOpacity - rootRouteOpacity)
               }, ${255 * (1 - headerOpacity - rootRouteOpacity)})`}
             />
             {cartQuantity ? (
-              <div className="top-[15px] left-[4px] w-5 h-5 z-40 absolute items-center justify-center rounded-full text-sm font-bold bg-discoyellow-200 text-discogray">
+              <div className="top-[24px] left-[16px] w-5 h-5 z-40 absolute items-center font-fw700 justify-center rounded-full text-sm bg-discoyellow-200 text-discogray">
                 {cartQuantity}
               </div>
             ) : (
