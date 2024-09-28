@@ -21,9 +21,7 @@ import { ColorSwatches } from '~/components/facet-filter/ColorSwatches';
 import { StockLevelLabel } from '~/components/products/StockLevelLabel';
 import CarouselSingle from '~/components/CarouselSingle';
 // import TopReviews from '~/components/products/TopReviews';
-import { ScrollableContainer } from '~/components/products/ScrollableContainer';
 // import { useTranslation } from 'react-i18next';
-import { Button } from '~/components/Button';
 
 export const meta: MetaFunction = ({ data }) => {
   return [
@@ -109,7 +107,7 @@ export default function ProductSlug() {
           {/* Image container */}
           <div className="flex flex-col sm:flex-row">
             <div className="w-full flex-row sm:flex-col sm:w-1/2 py-4 pl-4 pr-4 sm:pr-2 flex sm:justify-end">
-              <div className="h-full w-fit border-discogray border-4 overflow-hidden">
+              <div className="h-full w-fit border-discogray border-[4px] overflow-hidden">
                 <CarouselSingle productAsset={productAsset} />
               </div>
             </div>
