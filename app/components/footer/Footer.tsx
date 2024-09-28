@@ -105,7 +105,7 @@ fill="white"/>
 
         <div className="mx-auto">
               <LogoTwoLines
-                fill="#000"
+                fill="#fff"
                 className="-ml-2 mr-auto max-h-[5rem]"
               />
             </div>

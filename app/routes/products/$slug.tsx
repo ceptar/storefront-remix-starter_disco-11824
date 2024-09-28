@@ -179,16 +179,16 @@ export default function ProductSlug() {
                   </div>
 
                   {/* ADD TO CART  */}
-                  <div className="relative w-full pr-[3px]">
+                  <div className="relative w-full pr-[4px]">
 
                     <button
                       type="submit"
                       className={`
-      relative w-full h-12 text-sm uppercase tracking-[0.2em] 
-      text-black bg-black border-[3px] border-black
-      py-2.5 px-5 my-2 cursor-pointer shadow-[3px_3px_black]
-      active:translate-x-[3px] active:translate-y-[3px] active:shadow-none
-      transition-all duration-100 ease-in-out
+      relative w-full h-12 text-sm font-black uppercase tracking-[0.2em] 
+      text-black bg-black border-[2px] border-black
+      py-2.5 px-5 my-2 cursor-pointer shadow-[4px_4px_black]
+      active:translate-x-[4px] active:translate-y-[4px] active:shadow-none
+      transition-all duration-300 ease-in-out
       ${activeOrderFetcher.state !== 'idle' ? 'opacity-50' : ''}
       ${qtyInCart === 0 ? 'hover:bg-opacity-80' : 'hover:bg-opacity-80'}
     `}

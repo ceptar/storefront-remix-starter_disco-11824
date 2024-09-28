@@ -5,6 +5,7 @@ import {
   Links,
   Meta,
   Outlet,
+  redirect,
   Scripts,
   ScrollRestoration,
   ShouldRevalidateFunction,
@@ -12,6 +13,9 @@ import {
   useRouteError,
   MetaFunction,
 } from '@remix-run/react';
+import GdprBanner from "~/components/gdpr/GdprBanner";
+import GdprTrackingScript from "~/components/gdpr/GdprTrackingScript";
+import { gdprConsent } from './cookies';
 import styles from './tailwind.css';
 import { Header } from './components/header/Header';
 import {
@@ -74,23 +78,50 @@ export async function loader({ request, params, context }: DataFunctionArgs) {
   //   (collection) => collection.parent?.name === '__root_collection__',
   // );
   const activeCustomer = await getActiveCustomer({ request });
-  const locale = 'en';
+  const cookieHeader = request.headers.get('Cookie');
+  const cookie = (await gdprConsent.parse(cookieHeader)) || {};
   const loaderData: RootLoaderData = {
     activeCustomer,
     activeChannel: await activeChannel({ request }),
     // collections: topLevelCollections,
     collections: collections,
-    locale: locale, // Always set to English
+    locale: 'en', // Always set to English
   };
   console.log('loaderData', loaderData);
-  return json(loaderData, { headers: activeCustomer._headers });
+
+  return json(
+    {
+      ...loaderData,
+      showGdprBanner: !cookie.gdprConsent,  // GDPR cookie
+      track: cookie.gdprConsent,  // GDPR consent for tracking
+    },
+    { headers: activeCustomer._headers }
+  );
+}
+export async function action({ request }: { request: Request }) {
+  const formData = await request.formData();
+  const cookieHeader = request.headers.get('Cookie');
+  const cookie = (await gdprConsent.parse(cookieHeader)) || {};
+
+  // Handle GDPR consent submission
+  if (formData.get('accept-gdpr') === 'true') {
+    cookie.gdprConsent = true;
+    return redirect("/", {
+      headers: {
+        "Set-Cookie": await gdprConsent.serialize(cookie),
+      },
+    });
+  }
+
+  // Here you can merge any other actions you need.
+  return null;  // Fallback for cases where no action is required
 }
 
 export default function App() {
   const [open, setOpen] = useState(false);
   const loaderData = useLoaderData<RootLoaderData>();
   const { collections } = loaderData;
-  const { locale } = useLoaderData<typeof loader>();
+  const { locale, showGdprBanner, track } = useLoaderData<typeof loader>();
   // const { i18n } = useTranslation();
   const {
     activeOrderFetcher,
@@ -143,8 +174,10 @@ export default function App() {
           adjustOrderLine={adjustOrderLine}
           removeItem={removeItem}
         />
-        <Footer collections={collections} ></Footer>
+        <Footer collections={collections} />
+        <GdprBanner showGdprBanner={showGdprBanner} />  {/* GDPR banner display */}
         <ScrollRestoration />
+        {track && <GdprTrackingScript track={track} />}  {/* GDPR tracking script */}
         <Scripts />
       </body>
     </html>
