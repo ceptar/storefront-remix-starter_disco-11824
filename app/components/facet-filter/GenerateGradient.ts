@@ -1,6 +1,7 @@
 import { getTailwindColorClass } from './GetTailwindColorClass';
+import { ColorSwatchesProps } from '~/providers/interfaces';
 
-export function generateGradient({ colors }) {
+export function generateGradient({ colors }: ColorSwatchesProps) {
   const getColorValue = (color) => {
     const tailwindClass = getTailwindColorClass(color.name);
     // Convert Tailwind classes to actual color values

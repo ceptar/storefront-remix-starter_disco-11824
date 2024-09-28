@@ -2,6 +2,12 @@ import * as React from 'react';
 import { Form } from '@remix-run/react';
 import { getTailwindColorClass } from './GetTailwindColorClass';
 
+interface FacetValueFiltersProps {
+  results: any;
+  filterIds: string[];
+  updateFilterIds: (newFilterIds: string[]) => void;
+}
+
 // Add this CSS class to your global styles or component-specific styles
 const noSelectClass = `
   .no-select {
@@ -14,7 +20,7 @@ const noSelectClass = `
   }
 `;
 
-export function FacetValueFilters({ results, filterIds, updateFilterIds }) {
+export function FacetValueFilters({ results, filterIds, updateFilterIds }: FacetValueFiltersProps) {
   const onTagClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>, id: string) => {
     event.preventDefault();
     event.stopPropagation();

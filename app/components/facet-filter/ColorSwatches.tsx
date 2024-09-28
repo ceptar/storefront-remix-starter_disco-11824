@@ -1,11 +1,12 @@
 import { getTailwindColorClass } from '~/components/facet-filter/GetTailwindColorClass';
 import DiscoLightningInner from '../svgs/DiscoLightningInner';
+import { ColorSwatchesProps } from '~/providers/interfaces';
 
 
-export function ColorSwatches({ colors }) {
+export function ColorSwatches({ colors }: ColorSwatchesProps) {
   return (
     <div className="flex flex-wrap items-center justify-items-center mt-4 ">
-      {colors.map((color, index) => (
+      {colors.map((color) => (
         <div key={color.id}>
         <div
           
@@ -15,7 +16,7 @@ export function ColorSwatches({ colors }) {
           title={color.name}
         />
         <DiscoLightningInner
-          className="relative fill-discogray w-9 h-9 border-2 border-discogray border-collapse -mr-1"
+          className="relative fill-discogray w-9 h-9 border-2 border-discogray border-collapse  -mr-1"
 
            />
           
