@@ -9,7 +9,7 @@ interface GdprTrackingScriptProps {
     return (
       <>
         {/* Replace the src with your actual analytics script */}
-        <script src="/dummy-analytics-script.ts"></script>
+        <script src="/dummy-analytics-script.js"></script>
       </>
     );
   }

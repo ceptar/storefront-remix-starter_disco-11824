@@ -156,7 +156,7 @@ export default function CheckoutPayment() {
             )}
           </div>
         ) : paymentMethod.code.includes('stripe') ? (
-          <div className="py-12" key={paymentMethod.id}>
+          <div className="py-12 w-full" key={paymentMethod.id}>
             {stripeError ? (
               <div>
                 <p className="text-red-700 font-bold">

@@ -14,6 +14,9 @@ import { Breadcrumbs } from '~/components/Breadcrumbs';
 import { APP_META_TITLE } from '~/constants';
 import { CartLoaderData } from '~/routes/api/active-order';
 import { getSessionStorage } from '~/sessions';
+import { Elements } from '@stripe/react-stripe-js';
+import { ExpressCheckoutButton } from '~/components/checkout/sripe/ExpressCheckoutButton';
+import { loadStripe } from '@stripe/stripe-js';
 import { ErrorCode, ErrorResult } from '~/generated/graphql';
 import Alert from '~/components/Alert';
 import { generateGradient } from '~/components/facet-filter/GenerateGradient';
@@ -22,7 +25,6 @@ import { StockLevelLabel } from '~/components/products/StockLevelLabel';
 import CarouselSingle from '~/components/CarouselSingle';
 // import TopReviews from '~/components/products/TopReviews';
 // import { useTranslation } from 'react-i18next';
-
 export const meta: MetaFunction = ({ data }) => {
   return [
     {
@@ -35,6 +37,7 @@ export const meta: MetaFunction = ({ data }) => {
 
 export async function loader({ params, request }: DataFunctionArgs) {
   const { product } = await getProductBySlug(params.slug!, { request });
+
   if (!product) {
     throw new Response('Not Found', {
       status: 404,
@@ -51,10 +54,9 @@ export async function loader({ params, request }: DataFunctionArgs) {
       headers: {
         'Set-Cookie': await sessionStorage.commitSession(session),
       },
-    },
+    }
   );
 }
-
 export const shouldRevalidate: ShouldRevalidateFunction = () => true;
 
 export default function ProductSlug() {
@@ -93,7 +95,6 @@ export default function ProductSlug() {
   const colorFacetValues = product.facetValues.filter(
     (fv) => fv.facet.code.toLowerCase() === 'colors',
   );
-
   const [featuredAsset, setFeaturedAsset] = useState(
     selectedVariant?.featuredAsset,
   );
