@@ -16,7 +16,7 @@ export function ColorSwatches({ colors }: ColorSwatchesProps) {
           title={color.name}
         />
         <DiscoLightningInner
-          className="relative fill-discogray w-9 h-9 border-2 border-discogray border-collapse  -mr-1"
+          className="relative fill-discogray w-9 h-9 border-[2px] border-discogray border-collapse  -mr-[2px]"
 
            />
           

@@ -59,7 +59,7 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
             {/* Menu */}
 
             <div className="flex flex-row justify-between items-center h-20 border-b border-gray-500">
-              <h2 className="pl-4 text-xl font-bold tracking-[0.15em] uppercase text-white">
+              <h2 className="pl-4 text-xl font-bold tracking-[0.05em] uppercase text-white">
                 Menu
                 </h2>
 

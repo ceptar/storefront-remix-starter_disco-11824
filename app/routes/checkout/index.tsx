@@ -171,7 +171,7 @@ export default function CheckoutShipping() {
             <div className="mt-4">
               <label
                 htmlFor="emailAddress"
-                className="block text-sm font-fw400 text-gray-700"
+                className="text-sm font-fw400 text-gray-700 hidden"
               >
                 Email Address
               </label>
@@ -182,6 +182,7 @@ export default function CheckoutShipping() {
                   name="emailAddress"
                   autoComplete="email"
                   defaultValue={customer?.emailAddress}
+                  placeholder="Email Address"
                   className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
                 />
               </div>
@@ -195,7 +196,7 @@ export default function CheckoutShipping() {
               <div>
                 <label
                   htmlFor="firstName"
-                  className="block text-sm font-fw400 text-gray-700"
+                  className="text-sm font-fw400 text-gray-700 hidden"
                 >
                   First Name
                 </label>
@@ -206,6 +207,7 @@ export default function CheckoutShipping() {
                     name="firstName"
                     autoComplete="given-name"
                     defaultValue={customer?.firstName}
+                    placeholder="First Name"
                     className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
                   />
                 </div>
@@ -214,7 +216,7 @@ export default function CheckoutShipping() {
               <div>
                 <label
                   htmlFor="lastName"
-                  className="block text-sm font-fw400 text-gray-700"
+                  className="hidden text-sm font-fw400 text-gray-700"
                 >
                   Last Name
                 </label>
@@ -225,6 +227,8 @@ export default function CheckoutShipping() {
                     name="lastName"
                     autoComplete="family-name"
                     defaultValue={customer?.lastName}
+                    placeholder="Last Name"
+
                     className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
                   />
                 </div>

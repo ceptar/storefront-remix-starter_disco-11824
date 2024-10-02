@@ -46,9 +46,9 @@ export function FacetValueFilters({ results, filterIds, updateFilterIds }: Facet
         <h3 style={{
           fontSize: '20px',
           lineHeight: '28px',
-          fontWeight: '300',
+          fontWeight: '700',
           color: 'white',
-          letterSpacing: '0.15em',
+          letterSpacing: '0.05em',
           textTransform: 'uppercase',
         }}>
           Filter
@@ -57,13 +57,13 @@ export function FacetValueFilters({ results, filterIds, updateFilterIds }: Facet
 
       {Object.keys(groupedFacets).map((group) => (
         <div key={group} style={{
-          paddingTop: '32px',
+          paddingTop: '20px',
           paddingLeft: '16px',
           paddingRight: '16px',
         }}>
           <h3 style={{
-            fontSize: '28px',
-            fontWeight: '500',
+            fontSize: '20px',
+            fontWeight: '700',
             lineHeight: '120%',
             color: '#fff',
             textTransform: 'uppercase',

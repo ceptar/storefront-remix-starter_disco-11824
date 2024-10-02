@@ -5,8 +5,10 @@ import React, {
   useEffect,
 } from 'react';
 import type { PanInfo } from 'framer-motion';
-import { motion, useAnimation, useMotionValue, useSpring } from 'framer-motion';
+import { AnimatePresence, motion, useAnimation, useMotionValue, useSpring } from 'framer-motion';
 import { wrap } from 'popmotion';
+import DiscoPfeilLinks from './svgs/DiscoPfeilLinks';
+import DiscoPfeilRechts from './svgs/DiscoPfeilRechts';
 import { Link } from '@remix-run/react';
 import { ProductCard } from '~/components/products/ProductCard';
 
@@ -213,8 +215,41 @@ export default function Carousel({ featuredProducts }) {
               onMouseDown={(e) => e.preventDefault()} // Prevent drag image behavior
               onClick={disableDragClick}
             ></Link>
+            
           </div>
         ))}
+        {/* <div className="h-full">
+          <AnimatePresence initial={false}>
+            {currIndex > 0 && (
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.8 }}
+                exit={{ opacity: 0, pointerEvents: "none" }}
+                whileHover={{ opacity: 1 }}
+                className="absolute top-[calc(50%-18px)] left-0 flex h-9 w-9 items-center justify-center cursor-pointer z-[2]"
+                onClick={() => (currIndex - 1)}
+              >
+                <DiscoPfeilLinks className="h-9 w-9 bg-discogray backdrop-blur-md text-white opacity-85 -ml-1 bg-blend-difference"/>
+              </motion.button>
+            )}
+          </AnimatePresence>
+          </div>
+          <div className="h-full">
+          <AnimatePresence initial={false}>
+            {currIndex + 1 < featuredProducts.length && (
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.8 }}
+                exit={{ opacity: 0, pointerEvents: "none" }}
+                whileHover={{ opacity: 1 }}
+                className="absolute top-[calc(50%-18px)] right-0 flex h-9 w-9 items-center justify-center cursor-pointer z-[2]"
+                onClick={() => (currIndex + 1)}
+              >
+                <DiscoPfeilRechts className="h-9 w-9 bg-discogray backdrop-blur-md text-white opacity-85 -mr-1 bg-blend-difference"/>
+              </motion.button>
+            )}
+          </AnimatePresence>
+          </div> */}
       </motion.div>
     </div>
     </div>

@@ -13,30 +13,31 @@ export function AddressForm({
   // const { t } = useTranslation();
 
   return (
-    <div className="mt-4 grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-4">
+    <div className="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
       <div>
         <label
           htmlFor="fullName"
-          className="block text-sm font-fw400 text-gray-700"
+          className="hidden text-sm font-fw400 text-gray-700"
         >
           Full Name
         </label>
         <div className="mt-1">
+
           <input
             type="text"
             id="fullName"
             name="fullName"
             defaultValue={defaultFullName}
             autoComplete="given-name"
+            placeholder='Full Name'
             className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-          />
+            />
         </div>
-      </div>
-
-      <div className="sm:col-span-2">
+        </div>
+        <div>
         <label
           htmlFor="company"
-          className="block text-sm font-fw400 text-gray-700"
+          className="hidden text-sm font-fw400 text-gray-700"
         >
          Company
         </label>
@@ -46,15 +47,16 @@ export function AddressForm({
             name="company"
             id="company"
             defaultValue={address?.company ?? ''}
+            placeholder='Company'
             className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
-          />
+            />
         </div>
       </div>
 
       <div className="sm:col-span-2">
         <label
           htmlFor="streetLine1"
-          className="block text-sm font-fw400 text-gray-700"
+          className="hidden text-sm font-fw400 text-gray-700"
         >
 Street 1/2
         </label>
@@ -65,12 +67,13 @@ Street 1/2
             id="streetLine1"
             defaultValue={address?.streetLine1 ?? ''}
             autoComplete="street-address"
+            placeholder='Street'
             className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
           />
         </div>
       </div>
 
-      <div className="sm:col-span-2">
+      {/* <div className="sm:col-span-2">
         <label
           htmlFor="streetLine2"
           className="block text-sm font-fw400 text-gray-700"
@@ -86,12 +89,12 @@ Street 2/2
             className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
           />
         </div>
-      </div>
+      </div> */}
 
       <div>
         <label
           htmlFor="city"
-          className="block text-sm font-fw400 text-gray-700"
+          className="hidden text-sm font-fw400 text-gray-700"
         >
 City
         </label>
@@ -102,6 +105,7 @@ City
             id="city"
             autoComplete="address-level2"
             defaultValue={address?.city ?? ''}
+            placeholder='City'
             className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
           />
         </div>
@@ -110,7 +114,7 @@ City
       <div>
         <label
           htmlFor="countryCode"
-          className="block text-sm font-fw400 text-gray-700"
+          className="hidden text-sm font-fw400 text-gray-700"
         >
 Country
         </label>
@@ -120,6 +124,7 @@ Country
               id="countryCode"
               name="countryCode"
               defaultValue={address?.countryCode ?? 'AT'}
+              aria-placeholder='Country'
               className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
             >
               {availableCountries.map((item) => (
@@ -135,7 +140,7 @@ Country
       <div>
         <label
           htmlFor="province"
-          className="block text-sm font-fw400 text-gray-700"
+          className="hidden text-sm font-fw400 text-gray-700"
         >
 Province
         </label>
@@ -146,6 +151,7 @@ Province
             id="province"
             defaultValue={address?.province ?? ''}
             autoComplete="address-level1"
+            placeholder='Province'
             className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
           />
         </div>
@@ -154,7 +160,7 @@ Province
       <div>
         <label
           htmlFor="postalCode"
-          className="block text-sm font-fw400 text-gray-700"
+          className="hidden text-sm font-fw400 text-gray-700"
         >
 Zip Code
         </label>
@@ -165,6 +171,7 @@ Zip Code
             id="postalCode"
             defaultValue={address?.postalCode ?? ''}
             autoComplete="postal-code"
+            placeholder='ZIP'
             className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
           />
         </div>
@@ -173,7 +180,7 @@ Zip Code
       <div className="sm:col-span-2">
         <label
           htmlFor="phoneNumber"
-          className="block text-sm font-fw400 text-gray-700"
+          className="hidden text-sm font-fw400 text-gray-700"
         >
 Phone Number
         </label>
@@ -184,6 +191,7 @@ Phone Number
             id="phoneNumber"
             defaultValue={address?.phoneNumber ?? ''}
             autoComplete="tel"
+            placeholder='Phone Number'
             className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
           />
         </div>
