@@ -22,12 +22,15 @@ export function ShippingMethodSelector({
   // const { t } = useTranslation();
 
   return (
+    <div>
+    <div className="text-md text-center font-bold font-discogray uppercase tracking-[0.05em]">
+    Shipping Method
+  </div>
     <RadioGroup value={shippingMethodId} onChange={onChange}>
-      <RadioGroup.Label className="text-lg font-fw400 text-gray-900">
+      <RadioGroup.Label className="hidden text-md text-center font-bold font-discogray uppercase tracking-[0.05em]">
         Shipping Method
       </RadioGroup.Label>
-
-      <div className="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
+      <div className="mt-4 grid grid-cols-1 gap-y-4 sm:grid-cols-2 sm:gap-x-4">
         {eligibleShippingMethods.map((shippingMethod) => (
           <RadioGroup.Option
             key={shippingMethod.id}
@@ -42,17 +45,17 @@ export function ShippingMethodSelector({
           >
             {({ checked, active }) => (
               <>
-                <span className="flex-1 flex">
-                  <span className="flex flex-col">
+                <span className="flex-1 flex justify-between">
+                  <span className="flex flex-row w-full">
                     <RadioGroup.Label
                       as="span"
-                      className="block text-sm font-fw400 text-gray-900"
+                      className="flex text-sm font-fw400 text-gray-900"
                     >
                       {shippingMethod.name}
                     </RadioGroup.Label>
                     <RadioGroup.Description
                       as="span"
-                      className="mt-6 text-sm font-fw400 text-gray-900"
+                      className="flex-grow text-sm text-right font-fw400 text-gray-900"
                     >
                       <Price
                         priceWithTax={shippingMethod.priceWithTax}
@@ -81,5 +84,6 @@ export function ShippingMethodSelector({
         ))}
       </div>
     </RadioGroup>
+    </div>
   );
 }

@@ -53,21 +53,22 @@ const AnimatedCollectionsTreemenu: React.FC<{
     parentId?: string,
   ): JSX.Element[] => {
     const result: JSX.Element[] = [];
-
+  
     for (const collection of collections) {
       if (collection.parentId === parentId) {
         const hasChildren = collections.some(c => c.parentId === collection.id);
         const isOpen = openAccordions.includes(collection.id);
-
+  
         const navMenuItem = (
           <NavMenuItem
             index={collection.id.length}
             title={collection.name}
             class={`${collection.parentId ? 'child' : 'parent'}`}
             isOpen={isOpen}
+            hasChildren={hasChildren} // Pass the hasChildren prop
           />
         );
-
+  
         result.push(
           <div key={collection.id}>
             {hasChildren ? (
@@ -95,7 +96,7 @@ const AnimatedCollectionsTreemenu: React.FC<{
         );
       }
     }
-
+  
     return result;
   };
   

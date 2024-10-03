@@ -9,17 +9,19 @@ export function ColorSwatches({ colors }: ColorSwatchesProps) {
       {colors.map((color) => (
         <div key={color.id}>
         <div
-          
-          className={`absolute w-9 h-9 ${getTailwindColorClass(
+          // dieses div absolut setzen, wenn ein weiterer layer wie DiscoLightningInner benutzt wird
+          className={`
+            rounded-full border-[2px] mx-[2px]
+           border-discogray w-6 h-6 ${getTailwindColorClass(
             color.name,
           )}`}
           title={color.name}
         />
-        <DiscoLightningInner
+        {/* <DiscoLightningInner
           className="relative fill-discogray w-9 h-9 border-[2px] border-discogray border-collapse  -mr-[2px]"
 
-           />
-          
+           /> */}
+      
     </div>
     )) }
     </div>

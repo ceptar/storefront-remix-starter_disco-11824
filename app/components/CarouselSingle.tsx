@@ -33,7 +33,7 @@ export default function CarouselSingle({productAsset}) {
           ref={constraintsRef}
           // I added a max-w-[450px] and w-full for responsiveness and
           // so that it was easier to debug the carousel.
-          className="relative w-auto aspect-[5/8] max-h-[70vh] overflow-hidden"
+          className="relative w-full sm:w-auto aspect-[5/8] sm:max-h-[70vh] overflow-hidden"
         >
           {/* ↓ Draggable Container */}
           <motion.div
@@ -94,10 +94,10 @@ export default function CarouselSingle({productAsset}) {
                 animate={{ opacity: 0.8 }}
                 exit={{ opacity: 0, pointerEvents: "none" }}
                 whileHover={{ opacity: 1 }}
-                className="absolute bottom-0 left-0 flex h-9 w-9 items-center justify-center"
+                className="absolute bottom-0 left-0 flex h-10 w-10 items-center justify-center"
                 onClick={() => setIndex(index - 1)}
               >
-                <DiscoPfeilLinks className="h-9 w-9 bg-discogray backdrop-blur-md text-white opacity-85 -ml-1 bg-blend-difference"/>
+                <DiscoPfeilLinks className="h-10 w-10 bg-discogray backdrop-blur-md text-white opacity-85 -ml-1 bg-blend-difference"/>
               </motion.button>
             )}
           </AnimatePresence>
@@ -110,10 +110,10 @@ export default function CarouselSingle({productAsset}) {
                 animate={{ opacity: 0.8 }}
                 exit={{ opacity: 0, pointerEvents: "none" }}
                 whileHover={{ opacity: 1 }}
-                className="absolute bottom-0 right-0 flex h-9 w-9 items-center justify-center"
+                className="absolute bottom-0 right-0 flex h-10 w-10 items-center justify-center"
                 onClick={() => setIndex(index + 1)}
               >
-                <DiscoPfeilRechts className="h-9 w-9 bg-discogray backdrop-blur-md text-white opacity-85 -mr-1 bg-blend-difference"/>
+                <DiscoPfeilRechts className="h-10 w-10 bg-discogray backdrop-blur-md text-white opacity-85 -mr-1 bg-blend-difference"/>
               </motion.button>
             )}
           </AnimatePresence>

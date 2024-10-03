@@ -31,9 +31,9 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
     <div className="flex items-center justify-center">
       <div
         onClick={toggleSlideover}
-        className="flex flex-col bg-opacity-90 cursor-pointer justify-center items-center py-2 text-sm text-discogray-500 transition-all duration-300 ease-out hover:opacity-70"
+        className="flex flex-col bg-opacity-90 cursor-pointer justify-center items-center p-4 text-sm text-discogray-500 transition-all duration-300 ease-out hover:opacity-70"
       >
-        <button>
+        <button className="text-center flex-col items-center justify-center">
           <Hamburger className="w-9 h-9" fill={finalOpacity} />
         </button>
       </div>
@@ -74,13 +74,13 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
                   className="cursor-pointer text-white flex items-center justify-center"
                   onClick={toggleSlideover}
                 >
-                  <X className="w-9 h-9" fill="white" />
+                  <X className="w-10 h-10" fill="white" />
                 </div>
               </div>
             </div>
             <div className="flex-grow overflow-y-auto">
               <div className="flex flex-col">
-                <div className="w-full py-8">
+                <div className="w-full py-8 px-4">
                   <AnimatedCollectionsTreemenu
                     collectionsData={{ collections }}
                     index={0}

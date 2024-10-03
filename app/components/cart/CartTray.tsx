@@ -54,10 +54,10 @@ export function CartTray({
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <div className="w-full border border-discogray">
+              <div className="w-full border-l-[2px] border-discogray">
                 <div className="h-full flex flex-col bg-white bg-opacity-85 shadow-xl">
                   <div className="flex-1">
-                    <div className="flex flex-row justify-between items-center h-20 border-b border-discogray">
+                    <div className="flex flex-row justify-between items-center h-20 border-b-[2px] border-discogray">
                       <Dialog.Title className="pl-4 tracking-[0.05em] text-xl font-bold uppercase text-discogray">
                         Shopping cart
                       </Dialog.Title>
@@ -91,7 +91,7 @@ export function CartTray({
                   </div>
 
                   {activeOrder?.totalQuantity && editable && (
-                    <div className="border-t border-discogray py-6 px-4 sm:px-6">
+                    <div className="border-t-[2px] border-discogray py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-base font-medium text-gray-900">
                         <p>Subtotal</p>
                         <p>

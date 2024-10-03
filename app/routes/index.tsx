@@ -35,8 +35,8 @@ export default function Index() {
           <div className="h-full flex justify-end sm:justify-start items-end pl-4">
           <div className="flex pb-24 mr-auto sm:w-full ">
             <div className="pr-[32px] w-[80vw] md:w-[calc(50vw-32px)]">
-              <div className="filter p-[16px] bg-opacity-75 mix-blend-lighten border-[1px] border-white backdrop-blur-[4px]">
-                <div className="filter p-[16px] bg-white bg-opacity-100 mix-blend-lighten border-[1px] border-black backdrop-blur-[4px]">
+              <div className="filter p-[16px] bg-opacity-75 mix-blend-lighten border-[2px] border-white backdrop-blur-[4px]">
+                <div className="filter p-[16px] bg-white bg-opacity-100 mix-blend-lighten border-[2px] border-black backdrop-blur-[4px]">
                   <span className="font-fw300 tracking-wider uppercase text-2xl sm:text-4xl lg:text-5xl xl:text-7xl">
                     <p className="py-1">life's too short</p>
                     <p>to wear</p>

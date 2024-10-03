@@ -146,14 +146,14 @@ export default function CheckoutShipping() {
   }
 
   return (
-    <div className="">
+    <div className="p-8">
       <div>
-        <h2 className="text-lg font-fw400 text-gray-900">
+        <h2 className="text-md text-center font-bold font-discogray uppercase tracking-[0.05em] ">
           Checkout Details
         </h2>
 
         {isSignedIn ? (
-          <div>
+          <div className="bg-discogray">
             <p className="mt-2 text-gray-600">
               {customer?.firstName} {customer?.lastName}
             </p>
@@ -183,7 +183,7 @@ export default function CheckoutShipping() {
                   autoComplete="email"
                   defaultValue={customer?.emailAddress}
                   placeholder="Email Address"
-                  className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                  className="block w-full border-b-[2px] border-t-0 border-x-0 border-discogray  shadow-sm focus:ring-discogray focus:bg-discoyellow sm:text-sm"
                 />
               </div>
               {error?.errorCode === 'EMAIL_ADDRESS_CONFLICT_ERROR' && (
@@ -192,7 +192,7 @@ export default function CheckoutShipping() {
                 </p>
               )}
             </div>
-            <div className="mt-4 grid grid-cols-1 gap-y-6 sm:grid-cols-2 sm:gap-x-4">
+            <div className="mt-4 grid grid-cols-2 gap-x-4">
               <div>
                 <label
                   htmlFor="firstName"
@@ -208,7 +208,7 @@ export default function CheckoutShipping() {
                     autoComplete="given-name"
                     defaultValue={customer?.firstName}
                     placeholder="First Name"
-                    className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                    className="block w-full border-b-[2px] border-t-0 border-x-0 border-discogray  shadow-sm focus:ring-discogray focus:bg-discoyellow  sm:text-sm"
                   />
                 </div>
               </div>
@@ -229,7 +229,7 @@ export default function CheckoutShipping() {
                     defaultValue={customer?.lastName}
                     placeholder="Last Name"
 
-                    className="block w-full border-gray-300  shadow-sm focus:ring-primary-500 focus:border-primary-500 sm:text-sm"
+                    className="block w-full border-b-[2px] border-t-0 border-x-0 border-discogray  shadow-sm focus:ring-discogray focus:bg-discoyellow  sm:text-sm"
                   />
                 </div>
               </div>
@@ -245,8 +245,8 @@ export default function CheckoutShipping() {
         onChange={() => setAddressFormChanged(true)}
       >
         <input type="hidden" name="action" value="setCheckoutShipping" />
-        <div className="mt-10 border-t border-gray-200 pt-10">
-          <h2 className="text-lg font-fw400 text-gray-900">
+        <div className="mt-4 pt-4">
+          <h2 className="text-md text-center font-bold font-discogray uppercase tracking-[0.05em] ">
            Shipping
           </h2>
         </div>
@@ -267,7 +267,7 @@ export default function CheckoutShipping() {
         )}
       </Form>
 
-      <div className="mt-10 border-t border-gray-200 pt-10">
+      <div className="mt-4 pt-4">
         <ShippingMethodSelector
           eligibleShippingMethods={eligibleShippingMethods}
           currencyCode={activeOrder?.currencyCode}
@@ -286,7 +286,7 @@ export default function CheckoutShipping() {
           canProceedToPayment
             ? 'bg-discoyellow-300 hover:bg-discoyellow-400'
             : 'bg-gray-400',
-          'flex w-full items-center justify-center space-x-2 mt-24 py-3 border border-transparent text-base font-fw400  shadow-sm text-discogray focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-discopurple-500',
+          'flex w-full items-center justify-center space-x-2 mt-4 py-3 border border-transparent text-base font-fw400  shadow-sm text-discogray focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-discopurple-500',
         )}
       >
         <LockClosedIcon className="w-5 h-5"></LockClosedIcon>

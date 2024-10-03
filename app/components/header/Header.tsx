@@ -43,7 +43,7 @@ export function Header({
 
   return (
     <header
-      className="z-40 bg-discogray bg-opacity-75 top-0 flex items-center fixed justify-between h-20 w-full"
+      className="z-40 top-0 flex items-center fixed justify-between border-b-[2px] h-20 w-full"
       style={{
         backgroundColor: `rgba(255, 255, 255, ${headerOpacity})`,
         borderColor: `rgba(${255 * (1 - headerOpacity - rootRouteOpacity)}, ${
@@ -53,8 +53,8 @@ export function Header({
       }}
     >
 
-      <div className="relative px-4 flex flex-row items-center justify-between h-full w-full ">
-        <div className="relative flex flex-col  items-start justify-start w-1/6">
+      <div className="relative flex flex-row items-center justify-between h-full w-full ">
+        <div className="relative flex flex-col items-center justify-center w-20 p-4">
           <button
             className="flex flex-col  bg-opacity-90 shadow-none cursor-pointer justify-center rounded-full items-center py-2 text-sm text-discogray transition-all duration-300 ease-out hover:opacity-70"
             onClick={onCartIconClick}
@@ -67,7 +67,7 @@ export function Header({
               }, ${255 * (1 - headerOpacity - rootRouteOpacity)})`}
             />
             {cartQuantity ? (
-              <div className="top-[24px] left-[-4px] w-5 h-5 z-40 absolute items-center font-fw700 justify-center rounded-full text-sm bg-discoyellow-200 text-discogray">
+              <div className="top-[40px] left-[14px] w-5 h-5 z-40 absolute items-center font-fw700 justify-center rounded-full text-sm bg-discoyellow-200 text-discogray">
                 {cartQuantity}
               </div>
             ) : (
@@ -75,6 +75,8 @@ export function Header({
             )}
           </button>
         </div>
+        <div className="relative flex flex-col items-center justify-center w-20"><div className="w-20 h-20"></div></div>
+
         <div className="z-40 min-w-[100px] max-w-[300px] flex flex-col w-full justify-center mx-auto">
           <Link to="/" className="">
             <Logo
@@ -85,7 +87,9 @@ export function Header({
             />
           </Link>
         </div>
-        <div className="z-40 flex flex-col items-end justify-center w-1/6">
+        <div className="relative flex flex-col items-center justify-center w-20"><div className="w-20 h-20"></div></div>
+
+        <div className="z-40 flex flex-col items-center justify-center">
 
           <Sliderex
             finalOpacity={`rgba(${

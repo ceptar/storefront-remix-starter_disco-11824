@@ -107,14 +107,14 @@ export default function ProductSlug() {
         <div className="w-auto sm:max-w-none flex justify-center items-center">
           {/* Image container */}
           <div className="flex flex-col sm:flex-row">
-            <div className="w-full flex-row sm:flex-col sm:w-1/2 py-4 pl-4 pr-4 sm:pr-2 flex sm:justify-end">
+            <div className="w-full sm:w-1/2 py-4 pl-4 pr-4 flex justify-center sm:justify-end">
               <div className="h-full w-fit border-discogray border-[4px] overflow-hidden">
                 <CarouselSingle productAsset={productAsset} />
               </div>
             </div>
 
             {/* Product info */}
-            <div className="w-full sm:w-1/2 py-4 pr-4 pl-4 sm:pl-2">
+            <div className="w-full sm:w-1/2 py-4 pr-4 pl-4">
               {/* Product info content */}
               <h2 className="uppercase font-metrothin1 tracking-[0.15em] text-4xl py-1">
                 {product.name}

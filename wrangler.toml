@@ -1,2 +1,2 @@
 compatibility_date = "2024-01-11"
-vars = { VENDURE_API_URL="https://discobabes.store/shop-api" }
+vars = { VENDURE_API_URL="https://discobabes.club/shop-api" }
