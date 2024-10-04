@@ -108,7 +108,7 @@ export default function ProductSlug() {
           {/* Image container */}
           <div className="flex flex-col sm:flex-row">
             <div className="w-full sm:w-1/2 py-4 pl-4 pr-4 flex justify-center sm:justify-end">
-              <div className="h-full w-fit border-discogray border-[4px] overflow-hidden">
+              <div className="h-full w-fit border-discogray border-[2px] overflow-hidden">
                 <CarouselSingle productAsset={productAsset} />
               </div>
             </div>

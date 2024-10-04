@@ -75,7 +75,7 @@ export function Header({
             )}
           </button>
         </div>
-        <div className="relative flex flex-col items-center justify-center w-20"><div className="w-20 h-20"></div></div>
+        {/* <div className="relative flex flex-col items-center justify-center w-20"><div className="w-20 h-20"></div></div> */}
 
         <div className="z-40 min-w-[100px] max-w-[300px] flex flex-col w-full justify-center mx-auto">
           <Link to="/" className="">
@@ -87,7 +87,7 @@ export function Header({
             />
           </Link>
         </div>
-        <div className="relative flex flex-col items-center justify-center w-20"><div className="w-20 h-20"></div></div>
+        {/* <div className="relative flex flex-col items-center justify-center w-20"><div className="w-20 h-20"></div></div> */}
 
         <div className="z-40 flex flex-col items-center justify-center">
 
