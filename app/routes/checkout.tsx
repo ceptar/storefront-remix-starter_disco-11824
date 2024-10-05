@@ -27,8 +27,8 @@ export default function Checkout() {
     <div className="bg-white mt-32">
       <div
         className={classNames(
-          isConfirmationPage ? 'lg:max-w-3xl mx-auto' : 'lg:max-w-7xl',
-          'max-w-2xl mx-auto pb-24 px-4',
+          isConfirmationPage ? 'md:max-w-3xl mx-auto' : 'md:max-w-7xl',
+          'mx-auto pb-24 px-4',
         )}
       >
         <h2 className="sr-only">Checkout</h2>
@@ -59,14 +59,14 @@ export default function Checkout() {
           </ol>
           </div>
         </nav> */}
-        <div className="lg:grid lg:grid-cols-2">
-          <div className={isConfirmationPage ? 'lg:col-span-2' : ''}>
+        <div className="md:grid md:grid-cols-2">
+          <div className={isConfirmationPage ? 'md:col-span-2' : ''}>
             <Outlet context={outletContext} />
           </div>
 
           {/* Order summary */}
           {!isConfirmationPage && (
-            <div className="mt-10 lg:mt-0 p-8 bg-gray-50">
+            <div className="mt-10 lg:mt-0 py-8 sm:p-8 bg-gray-100">
               <h2 className="text-md font-bold uppercase text-center tracking-[0.05em] text-discogray mb-12">
                 Order summary
               </h2>

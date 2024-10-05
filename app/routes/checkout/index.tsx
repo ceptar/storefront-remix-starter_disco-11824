@@ -146,7 +146,7 @@ export default function CheckoutShipping() {
   }
 
   return (
-    <div className="p-8">
+    <div className="pt-8 md:px-8">
       <div>
         <h2 className="text-md text-center font-bold font-discogray uppercase tracking-[0.05em] ">
           Checkout Details

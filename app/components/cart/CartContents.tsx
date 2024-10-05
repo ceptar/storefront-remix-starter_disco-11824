@@ -18,7 +18,7 @@ export function CartContents({
   const isEditable = editable !== false;
   return (
     <div className="flow-root">
-      <ul role="list" className="-my-4 divide-y divide-discogray divide-opacity-30">
+      <ul role="list" className="-my-4 ">
         {(orderLines ?? []).map((line) => (
           <li key={line.id} className="py-4 flex">
             <div className="flex-shrink-0 w-24 h-24 border-[2px] border-discogray object-center object-cover items-center justify-center overflow-hidden">
