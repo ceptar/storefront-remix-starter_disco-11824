@@ -74,7 +74,7 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
                   className="cursor-pointer text-white flex items-center justify-center"
                   onClick={toggleSlideover}
                 >
-                  <X className="w-10 h-10" fill="white" />
+                  <X className="w-9 h-9" fill="white" />
                 </div>
               </div>
             </div>

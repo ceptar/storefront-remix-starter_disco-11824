@@ -30,7 +30,7 @@ const NavMenuItem: React.FC<NavMenuItemProps> = ({ index, title, class: classNam
         {hasChildren && ( // Conditionally render the icon only if it's a parent item
 
             <motion.div className="p-1" variants={arrowMotion}>
-            <DiscoLightningFill className="fill-white " width={32} height={32} />
+            <DiscoLightningFill className="fill-white " width={30} height={30} />
           </motion.div>
 
         )}
