@@ -1682,7 +1682,7 @@ export type Mutation = {
   authenticate: AuthenticationResult;
   /** Create a new Customer Address */
   createCustomerAddress: Address;
-  createStripePaymentIntent?: Maybe<Scalars['String']>;
+  createStripePaymentIntent: Scalars['String'];
   /** Delete an existing Address */
   deleteCustomerAddress: Success;
   /**
@@ -2513,6 +2513,8 @@ export enum Permission {
   ReadTaxRate = 'ReadTaxRate',
   /** Grants permission to read Zone */
   ReadZone = 'ReadZone',
+  /** Allows setting a webhook URL */
+  SetWebhook = 'SetWebhook',
   /** SuperAdmin has unrestricted access to all operations */
   SuperAdmin = 'SuperAdmin',
   /** Grants permission to update Administrator */
@@ -3510,7 +3512,7 @@ export type TransitionOrderToStateMutation = { __typename?: 'Mutation', transiti
 export type CreateStripePaymentIntentMutationVariables = Exact<{ [key: string]: never; }>;
 
 
-export type CreateStripePaymentIntentMutation = { __typename?: 'Mutation', createStripePaymentIntent?: string | null };
+export type CreateStripePaymentIntentMutation = { __typename?: 'Mutation', createStripePaymentIntent: string };
 
 export type GenerateBraintreeClientTokenQueryVariables = Exact<{ [key: string]: never; }>;
 

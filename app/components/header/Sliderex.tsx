@@ -58,7 +58,7 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
           <div className="absolute justify-between items-stretch bg-discogray bg-opacity-85 backdrop-blur-md transform w-full h-full flex flex-col">
             {/* Menu */}
 
-            <div className="flex flex-row justify-between items-center h-20 border-b border-gray-500">
+            <div className="flex flex-row justify-between items-center h-20 border-b-[2px]">
               <h2 className="pl-4 text-xl font-bold tracking-[0.05em] uppercase text-white">
                 Menu
                 </h2>
@@ -80,7 +80,7 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
             </div>
             <div className="flex-grow overflow-y-auto">
               <div className="flex flex-col">
-                <div className="w-full py-8 px-4">
+                <div className="w-full">
                   <AnimatedCollectionsTreemenu
                     collectionsData={{ collections }}
                     index={0}

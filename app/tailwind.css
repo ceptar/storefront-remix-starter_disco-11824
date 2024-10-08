@@ -107,15 +107,15 @@ padding: 16px;
   }
 
   .parent {
-    font-size: 20px;
-    font-weight:700;
+    font-size: 28px;
+    font-weight:300;
     line-height: 120%;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-
+    padding: 1rem;
+    height: 80px;
+    border-bottom: 1px solid #ffffff;
   }
   .parent:hover {
     color: #ffffffc0;
@@ -128,6 +128,7 @@ padding: 16px;
     font-weight: 400;
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
+    padding-left: 2rem;
   }
   .child:hover {
     color: #ffffffc0;

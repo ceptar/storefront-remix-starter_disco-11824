@@ -15,7 +15,6 @@ import { APP_META_TITLE } from '~/constants';
 import { CartLoaderData } from '~/routes/api/active-order';
 import { getSessionStorage } from '~/sessions';
 import { Elements } from '@stripe/react-stripe-js';
-import { ExpressCheckoutButton } from '~/components/checkout/sripe/ExpressCheckoutButton';
 import { loadStripe } from '@stripe/stripe-js';
 import { ErrorCode, ErrorResult } from '~/generated/graphql';
 import Alert from '~/components/Alert';
@@ -101,7 +100,15 @@ export default function ProductSlug() {
   const productAsset = product.assets.map((asset) => asset.preview + '?w=full');
   console.log('productImages', productAsset);
   return (
-    <div className="w-full">
+    <div className="w-full relative z-[-2]"
+    style={{
+      background: generateGradient({
+        colors: colorFacetValues,
+      }),
+      backgroundSize: '600% 100%',
+      animation: 'gradient 16s ease infinite',
+    }}>
+<div className="w-full h-full z-[-1] absolute bg-[rgba(255,255,255,0.8)]"></div>
       <div className="h-28 w-full"></div>
       <div className="w-full flex justify-center">
         <div className="w-auto sm:max-w-none flex justify-center items-center">
@@ -114,7 +121,8 @@ export default function ProductSlug() {
             </div>
 
             {/* Product info */}
-            <div className="w-full sm:w-1/2 py-4 pr-4 pl-4">
+            <div className="w-full sm:w-1/2 py-4 pr-4 pl-4 ">
+            
               {/* Product info content */}
               <h2 className="uppercase font-metrothin1 tracking-[0.15em] text-4xl py-1">
                 {product.name}
@@ -184,21 +192,21 @@ export default function ProductSlug() {
                       type="submit"
                       className={`
       relative w-full h-12 text-sm uppercase tracking-[0.2em] 
-      text-black bg-black border-[2px] border-black
+      text-white bg-black border-[2px] border-black
       py-2.5 px-5 my-2 cursor-pointer shadow-[3px_3px_black]
       active:translate-x-[3px] active:translate-y-[3px] active:shadow-none
-      transition-all ease-in-out
+      transition-all
       ${activeOrderFetcher.state !== 'idle' ? '' : ''}
       ${qtyInCart === 0 ? '' : ''}
     `}
                       disabled={activeOrderFetcher.state !== 'idle'}
-                      style={{
-                        background: generateGradient({
-                          colors: colorFacetValues,
-                        }),
-                        backgroundSize: '600% 100%',
-                        animation: 'gradient 16s ease infinite',
-                      }}
+                      // style={{
+                      //   background: generateGradient({
+                      //     colors: colorFacetValues,
+                      //   }),
+                      //   backgroundSize: '600% 100%',
+                      //   animation: 'gradient 16s ease infinite',
+                      // }}
                     >
                       {qtyInCart ? (
                         <span className="flex items-center justify-center">

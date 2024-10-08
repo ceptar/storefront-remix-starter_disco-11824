@@ -1966,7 +1966,7 @@ type Mutation {
 
   """Create a new Customer Address"""
   createCustomerAddress(input: CreateAddressInput!): Address!
-  createStripePaymentIntent: String
+  createStripePaymentIntent: String!
 
   """Delete an existing Address"""
   deleteCustomerAddress(id: ID!): Success!
@@ -2791,6 +2791,9 @@ enum Permission {
 
   """Grants permission to read Zone"""
   ReadZone
+
+  """Allows setting a webhook URL"""
+  SetWebhook
 
   """SuperAdmin has unrestricted access to all operations"""
   SuperAdmin

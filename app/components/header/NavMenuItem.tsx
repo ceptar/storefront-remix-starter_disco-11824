@@ -22,9 +22,9 @@ const NavMenuItem: React.FC<NavMenuItemProps> = ({ index, title, class: classNam
       whileHover="hover"
       onAnimationComplete={() => setIsLoading(false)}
     >
-      <div className=" flex items-center relative w-full">
+      <div className={`${className} flex items-center relative`}>
 
-        <motion.div className={`${className} flex-1 flex items-center justify-between`} variants={itemContentMotion}>
+        <motion.div className="flex-1 flex items-center justify-between" variants={itemContentMotion}>
           {title}
         </motion.div>
         {hasChildren && ( // Conditionally render the icon only if it's a parent item

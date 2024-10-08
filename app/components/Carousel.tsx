@@ -5,7 +5,7 @@ import React, {
   useEffect,
 } from 'react';
 import type { PanInfo } from 'framer-motion';
-import { AnimatePresence, motion, useAnimation, useMotionValue, useSpring } from 'framer-motion';
+import { AnimatePresence, motion, MotionConfig, useAnimation, useMotionValue, useSpring } from 'framer-motion';
 import { wrap } from 'popmotion';
 import DiscoPfeilLinks from './svgs/DiscoPfeilLinks';
 import DiscoPfeilRechts from './svgs/DiscoPfeilRechts';
@@ -33,7 +33,7 @@ export default function Carousel({ featuredProducts }) {
   const currIndex = wrap(0, CAROUSEL_LENGTH, page);
 
   const paginate = (newDirection) => {
-    setPage((p) => p + newDirection);
+    setPage(wrap(0, CAROUSEL_LENGTH, page + newDirection));
   };
 
   const calcX = (index) => {
@@ -147,8 +147,8 @@ export default function Carousel({ featuredProducts }) {
   };
 
   useEffect(() => {
-    controls.set({ x: -calcX(currIndex) });
-  }, [currIndex, controls]);
+    controls.start({ x: -calcX(page) });
+  }, [page, controls]);
 
   const handleDrag = (event, info) => {
     const { offset } = info;
@@ -168,11 +168,45 @@ export default function Carousel({ featuredProducts }) {
   };
 
   return (
+    <MotionConfig transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}>
     <div className="flex flex-row w-full px-4 ">
+      
     <div
     className="relative flex overflow-hidden"
       ref={containerRef}
     >
+      <div className="h-full">
+          <AnimatePresence initial={false}>
+            {currIndex > 0 && (
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.8 }}
+                exit={{ opacity: 0, pointerEvents: "none" }}
+                whileHover={{ opacity: 1 }}
+                className="absolute top-[calc(50%-18px)] z-[2] left-0 flex h-9 w-9 items-center justify-center cursor-pointer z-[2]"
+                onClick={() => paginate(-1)}
+              >
+                <DiscoPfeilLinks className="h-9 w-9 bg-discogray backdrop-blur-md text-white opacity-85 -ml-1 bg-blend-difference"/>
+              </motion.button>
+            )}
+          </AnimatePresence>
+          </div>
+          <div className="h-full">
+          <AnimatePresence initial={false}>
+            {currIndex + 1 < featuredProducts.length && (
+              <motion.button
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.8 }}
+                exit={{ opacity: 0, pointerEvents: "none" }}
+                whileHover={{ opacity: 1 }}
+                className="absolute top-[calc(50%-18px)] z-[2] right-0 flex h-9 w-9 items-center justify-center cursor-pointer z-[2]"
+                onClick={() => paginate(1)}
+              >
+                <DiscoPfeilRechts className="h-9 w-9 bg-discogray backdrop-blur-md text-white opacity-85 -mr-1 bg-blend-difference"/>
+              </motion.button>
+            )}
+          </AnimatePresence>
+          </div>
       <motion.div
       className="flex gap-4 w-fit"
         ref={carouselRef}
@@ -191,7 +225,7 @@ export default function Carousel({ featuredProducts }) {
           <div
             key={index} // Prefer using a unique product identifier here
             className="relative flex-shrink-0 flex flex-col b-radius-0 
-            w-[calc(50vw-24px)] md:w-[calc(25vw-24px)]
+            w-[calc(50vw-32px)] md:w-[calc(25vw-24px)]
             "
  /* 
  w-[calc(100vw-48px)] 
@@ -218,40 +252,9 @@ export default function Carousel({ featuredProducts }) {
             
           </div>
         ))}
-        {/* <div className="h-full">
-          <AnimatePresence initial={false}>
-            {currIndex > 0 && (
-              <motion.button
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.8 }}
-                exit={{ opacity: 0, pointerEvents: "none" }}
-                whileHover={{ opacity: 1 }}
-                className="absolute top-[calc(50%-18px)] left-0 flex h-9 w-9 items-center justify-center cursor-pointer z-[2]"
-                onClick={() => (currIndex - 1)}
-              >
-                <DiscoPfeilLinks className="h-9 w-9 bg-discogray backdrop-blur-md text-white opacity-85 -ml-1 bg-blend-difference"/>
-              </motion.button>
-            )}
-          </AnimatePresence>
-          </div>
-          <div className="h-full">
-          <AnimatePresence initial={false}>
-            {currIndex + 1 < featuredProducts.length && (
-              <motion.button
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.8 }}
-                exit={{ opacity: 0, pointerEvents: "none" }}
-                whileHover={{ opacity: 1 }}
-                className="absolute top-[calc(50%-18px)] right-0 flex h-9 w-9 items-center justify-center cursor-pointer z-[2]"
-                onClick={() => (currIndex + 1)}
-              >
-                <DiscoPfeilRechts className="h-9 w-9 bg-discogray backdrop-blur-md text-white opacity-85 -mr-1 bg-blend-difference"/>
-              </motion.button>
-            )}
-          </AnimatePresence>
-          </div> */}
       </motion.div>
     </div>
     </div>
+    </MotionConfig>
   );
 }
