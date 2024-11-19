@@ -187,7 +187,7 @@ export default function ProductSlug() {
       text-black bg-black border-[2px] border-black
       py-2.5 px-5 my-2 cursor-pointer shadow-[3px_3px_black]
       active:translate-x-[3px] active:translate-y-[3px] active:shadow-none
-      transition-all ease-in-out
+      transition-all
       ${activeOrderFetcher.state !== 'idle' ? '' : ''}
       ${qtyInCart === 0 ? '' : ''}
     `}
