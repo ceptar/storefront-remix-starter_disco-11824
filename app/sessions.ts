@@ -30,7 +30,8 @@ export async function getSessionStorage() {
       name: 'vendure_remix_session',
       httpOnly: true,
       path: '/',
-      sameSite: 'strict',
+      sameSite: 'none', // Update this to 'none'
+      secure: true, // Add this line
       secrets: ['awdbhbjahdbaw'],
     },
   });

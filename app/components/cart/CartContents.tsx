@@ -21,12 +21,12 @@ export function CartContents({
       <ul role="list" className="-my-4 ">
         {(orderLines ?? []).map((line) => (
           <li key={line.id} className="py-4 flex">
-            <div className="flex-shrink-0 w-24 h-24 border-[2px] border-discogray object-center object-cover items-center justify-center overflow-hidden">
+            <div className="flex-shrink-0 w-24 h-32 border-[2px] border-discogray object-center object-cover items-center justify-center overflow-hidden">
               <img
-                src={line.featuredAsset?.preview + '?preset=thumb'}
+                src={line.featuredAsset?.preview + '?q=95&w=150&h=210&mode=crop&fpx=0.5&fpy=0.5'}
                 alt={line.productVariant.name}
                 className="flex w-full h-auto object-center object-cover"
-              />
+              ></img>
             </div>
 
             <div className="ml-4 flex-1 flex flex-col">

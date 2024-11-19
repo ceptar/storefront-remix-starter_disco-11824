@@ -80,7 +80,10 @@ function requester<R, V>(
       );
       if (session) {
         session.set(AUTH_TOKEN_SESSION_KEY, token);
-        headers['Set-Cookie'] = await sessionStorage.commitSession(session);
+        headers['Set-Cookie'] = await sessionStorage.commitSession(session, {
+          sameSite: 'none',
+          secure: true,
+        });
       }
     }
     headers['x-vendure-api-url'] = API_URL;

@@ -17,7 +17,7 @@ export function Header({
   const [rootRouteOpacity, setRootRouteOpacity] = React.useState(1);
   const [headerOpacity, setHeaderOpacity] = React.useState(0);
   const location = useLocation();
-  // console.log('headerData', data);
+
   React.useEffect(() => {
     const checkRootRoute = () => {
       setRootRouteOpacity(location.pathname === '/' ? 0 : 1);

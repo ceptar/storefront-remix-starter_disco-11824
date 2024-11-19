@@ -66,7 +66,7 @@ export default function CollectionSlug() {
                 className="object-cover"
                 alt={productName}
                 src={productAsset?.preview + '?w=full'}
-              />
+              ></img>
                      <div className="relative w-full mx-auto bottom-0 left-0">
                      <div className="text-center bg-discogray absolute bottom-0 left-0 w-fit h-fit text-white text-md p-1 ">                <Price priceWithTax={priceWithTax} currencyCode={currencyCode as CurrencyCode} />               
                 </div>

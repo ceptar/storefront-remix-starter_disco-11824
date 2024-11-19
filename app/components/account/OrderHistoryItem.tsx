@@ -117,7 +117,7 @@ export default function OrderHistoryItem({
                   <img
                     src={line.featuredAsset?.source}
                     className="w-24 h-24 object-cover "
-                  />
+                  ></img>
                 </Link>
                 <span className="flex flex-1 flex-col gap-0">
                   {/* Product name */}

@@ -1,21 +1,52 @@
 {
   "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx", "public/dummy-analytics-script.js"],
+
+  "ts-node": {
+    "transpileOnly": true,
+    "moduleTypes": {
+      "webpack.config.ts": "cjs",
+      // Globs are also supported with the same behavior as tsconfig "include"
+      "webpack-config-scripts/**/*": "cjs"
+    }
+  },
   "compilerOptions": {
     "lib": ["DOM", "DOM.Iterable", "ES2022"],
     "isolatedModules": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-"moduleResolution": "Bundler",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "target": "ES2022",
     "module": "ES2022",
-    "strict": true,
+    "strict": false,
     "baseUrl": ".",
-    "paths": {
-      "~/*": ["./app/*"]
-    },
     "noEmit": true,
     "forceConsistentCasingInFileNames": true,
-    "allowJs": true
+    "allowJs": true,
+    "paths": {
+      "~/*": ["./app/*"]
+    }
   }
+
+
+//   }
 }
+
+
+// "compilerOptions": {
+//   "lib": ["DOM", "DOM.Iterable", "ES2022"],
+//   "isolatedModules": true,
+//   "esModuleInterop": true,
+//   "jsx": "react-jsx",
+// "moduleResolution": "Bundler",
+//   "resolveJsonModule": true,
+//   "target": "ES2022",
+//   "module": "ES2022",
+//   "strict": true,
+//   "baseUrl": ".",
+//   "paths": {
+//     "~/*": ["./app/*"]
+//   },
+//   "noEmit": true,
+//   "forceConsistentCasingInFileNames": true,
+//   "allowJs": true

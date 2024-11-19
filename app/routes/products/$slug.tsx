@@ -99,30 +99,35 @@ export default function ProductSlug() {
   );
   const productAsset = product.assets.map((asset) => asset.preview + '?w=full');
   console.log('productImages', productAsset);
-  return (
-    <div className="w-full relative z-[-2]"
+  return (<div className="w-full h-full">
+    <div className="w-full h-full 
+fixed  bg-[rgba(255,255,255,0.2)]"></div>
+    <div className="w-full h-full fixed 
+    "
     style={{
       background: generateGradient({
         colors: colorFacetValues,
       }),
       backgroundSize: '600% 100%',
       animation: 'gradient 16s ease infinite',
-    }}>
-<div className="w-full h-full z-[-1] absolute bg-[rgba(255,255,255,0.8)]"></div>
+    }}></div>
+        {/* <div className="w-full h-full 
+absolute  bg-[rgba(255,255,255,0.4)]"></div> */}
+
       <div className="h-28 w-full"></div>
-      <div className="w-full flex justify-center">
+      <div className="w-full relative flex justify-center">
         <div className="w-auto sm:max-w-none flex justify-center items-center">
           {/* Image container */}
           <div className="flex flex-col sm:flex-row">
             <div className="w-full sm:w-1/2 py-4 pl-4 pr-4 flex justify-center sm:justify-end">
-              <div className="h-full w-fit border-discogray border-[2px] overflow-hidden">
+              <div className="h-fit w-fit border-discogray border-[2px] overflow-hidden">
                 <CarouselSingle productAsset={productAsset} />
               </div>
             </div>
 
             {/* Product info */}
-            <div className="w-full sm:w-1/2 py-4 pr-4 pl-4 ">
-            
+            <div className="w-full h-full sm:w-1/2 py-4 pr-4 pl-4 ">
+            <div className="p-4 w-full h-hull bg-[rgba(255,255,255,0.2)] border-discogray border-[2px]">
               {/* Product info content */}
               <h2 className="uppercase font-metrothin1 tracking-[0.15em] text-4xl py-1">
                 {product.name}
@@ -258,12 +263,14 @@ export default function ProductSlug() {
                 </div>
               </activeOrderFetcher.Form>
             </div>
+            </div>
           </div>
         </div>
       </div>
 
       <div className="h-12 w-full"></div>
     </div>
+  
   );
 }
 

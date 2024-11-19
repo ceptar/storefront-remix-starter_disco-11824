@@ -87,7 +87,6 @@ export async function loader({ request, params, context }: DataFunctionArgs) {
     collections: collections,
     locale: 'en', // Always set to English
   };
-  console.log('loaderData', loaderData);
 
   return json(
     {
@@ -140,7 +139,7 @@ export default function App() {
   }, [loaderData]);
 
   return (
-    <html id="app">
+    <html id="app" lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1" />

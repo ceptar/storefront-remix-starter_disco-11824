@@ -52,7 +52,7 @@ query GetCollectionProducts($slug: String!, $skip: Int!, $take: Int!) {
 // export async function fetchCollectionProducts(slug: string, skip: number = 0, take: number = 10) {
 //   try {
 //     const data = await sdk.GetCollectionProducts({ slug, skip, take });
-//     console.log(data);
+
 //     return {
 //       products: data.search.items,
 //       totalItems: data.search.totalItems,
@@ -61,6 +61,6 @@ query GetCollectionProducts($slug: String!, $skip: Int!, $take: Int!) {
 //     console.error('Error fetching collection products:', error);
 //     throw error;
 //   } finally {
-//     console.log('Query execution completed');
+
 //   }
 // }

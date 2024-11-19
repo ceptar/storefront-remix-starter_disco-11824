@@ -20,9 +20,8 @@ const navigation = {
 };
 
 export default function Footer({ collections }: RootLoaderData) {
-  console.log('Collections:', collections);
+
   const collectionTree = arrayToTree(collections);
-  console.log('Collection Tree:', collectionTree);
 
   return (
 <div className="relative text-white w-full h-full">

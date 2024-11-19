@@ -14,17 +14,15 @@ export default function CarouselSingle({productAsset}) {
     const draggedDistance = dragInfo.offset.x;
     const swipeThreshold = 20;
     if (draggedDistance > swipeThreshold) {
-      console.log("swipe detection: ", "prev");
       index > 0 && setIndex(index - 1);
     } else if (draggedDistance < -swipeThreshold) {
-      console.log("swipe detection: ", "next");
       index + 1 < productAsset.length && setIndex(index + 1);
     }
   };
 
   return (
     <MotionConfig transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}>
-      <div className="w-full h-full flex flex-col justify-center items-center">
+      <div className="w-full h-full flex justify-center items-center">
         {/* ↓ Parent Container */}
         <div
           // Added ref to Parent Container so we can use
@@ -33,7 +31,7 @@ export default function CarouselSingle({productAsset}) {
           ref={constraintsRef}
           // I added a max-w-[450px] and w-full for responsiveness and
           // so that it was easier to debug the carousel.
-          className="relative w-full sm:w-auto aspect-[5/8] sm:max-h-[70vh] overflow-hidden"
+          className="relative w-full sm:w-auto aspect-[5/8] sm:max-h-[70vh] min-h-[300px] overflow-hidden"
         >
           {/* ↓ Draggable Container */}
           <motion.div
@@ -82,7 +80,7 @@ export default function CarouselSingle({productAsset}) {
                   // Added opacity-50 to make the background bleed
                   // through to help visualize the slides changing.
                   className="object-cover pointer-events-none opacity-100"
-                />
+                ></img>
               </div>
             ))}
           </motion.div>

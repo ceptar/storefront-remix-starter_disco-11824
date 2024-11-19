@@ -22,7 +22,7 @@ export function ProductCard({
           className="object-cover aspect-[5/8] object-center"
           alt=""
           src={productAsset?.preview + '?w=full'}
-        />
+        ></img>
         <div className="relative w-full mx-auto bottom-0 left-0">
           <div className="text-center absolute bottom-0 left-0 w-fit h-fit bg-discogray text-white text-md p-1 font-fw300">
             <Price priceWithTax={priceWithTax} currencyCode={currencyCode} />
