@@ -27,13 +27,15 @@ const AccordionTrigger = React.forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center py-4 justify-between text-xl tracking-[0.05em] uppercase transition-all hover:bg-primary-100 text-left [&[data-state=open]>svg]:rotate-90",
+        "flex flex-1 items-center justify-between text-xl tracking-[0.05em] uppercase transition-all hover:bg-primary-100 text-left [&[data-state=open]>svg]:rotate-90",
         className
       )}
       {...props}
     >
       {children}
-      <DiscoLightningFill className="fill-primary transition-transform duration-200 p-2 mr-4" width={44} height={44}/>
+      <div className="flex flex-col items-center justify-center px-5 py-4">
+      <DiscoLightningFill className="fill-primary transition-transform duration-200 iconsize"/>
+      </div>
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ))

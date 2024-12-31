@@ -1,20 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { Sheet, SheetTrigger, SheetContent } from '@/components/ui/sheet';
-import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from '@/components/ui/accordion';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent,
+} from '@/components/ui/accordion';
 import { MenuIcon } from '~/components/svgsAnimated/menu';
 import { Link } from '@remix-run/react';
 
 type MobileMenuProps = {
-  collections: Array<{ id: string; slug: string; name: string; parentId: string }>;
+  collections: Array<{
+    id: string;
+    slug: string;
+    name: string;
+    parentId: string;
+  }>;
   headerOpacity: number;
   rootRouteOpacity: number;
 };
 
-const MobileMenu: React.FC<MobileMenuProps> = ({ collections, headerOpacity, rootRouteOpacity }) => {
+const MobileMenu: React.FC<MobileMenuProps> = ({
+  collections,
+  headerOpacity,
+  rootRouteOpacity,
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
-  const categories = collections.filter(collection => collection.parentId === '15');
-  const subCollections = collections.filter(collection => collection.parentId === '12');
+  const categories = collections.filter(
+    (collection) => collection.parentId === '15',
+  );
+  const subCollections = collections.filter(
+    (collection) => collection.parentId === '12',
+  );
 
   useEffect(() => {
     if (isOpen) {
@@ -39,29 +57,30 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ collections, headerOpacity, roo
       <SheetContent className="h-[calc(100vh-5rem)] mt-20 text-base">
         <Accordion type="single" collapsible>
           <AccordionItem value="collections">
-            <AccordionTrigger className="pl-6">Collections</AccordionTrigger>
+            <AccordionTrigger className="pl-5 text-2xl">Collections</AccordionTrigger>
             <AccordionContent>
               <ul className="border-t-[2px] border-primary">
-                {subCollections.map(collection => (
-				<Link key={collection.id} to={`/collections/${collection.slug}`}>
-                  <li className="px-6 py-3 font-semibold">
-                  {collection.name}
-                  </li>
-				  </Link>
+                {subCollections.map((collection) => (
+                  <Link
+                    key={collection.id}
+                    to={`/collections/${collection.slug}`}
+                  >
+                    <li className="px-5 py-3 font-semibold">
+                      {collection.name}
+                    </li>
+                  </Link>
                 ))}
               </ul>
             </AccordionContent>
           </AccordionItem>
           <AccordionItem value="categories">
-            <AccordionTrigger  className="pl-6">Categories</AccordionTrigger>
+            <AccordionTrigger className="pl-5 text-2xl">Categories</AccordionTrigger>
             <AccordionContent>
               <ul className="border-t-[2px] border-primary">
-                {categories.map(category => (
-				<Link key={category.id}  to={`/categories/${category.slug}`}>
-                  <li className="px-6 py-3 font-semibold">
-                    {category.name}
-                  </li>
-				  </Link>
+                {categories.map((category) => (
+                  <Link key={category.id} to={`/categories/${category.slug}`}>
+                    <li className="px-5 py-3 font-semibold">{category.name}</li>
+                  </Link>
                 ))}
               </ul>
             </AccordionContent>

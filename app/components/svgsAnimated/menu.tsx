@@ -47,8 +47,6 @@ const MenuIcon: React.FC<MenuIconProps> = ({ headerOpacity, rootRouteOpacity, is
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="28"
-        height="28"
         viewBox="0 0 24 24"
         fill="none"
         stroke={`rgba(${255 * (1 - headerOpacity - rootRouteOpacity)}, ${
@@ -57,6 +55,7 @@ const MenuIcon: React.FC<MenuIconProps> = ({ headerOpacity, rootRouteOpacity, is
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+        className="iconsize" 
       >
         <motion.line
           x1="4"
