@@ -1972,10 +1972,7 @@ type Mutation {
   deleteCustomerAddress(id: ID!): Success!
 
   """
-  Authenticates the user using the native authentication strategy. This mutation is an alias for authenticate({ native: { ... }})
-  
-  The `rememberMe` option applies when using cookie-based sessions, and if `true` it will set the maxAge of the session cookie
-  to 1 year.
+  Authenticates the user using the native authentication strategy. This mutation is an alias for `authenticate({ native: { ... }})`
   """
   login(password: String!, rememberMe: Boolean, username: String!): NativeAuthenticationResult!
 
@@ -2791,9 +2788,6 @@ enum Permission {
 
   """Grants permission to read Zone"""
   ReadZone
-
-  """Allows setting a webhook URL"""
-  SetWebhook
 
   """SuperAdmin has unrestricted access to all operations"""
   SuperAdmin

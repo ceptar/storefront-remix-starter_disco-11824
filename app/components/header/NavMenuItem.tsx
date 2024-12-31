@@ -24,13 +24,13 @@ const NavMenuItem: React.FC<NavMenuItemProps> = ({ index, title, class: classNam
     >
       <div className={`${className} flex items-center relative`}>
 
-        <motion.div className="flex-1 flex items-center justify-between" variants={itemContentMotion}>
+        <motion.div className="flex-1 items-center justify-between" variants={itemContentMotion}>
           {title}
         </motion.div>
         {hasChildren && ( // Conditionally render the icon only if it's a parent item
 
-            <motion.div className="p-1" variants={arrowMotion}>
-            <DiscoLightningFill className="fill-white " width={30} height={30} />
+            <motion.div className="flex items-center justify-center" variants={arrowMotion}>
+            <DiscoLightningFill className="fill-white" width={32} height={32}/>
           </motion.div>
 
         )}

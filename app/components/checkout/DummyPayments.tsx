@@ -14,7 +14,7 @@ export function DummyPayments({
 
   return (
     <div className="flex flex-col items-center">
-      <p className="text-gray-600 text-sm p-6">{('checkout.dummyPayment')}</p>
+      <p className="text-discogray-700 text-sm p-6">{('checkout.dummyPayment')}</p>
       {paymentError && (
         <div className=" bg-red-50 p-4 mb-8">
           <div className="flex">

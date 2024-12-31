@@ -19,16 +19,14 @@ const navigation = {
   ],
 };
 
-export default function Footer({ collections }: RootLoaderData) {
-
-  const collectionTree = arrayToTree(collections);
+export default function Footer() {
 
   return (
 <div className="relative text-white w-full h-full">
   {/* Gradient background */}
   <div className="absolute inset-0 bg-discogray"></div>
-  <div className="absolute inset-0 opacity-10">
-    <svg width="100%" height="100%">
+  <div className="absolute inset-0">
+    <svg width="100%" height="100%" className="mix-blend-overlay">
       <pattern id="pattern-disco" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
       <path 
 d="M13.8183 1.16319C13.836 1.06857 13.9186 1 14.0148 1H16.2754C16.4243 1 16.521 1.1569 16.4541 1.28991L15.2531 3.67615C15.2126 3.75714 15.2715 3.85238 15.3621 3.85238H17.2223C17.3161 3.85238 17.3747 3.95402 17.3277 4.03523L14.6432 8.63059C14.5522 8.78635 14.3236 8.77539 14.2479 8.61164V8.61164C14.2267 8.56557 14.2217 8.51363 14.2339 8.46437L14.8898 5.81695C14.9088 5.74013 14.8507 5.66584 14.7715 5.66584H13.1218C13.0456 5.66584 12.9881 5.59656 13.0021 5.52161L13.8183 1.16319Z"
@@ -74,14 +72,14 @@ fill="white"/>
           <h3 className="text-sm font-semibold  tracking-[0.25em] uppercase">
             Shop
           </h3>
+{/* 
 
-{/* TREEMENU */}
 {collectionTree.children.length > 0 ? (
     <CollectionList collections={collectionTree} />
   ) : (
     <p>No collections available</p>
   )}
-
+ */}
         </div>
         <div className="w-full px-4 lg:w-1/4 md:w-1/2 mt-[2rem]">
           <h3 className="text-sm font-semibold  tracking-[0.25em] uppercase">
@@ -112,7 +110,7 @@ fill="white"/>
 
         </div>
       </div>
-      <div className="flex flex-row w-full px-4 mb-8 mt-8 xl:mt-0">
+      {/* <div className="flex flex-row w-full px-4 mb-8 mt-8 xl:mt-0">
         <div className="flex flex-col">
             <h3 className="text-sm font-semibold  tracking-[0.25em] uppercase">
               Subscribe to our newsletter
@@ -143,13 +141,13 @@ fill="white"/>
               </div>
             </form>
           </div>
-          </div>
+          </div> */}
     </div>
   </footer>
   </div>
   );
 }
-
+/* 
 function CollectionList({ collections }: { collections: RootNode<any> }) {
   const [openAccordions, setOpenAccordions] = useState<string[]>([]);
 
@@ -188,3 +186,4 @@ function CollectionList({ collections }: { collections: RootNode<any> }) {
     </ul>
   );
 }
+ */

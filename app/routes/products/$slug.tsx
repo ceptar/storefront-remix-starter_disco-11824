@@ -100,8 +100,7 @@ export default function ProductSlug() {
   const productAsset = product.assets.map((asset) => asset.preview + '?w=full');
   console.log('productImages', productAsset);
   return (<div className="w-full h-full">
-    <div className="w-full h-full 
-fixed  bg-[rgba(255,255,255,0.2)]"></div>
+
     <div className="w-full h-full fixed 
     "
     style={{
@@ -111,8 +110,8 @@ fixed  bg-[rgba(255,255,255,0.2)]"></div>
       backgroundSize: '600% 100%',
       animation: 'gradient 16s ease infinite',
     }}></div>
-        {/* <div className="w-full h-full 
-absolute  bg-[rgba(255,255,255,0.4)]"></div> */}
+
+    <div className="w-full h-full fixed bg-discograytwo bg-opacity-75"></div>
 
       <div className="h-28 w-full"></div>
       <div className="w-full relative flex justify-center">
@@ -127,7 +126,7 @@ absolute  bg-[rgba(255,255,255,0.4)]"></div> */}
 
             {/* Product info */}
             <div className="w-full h-full sm:w-1/2 py-4 pr-4 pl-4 ">
-            <div className="p-4 w-full h-hull bg-[rgba(255,255,255,0.2)] border-discogray border-[2px]">
+            <div className="p-4 w-full h-hull bg-[rgba(255,255,255,0.4)] border-discogray border-[2px]">
               {/* Product info content */}
               <h2 className="uppercase font-metrothin1 tracking-[0.15em] text-4xl py-1">
                 {product.name}
@@ -238,10 +237,10 @@ absolute  bg-[rgba(255,255,255,0.4)]"></div> */}
                 )}
 
                 <div className="mt-4 pt-4 text-xs">
-                  <h3 className="text-gray-600 font-bold mb-2">
+                  <h3 className="text-discogray-700 font-bold mb-2">
                     Shipping & Returns
                   </h3>
-                  <div className=" text-discogray-600 space-y-1">
+                  <div className=" text-discogray-900 space-y-1">
                     <p>
                       Standard shipping: 3 - 5 working days. Express shipping: 1
                       - 3 working days.

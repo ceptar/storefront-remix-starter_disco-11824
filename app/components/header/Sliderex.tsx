@@ -34,7 +34,7 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
         className="flex flex-col bg-opacity-90 cursor-pointer justify-center items-center p-4 text-sm text-discogray-500 transition-all duration-300 ease-out hover:opacity-70"
       >
         <button className="text-center flex-col items-center justify-center">
-          <Hamburger className="w-9 h-9" fill={finalOpacity} />
+          <Hamburger className="iconsize" fill={finalOpacity} />
         </button>
       </div>
       <div
@@ -58,8 +58,8 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
           <div className="absolute justify-between items-stretch bg-discogray bg-opacity-85 backdrop-blur-md transform w-full h-full flex flex-col">
             {/* Menu */}
 
-            <div className="flex flex-row justify-between items-center h-20 border-b-[2px]">
-              <h2 className="pl-4 text-lg font-fw950 tracking-[0.05em] uppercase text-white">
+            <div className="pl-8 flex flex-row justify-between items-center h-20 border-b-[2px]">
+              <h2 className=" tracking-[0.05em] text-xl font-bold uppercase text-white">
                 Menu
                 </h2>
 
@@ -68,13 +68,13 @@ const Sliderex: React.FC<SliderexProps> = ({ finalOpacity }) => {
                   to={isSignedIn ? '/account' : '/sign-in'}
                   className="flex space-x-1"
                 >
-                  <DiscoSignIn className="w-9 h-9" fill="white" />
+                  <DiscoSignIn className="iconsize" fill="white" />
                 </Link>
                 <div
                   className="cursor-pointer text-white flex items-center justify-center"
                   onClick={toggleSlideover}
                 >
-                  <X className="w-9 h-9" fill="white" />
+                  <X className="iconsize" fill="white" />
                 </div>
               </div>
             </div>

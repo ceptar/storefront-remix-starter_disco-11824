@@ -28,10 +28,10 @@ export async function getSessionStorage() {
   sessionStorage = factory({
     cookie: {
       name: 'vendure_remix_session',
-      httpOnly: true,
-      path: '/',
-      sameSite: 'none', // Update this to 'none'
-      secure: true, // Add this line
+      // httpOnly: true,
+      // path: '/',
+      // sameSite: 'none', // Update this to 'none'
+      // secure: true, // Add this line
       secrets: ['awdbhbjahdbaw'],
     },
   });

@@ -154,7 +154,7 @@ export default function CheckoutShipping() {
 
         {isSignedIn ? (
           <div className="bg-discogray">
-            <p className="mt-2 text-gray-600">
+            <p className="mt-2 text-discogray-700">
               {customer?.firstName} {customer?.lastName}
             </p>
             <p>{customer?.emailAddress}</p>

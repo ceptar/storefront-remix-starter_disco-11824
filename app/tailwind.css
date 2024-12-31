@@ -5,9 +5,40 @@
 
 @tailwind utilities;
 
+html {
+  @apply max-w-full;
+  overflow-x: hidden;
+}
+body {
+  @apply min-w-full min-h-[100vh];
+  overflow-x: scroll;
+}
+
 @layer base {
+
   button:disabled {
     cursor: not-allowed;
+  }
+  :root {
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -15,7 +46,7 @@
 
   @font-face {
     font-family: 'uncut';
-    src: url(~/styles/font/_var_montserrat.woff2) format('woff2-variations');
+    src: url(~/styles/font/DMSansVar.woff) format('woff-variations');
     font-weight: 100 900;
     font-stretch: 75% 125%;
     font-style: normal;
@@ -23,48 +54,48 @@
   
   @font-face {
     font-family: 'Metropolitano-Thin';
-    src: url(~/styles/font/_var_montserrat.woff2) format('woff2-variations');
+    src: url(~/styles/font/DMSansVar.woff) format('woff-variations');
     font-weight: 200;
-    font-stretch: 115%;
+    font-stretch: 100%;
     font-display: swap;
   }
   @font-face {
     font-family: 'Metropolitano-Light';
-    src: url(~/styles/font/_var_montserrat.woff2) format('woff2-variations');
+    src: url(~/styles/font/DMSansVar.woff) format('woff-variations');
     font-weight: 300;
-    font-stretch: 115%;
+    font-stretch: 100%;
     font-display: swap;
   }
   @font-face {
     font-family: 'sans';
-    src: url(~/styles/font/_var_montserrat.woff2) format('woff2-variations');
+    src: url(~/styles/font/DMSansVar.woff) format('woff-variations');
     font-weight: 300;
-    font-stretch: 115%;
+    font-stretch: 100%;
     font-display: swap;
   }
     @font-face {
       font-family: 'Metropolitano-Regular';
-      src: url(~/styles/font/_var_montserrat.woff2) format('woff2-variations');
+      src: url(~/styles/font/DMSansVar.woff) format('woff-variations');
       font-weight: 400;
-      font-stretch: 115%;
+      font-stretch: 100%;
       font-display: swap;
     }
     @font-face {
       font-family: 'Metropolitano-Medium';
-      src: url(~/styles/font/_var_montserrat.woff2) format('woff2-variations');
+      src: url(~/styles/font/DMSansVar.woff) format('woff-variations');
       font-weight: 500;
-      font-stretch: 115%;
+      font-stretch: 100%;
       font-display: swap;
     }
     @font-face {
       font-family: 'Metropolitano-Bold';
-      src: url(~/styles/font/_var_montserrat.woff2) format('woff2-variations');
+      src: url(~/styles/font/DMSansVar.woff) format('woff-variations');
       font-weight: 700;
       font-display: swap;
     }
     @font-face {
       font-family: 'Metropolitano-Black';
-      src: url(~/styles/font/_var_montserrat.woff2) format('woff2-variations');
+      src: url(~/styles/font/DMSansVar.woff) format('woff-variations');
       font-weight: 800;
       font-display: swap;
     }
@@ -86,36 +117,15 @@
     color: inherit;
   }
 
-  .cookie-container {
-padding: 16px;
-    width: 100%;
-    color: #fff !important;
-    backdrop-filter: blur(8px) !important;
-    background-color: rgb(0 0 0 / 0.75) !important;
-  }
-  .cookie-consent-button {
-    margin-left: 2rem;
-    padding: 0.5rem 1rem !important;
-    color: #fff !important;
-    letter-spacing: 0.1em !important;
-    background-color: rgba(255, 255, 255, 0) !important;
-    border: 1px solid rgba(255, 255, 255, 0.25) !important; /* Add a border style */
-  }
-  .cookie-consent-button:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.5) !important; /* Add a border style */
-  }
-
   .parent {
-    font-size: 28px;
+    font-size: 24px;
     font-weight:300;
     line-height: 120%;
     color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    padding: 1rem;
+    padding-left: 2rem;
+    padding-right: 1rem;
     height: 80px;
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
   }
   .parent:hover {
     color: #ffffffc0;
@@ -126,8 +136,8 @@ padding: 16px;
     line-height: 100%;
     color: #ffffff;
     font-weight: 400;
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     padding-left: 2rem;
   }
   .child:hover {
@@ -162,6 +172,10 @@ padding: 16px;
     background-size: 200% 200%;
     animation: gradient 16s linear infinite;
 }
+
+  .iconsize {
+    @apply w-8 h-8;
+  }
 
 @keyframes gradient {
     0% {background-position: 0% 50%}

@@ -1,3 +1,4 @@
+
 import { cssBundleHref } from '@remix-run/css-bundle';
 import {
   isRouteErrorResponse,
@@ -13,9 +14,8 @@ import {
   useRouteError,
   MetaFunction,
 } from '@remix-run/react';
-import GdprBanner from "~/components/gdpr/GdprBanner";
-import GdprTrackingScript from "~/components/gdpr/GdprTrackingScript";
-import { gdprConsent } from './cookies';
+import { CookieConsent } from './components/CookieConsent';
+
 import styles from './tailwind.css';
 import { Header } from './components/header/Header';
 import {
@@ -73,13 +73,13 @@ export type RootLoaderData = {
 };
 
 export async function loader({ request, params, context }: DataFunctionArgs) {
-  const collections = await getCollections(request, { take: 20 });
+  const collections = await getCollections(request, { take: 100 });
   // const topLevelCollections = collections.filter(
   //   (collection) => collection.parent?.name === '__root_collection__',
   // );
   const activeCustomer = await getActiveCustomer({ request });
-  const cookieHeader = request.headers.get('Cookie');
-  const cookie = (await gdprConsent.parse(cookieHeader)) || {};
+  // const cookieHeader = request.headers.get('Cookie');
+  // const cookie = (await gdprConsent.parse(cookieHeader)) || {};
   const loaderData: RootLoaderData = {
     activeCustomer,
     activeChannel: await activeChannel({ request }),
@@ -91,36 +91,18 @@ export async function loader({ request, params, context }: DataFunctionArgs) {
   return json(
     {
       ...loaderData,
-      showGdprBanner: !cookie.gdprConsent,  // GDPR cookie
-      track: cookie.gdprConsent,  // GDPR consent for tracking
+
     },
     { headers: activeCustomer._headers }
   );
 }
-export async function action({ request }: { request: Request }) {
-  const formData = await request.formData();
-  const cookieHeader = request.headers.get('Cookie');
-  const cookie = (await gdprConsent.parse(cookieHeader)) || {};
 
-  // Handle GDPR consent submission
-  if (formData.get('accept-gdpr') === 'true') {
-    cookie.gdprConsent = true;
-    return redirect("/", {
-      headers: {
-        "Set-Cookie": await gdprConsent.serialize(cookie),
-      },
-    });
-  }
-
-  // Here you can merge any other actions you need.
-  return null;  // Fallback for cases where no action is required
-}
 
 export default function App() {
   const [open, setOpen] = useState(false);
   const loaderData = useLoaderData<RootLoaderData>();
   const { collections } = loaderData;
-  const { locale, showGdprBanner, track } = useLoaderData<typeof loader>();
+  // const { locale, showGdprBanner, track } = useLoaderData<typeof loader>();
   // const { i18n } = useTranslation();
   const {
     activeOrderFetcher,
@@ -149,7 +131,10 @@ export default function App() {
       </head>
       <body 
       // className="flex flex-col min-h-screen w-full overflow-x-hidden"
+
       >
+        
+
         <Header
           onCartIconClick={() => setOpen(!open)}
           cartQuantity={activeOrder?.totalQuantity ?? 0}
@@ -173,11 +158,17 @@ export default function App() {
           adjustOrderLine={adjustOrderLine}
           removeItem={removeItem}
         />
-        <Footer collections={collections} />
-        <GdprBanner showGdprBanner={showGdprBanner} />  {/* GDPR banner display */}
+        <Footer />
+{/* 
+   <GdprBanner showGdprBanner={showGdprBanner} /> 
+    */}
+    <CookieConsent />
         <ScrollRestoration />
-        {track && <GdprTrackingScript track={track} />}  {/* GDPR tracking script */}
+{/* 
+        {track && <GdprTrackingScript track={track} />} 
+         */}
         <Scripts />
+
       </body>
     </html>
   );

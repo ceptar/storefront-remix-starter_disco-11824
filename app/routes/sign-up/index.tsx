@@ -54,7 +54,7 @@ export default function SignUpPage() {
             // t
             ('account.create')}
           </h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
+          <p className="mt-2 text-center text-sm text-discogray-700">
             {
             // t
             ('common.or')}{' '}
